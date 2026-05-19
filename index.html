@@ -1,0 +1,3910 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>法治教育學生手冊｜三～六年級整合版</title>
+  <style>
+    :root {
+      --ink: #1a2740;
+      --ink-soft: #2d3f5c;
+      --paper: #f5f1e8;
+      --surface: #fffdf8;
+      --line: #d8d2c5;
+      --blue-gray: #7f8fa6;
+      --blue-gray-light: #dfe5ec;
+      --sage: #879b8d;
+      --clay: #b98b73;
+      --gold: #c8a45d;
+      --white: #ffffff;
+      --shadow: 0 18px 44px rgba(26, 39, 64, .12);
+      --radius: 8px;
+      --side: 320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(26, 39, 64, .05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(26, 39, 64, .04) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px;
+      font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+      line-height: 1.75;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      transform: translateY(-140%);
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .top-hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      align-items: center;
+      padding: 118px clamp(22px, 6vw, 86px) 42px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(26, 39, 64, .97), rgba(45, 63, 92, .94)),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, .07) 0 1px, transparent 1px 34px);
+    }
+
+    .hero-inner {
+      max-width: 1140px;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 16px;
+    }
+
+    .hero-logo-badge {
+      position: absolute;
+      top: clamp(22px, 4vw, 44px);
+      left: clamp(22px, 5vw, 72px);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(245, 241, 232, .76);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hero-logo-badge img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255, 253, 248, .88);
+      padding: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+    }
+
+    .school-line {
+      width: fit-content;
+      margin-bottom: 26px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(245, 241, 232, .52);
+      color: rgba(255, 255, 255, .82);
+      font-size: clamp(.95rem, 1.4vw, 1.1rem);
+    }
+
+    .top-hero h1 {
+      max-width: 880px;
+      margin: 0;
+      font-size: clamp(2.55rem, 8vw, 6.25rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, .88);
+      font-size: clamp(1.25rem, 3vw, 2.15rem);
+      font-weight: 500;
+    }
+
+    .hero-applicable {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: clamp(1rem, 1.7vw, 1.22rem);
+      font-weight: 700;
+    }
+
+    .version-mark {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      margin-top: 34px;
+      padding: 4px 14px;
+      border: 1px solid rgba(245, 241, 232, .6);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, .92);
+      font-weight: 700;
+    }
+
+    .hero-footer {
+      margin-top: 72px;
+      color: rgba(255, 255, 255, .7);
+      font-size: .95rem;
+    }
+
+    .overview-section {
+      padding: 64px clamp(20px, 5vw, 76px);
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      margin: 0 0 24px;
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      line-height: 1.25;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .overview-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--white), #fbf8f1);
+    }
+
+    .overview-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+
+    .overview-card p {
+      margin: 14px 0 0;
+      color: #49576e;
+      line-height: 1.65;
+    }
+
+    .overview-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      min-height: 28px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--blue-gray-light);
+      color: var(--ink-soft);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--side) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 28px 20px;
+      color: var(--white);
+      background: var(--ink);
+      border-right: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .side-brand {
+      margin: 0 0 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .nav-label {
+      margin: 24px 0 10px;
+      color: rgba(255, 255, 255, .66);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .nav-group {
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, .11);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .045);
+    }
+
+    .grade-buttons,
+    .lesson-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .nav-button {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 7px;
+      color: rgba(255, 255, 255, .85);
+      background: rgba(255, 255, 255, .05);
+      text-align: left;
+      line-height: 1.35;
+    }
+
+    .nav-button:hover,
+    .nav-button.is-active {
+      color: var(--ink);
+      background: var(--paper);
+      border-color: var(--paper);
+    }
+
+    .lesson-link {
+      min-height: 42px;
+      padding: 8px 10px 8px 12px;
+      border: 0;
+      border-left: 3px solid transparent;
+      border-radius: 0 6px 6px 0;
+      color: rgba(255, 255, 255, .78);
+      background: transparent;
+      text-align: left;
+      line-height: 1.38;
+    }
+
+    .lesson-link:hover,
+    .lesson-link.is-active {
+      color: var(--white);
+      border-left-color: var(--gold);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 241, 232, .97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .slide-card .slide-logo-badge {
+      display: inline-flex;
+    }
+
+    .mobile-row {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding: 8px 12px;
+      scrollbar-width: thin;
+    }
+
+    .mobile-row + .mobile-row {
+      padding-top: 0;
+      padding-bottom: 8px;
+    }
+
+    .mobile-pill {
+      flex: 0 0 auto;
+      min-height: 36px;
+      max-width: 78vw;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--surface);
+      font-size: .94rem;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .mobile-pill.is-active {
+      color: var(--white);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .content {
+      min-width: 0;
+      padding: 34px clamp(18px, 4vw, 60px) 44px;
+    }
+
+    .content-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 18px;
+      z-index: 20;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-bottom: 18px;
+      pointer-events: none;
+    }
+
+    .print-button {
+      min-height: 40px;
+      padding: 7px 14px;
+      border: 1px solid var(--ink);
+      border-radius: 7px;
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: 0 10px 26px rgba(26, 39, 64, .16);
+      pointer-events: auto;
+    }
+
+    .print-button.secondary {
+      color: var(--ink);
+      background: var(--surface);
+    }
+
+    .global-topbar {
+      position: fixed;
+      right: 18px;
+      top: 18px;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px;
+      border: 1px solid rgba(26, 39, 64, .16);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .94);
+      box-shadow: 0 14px 34px rgba(26, 39, 64, .16);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-brand {
+      display: none;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--ink);
+      font-size: clamp(.95rem, 1.5vw, 1.08rem);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .mode-switch,
+    .topbar-print {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .mode-button {
+      min-height: 36px;
+      padding: 5px 13px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--ink);
+      background: transparent;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .mode-button.is-active {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .topbar-print {
+      padding-left: 8px;
+      border-left: 1px solid rgba(26, 39, 64, .16);
+    }
+
+    .topbar-print .print-button {
+      min-height: 36px;
+      padding: 5px 12px;
+      box-shadow: none;
+    }
+
+    .presentation-stage {
+      display: none;
+    }
+
+    @media screen {
+      body[data-view="presentation"] {
+        min-height: 100vh;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      body[data-view="presentation"] .top-hero,
+      body[data-view="presentation"] .overview-section,
+      body[data-view="presentation"] .mobile-nav,
+      body[data-view="presentation"] .layout {
+        display: none;
+      }
+
+      body[data-view="presentation"] .global-topbar {
+        left: clamp(16px, 4vw, 46px);
+        right: clamp(16px, 4vw, 46px);
+        top: 14px;
+        justify-content: space-between;
+        overflow: hidden;
+        border-radius: 8px;
+        background: rgba(245, 241, 232, .96);
+      }
+
+      body[data-view="presentation"] .topbar-brand {
+        display: block;
+      }
+
+      body[data-view="presentation"] .presentation-stage {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        gap: 16px;
+        padding: 86px clamp(16px, 4vw, 46px) 20px;
+        color: var(--ink);
+        background:
+          linear-gradient(135deg, rgba(26, 39, 64, .98), rgba(45, 63, 92, .96)),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, .05) 0 1px, transparent 1px 38px);
+      }
+    }
+
+    .slide-frame {
+      width: min(100%, calc((100vh - 182px) * 16 / 9));
+      max-height: calc(100vh - 182px);
+      aspect-ratio: 16 / 9;
+      align-self: center;
+      justify-self: center;
+      display: grid;
+      overflow: hidden;
+      border: 1px solid rgba(245, 241, 232, .34);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+    }
+
+    .slide-logo-badge {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      color: rgba(93, 107, 128, .86);
+      font-size: clamp(.74rem, .9vw, .86rem);
+      font-weight: 700;
+    }
+
+    .slide-logo-badge img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 7px;
+      background: #fffdf8;
+      padding: 4px;
+      border: 1px solid #d8d2c5;
+    }
+
+    .slide,
+    .slide-card {
+      min-height: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(16px, 2.2vw, 26px);
+      overflow: visible;
+      padding: clamp(30px, 4.5vw, 58px);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, .98), rgba(245, 241, 232, .98));
+    }
+
+    .slide-header {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(8px, 1.4vw, 16px);
+    }
+
+    .slide-meta {
+      color: #5d6b80;
+      font-size: clamp(.9rem, 1.5vw, 1.1rem);
+      font-weight: 800;
+    }
+
+    .slide-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.85rem, 3.2vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .slide-subtitle {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.05rem, 2vw, 1.65rem);
+      line-height: 1.3;
+      font-weight: 800;
+    }
+
+    .slide-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .slide-core {
+      max-width: 24ch;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.2rem, 2.05vw, 1.9rem);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .slide-intro {
+      max-width: 44ch;
+      margin: 18px 0 0;
+      color: #4c5b72;
+      font-size: clamp(.98rem, 1.45vw, 1.25rem);
+      line-height: 1.55;
+    }
+
+    .slide-list {
+      margin: 0;
+      padding-left: 1.25em;
+      list-style: disc;
+    }
+
+    .slide-list li {
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .slide-list li + li {
+      margin-top: clamp(7px, 1.05vw, 12px);
+    }
+
+    .slide-emphasis {
+      max-width: 26ch;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.35vw, 2.25rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .slide-law-detail {
+      max-width: 38ch;
+      margin: clamp(14px, 2vw, 18px) 0 0;
+      color: #4c5b72;
+      font-size: clamp(.98rem, 1.45vw, 1.25rem);
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .slide-reminder {
+      margin: clamp(14px, 2vw, 20px) 0 0;
+      color: #5d6b80;
+      font-size: clamp(.9rem, 1.35vw, 1.05rem);
+      font-weight: 700;
+    }
+
+    .discussion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(12px, 1.8vw, 20px);
+    }
+
+    .discussion-card {
+      min-height: clamp(118px, 18vh, 172px);
+      display: flex;
+      align-items: center;
+      padding: clamp(16px, 2.3vw, 26px);
+      border: 1px solid #c8d0db;
+      border-top: 6px solid var(--gold);
+      border-radius: 8px;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fffdf8, #eef2f5);
+      font-size: clamp(1.02rem, 1.55vw, 1.42rem);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .quiz-slide-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(8px, 1.1vw, 12px);
+    }
+
+    .quiz-question-card,
+    .quiz-scenario-card {
+      padding: clamp(10px, 1.35vw, 16px);
+      border: 1px solid #c8d0db;
+      border-radius: 8px;
+      background: #fffdf8;
+    }
+
+    .quiz-question-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: var(--ink);
+      font-size: clamp(.95rem, 1.3vw, 1.2rem);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .quiz-blank {
+      min-width: 3.1em;
+      color: #5d6b80;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .quiz-scenario-card {
+      border-left: 6px solid var(--gold);
+      color: var(--ink);
+      font-size: clamp(.96rem, 1.35vw, 1.22rem);
+      line-height: 1.28;
+      font-weight: 800;
+    }
+
+    .quiz-scenario-card span {
+      display: block;
+      margin-bottom: 4px;
+      color: #5d6b80;
+      font-size: .82em;
+      font-weight: 900;
+    }
+
+    .presentation-controls {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px;
+      border: 1px solid rgba(245, 241, 232, .28);
+      border-radius: 999px;
+      background: rgba(245, 241, 232, .12);
+      min-height: 58px;
+    }
+
+    .slide-control {
+      min-height: 42px;
+      padding: 7px 16px;
+      border: 1px solid rgba(245, 241, 232, .44);
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(255, 255, 255, .08);
+      font-weight: 800;
+    }
+
+    .slide-control:hover {
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .slide-control:disabled {
+      cursor: not-allowed;
+      opacity: .45;
+    }
+
+    .slide-count {
+      min-width: 88px;
+      color: var(--paper);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .grade-section {
+      display: block;
+    }
+
+    .grade-section.is-hidden {
+      display: none;
+    }
+
+    .grade-cover {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      align-items: end;
+      margin-bottom: 28px;
+      padding: clamp(28px, 6vw, 64px);
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(26, 39, 64, .96), rgba(73, 87, 110, .9)),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .08) 0 1px, transparent 1px 26px);
+      box-shadow: var(--shadow);
+    }
+
+    .grade-cover::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(245, 241, 232, .36);
+      pointer-events: none;
+    }
+
+    .grade-cover-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .grade-logo-badge {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, .72);
+      font-size: .92rem;
+      font-weight: 800;
+    }
+
+    .grade-logo-badge img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 7px;
+      background: rgba(255, 253, 248, .92);
+      padding: 5px;
+    }
+
+    .grade-kicker {
+      margin: 0 0 12px;
+      color: rgba(255, 255, 255, .78);
+      font-weight: 700;
+    }
+
+    .grade-cover h2 {
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .grade-subtitle {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .9);
+      font-size: clamp(1.15rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+    }
+
+    .grade-summary {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 1.05rem;
+    }
+
+    .summary-panel,
+    .lesson-card,
+    .pending-panel {
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .95);
+      box-shadow: 0 10px 28px rgba(26, 39, 64, .07);
+    }
+
+    .summary-panel {
+      padding: clamp(20px, 3vw, 30px);
+    }
+
+    .panel-title {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+      line-height: 1.28;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .manual-table th {
+      color: var(--white);
+      background: var(--ink);
+      font-weight: 700;
+    }
+
+    .manual-table tr:nth-child(even) td {
+      background: #f7f4ed;
+    }
+
+    .manual-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .lesson-card {
+      overflow: hidden;
+      scroll-margin-top: 112px;
+    }
+
+    .lesson-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 22px clamp(20px, 3vw, 30px);
+      color: var(--white);
+      background: var(--ink-soft);
+    }
+
+    .lesson-number {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      border: 1px solid rgba(255, 255, 255, .42);
+      border-radius: 50%;
+      color: var(--paper);
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .lesson-title {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.7vw, 2rem);
+      line-height: 1.35;
+    }
+
+    .lesson-core {
+      margin: 4px 0 0;
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .lesson-body {
+      display: grid;
+      gap: 18px;
+      padding: clamp(20px, 3vw, 30px);
+    }
+
+    .block {
+      position: relative;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue-gray);
+      border-radius: 8px;
+      background: #fbf8f1;
+    }
+
+    .block.story {
+      border-left-color: var(--clay);
+      background: var(--surface);
+    }
+
+    .block.reminder {
+      border-left-color: var(--gold);
+    }
+
+    .block.action {
+      border-left-color: var(--sage);
+    }
+
+    .block.quiz {
+      border-left-color: var(--ink-soft);
+    }
+
+    .block h4 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .block h4::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .72;
+    }
+
+    .block p {
+      margin: 0;
+    }
+
+    .story-text {
+      max-width: 72ch;
+      font-size: 1.08rem;
+      line-height: 2;
+      letter-spacing: 0;
+    }
+
+    .presentation-hint {
+      display: none;
+      color: rgba(245, 241, 232, .78);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .block ul,
+    .block ol {
+      margin: 10px 0 0;
+      padding-left: 1.45rem;
+    }
+
+    .block li + li {
+      margin-top: 8px;
+    }
+
+    .quiz-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quiz-item {
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--white);
+    }
+
+    .response-lines {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .response-line {
+      height: 26px;
+      border-bottom: 1px solid #9da9b8;
+    }
+
+    .teacher-answer {
+      margin-top: 16px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #f7f4ed;
+    }
+
+    .teacher-answer summary {
+      min-height: 42px;
+      padding: 8px 14px;
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .teacher-answer-content {
+      padding: 0 16px 16px;
+      color: #4c5d76;
+      font-size: .95rem;
+    }
+
+    .teacher-answer-content ol {
+      margin: 8px 0 0;
+      padding-left: 1.45rem;
+    }
+
+    .pending-panel {
+      display: grid;
+      gap: 18px;
+      padding: clamp(24px, 4vw, 42px);
+      border-style: solid;
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, .98), rgba(247, 244, 237, .98));
+      text-align: left;
+    }
+
+    .pending-panel strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.5rem;
+    }
+
+    .pending-status {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 30px;
+      align-items: center;
+      padding: 3px 11px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--blue-gray-light);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .pending-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .pending-slot {
+      min-height: 72px;
+      padding: 12px;
+      border: 1px dashed #b8c1ce;
+      border-radius: 7px;
+      color: #536176;
+      background: var(--white);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      margin-top: 44px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--line);
+      color: #4d5a70;
+      font-size: .94rem;
+    }
+
+    .site-footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 1020px) {
+      .overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .side-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .content {
+        padding-top: 22px;
+      }
+
+      .toolbar {
+        top: 92px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-hero {
+        min-height: 78vh;
+        align-items: center;
+        padding: 96px 20px 28px;
+      }
+
+      .hero-inner {
+        padding-top: 0;
+      }
+
+      .hero-logo-badge {
+        top: 18px;
+        left: 18px;
+        right: 18px;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .hero-logo-badge img {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+      }
+
+      .top-hero h1 {
+        max-width: 8.5em;
+        font-size: clamp(2.35rem, 12vw, 3.4rem);
+      }
+
+      .hero-subtitle {
+        margin-top: 16px;
+        font-size: clamp(1.06rem, 5vw, 1.35rem);
+        line-height: 1.45;
+      }
+
+      .hero-applicable {
+        margin-top: 8px;
+        font-size: .98rem;
+      }
+
+      .version-mark {
+        min-height: 30px;
+        margin-top: 20px;
+        padding: 2px 11px;
+      }
+
+      .hero-footer {
+        margin-top: 34px;
+        font-size: .9rem;
+        line-height: 1.65;
+      }
+
+      .mobile-nav {
+        max-height: 86px;
+      }
+
+      .mobile-row {
+        gap: 6px;
+        padding: 7px 10px;
+      }
+
+      .mobile-row + .mobile-row {
+        padding-bottom: 7px;
+      }
+
+      .mobile-pill {
+        min-height: 34px;
+        padding: 5px 10px;
+        font-size: .9rem;
+      }
+
+      .content {
+        padding: 18px 14px 34px;
+      }
+
+      .toolbar {
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .print-button {
+        min-height: 36px;
+        padding: 6px 10px;
+        font-size: .9rem;
+      }
+
+      .grade-cover {
+        min-height: 360px;
+        margin-bottom: 18px;
+      }
+
+      .summary-panel,
+      .lesson-card,
+      .pending-panel {
+        margin-bottom: 18px;
+      }
+
+      .lesson-card {
+        scroll-margin-top: 104px;
+      }
+
+      .lesson-header {
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .lesson-body {
+        gap: 14px;
+        padding: 18px;
+      }
+
+      .block {
+        padding: 16px;
+        border-left-width: 5px;
+      }
+
+      .block h4 {
+        margin-bottom: 9px;
+        font-size: 1.04rem;
+      }
+
+      .story-text {
+        max-width: none;
+        font-size: 18px;
+        line-height: 1.82;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .block p,
+      .block li,
+      .quiz-item,
+      .answer {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .block ul,
+      .block ol {
+        padding-left: 1.25rem;
+      }
+
+      .manual-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      body[data-view="presentation"] .presentation-hint {
+        display: block;
+      }
+    }
+
+      @media (max-width: 680px) {
+      .top-hero {
+        min-height: 76vh;
+        padding: 94px 20px 28px;
+      }
+
+      .hero-logo-badge {
+        top: 18px;
+        left: 18px;
+        right: 18px;
+        gap: 8px;
+        font-size: 13px;
+      }
+
+      .hero-logo-badge img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .overview-section {
+        padding: 40px 16px;
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-card {
+        min-height: 170px;
+      }
+
+      .toolbar {
+        position: static;
+        justify-content: stretch;
+        flex-direction: column;
+      }
+
+      .print-button {
+        width: 100%;
+      }
+
+      .global-topbar {
+        left: 12px;
+        right: 12px;
+        top: 10px;
+        border-radius: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .mode-button {
+        flex: 1 1 0;
+        min-height: 34px;
+        padding: 5px 8px;
+      }
+
+      body[data-view="presentation"] .topbar-brand {
+        flex: 1 0 100%;
+        text-align: center;
+      }
+
+      body[data-view="presentation"] .presentation-stage {
+        padding: 126px 10px 12px;
+      }
+
+      .slide-frame {
+        width: 100%;
+        max-height: calc(100vh - 244px);
+      }
+
+      .slide {
+        padding: 20px;
+      }
+
+      .presentation-controls {
+        width: 100%;
+        border-radius: 8px;
+        flex-wrap: wrap;
+      }
+
+      .slide-control {
+        flex: 1 1 38%;
+      }
+
+      .grade-cover {
+        min-height: 430px;
+        padding: 30px 22px;
+      }
+
+      .grade-logo-badge {
+        top: 22px;
+        left: 22px;
+        font-size: .82rem;
+      }
+
+      .grade-logo-badge img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .grade-cover::before {
+        inset: 14px;
+      }
+
+      .lesson-header {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-number {
+        width: 52px;
+        height: 52px;
+      }
+
+      .pending-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .pending-slot {
+        min-height: 62px;
+      }
+
+      .manual-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .top-hero {
+        min-height: 74vh;
+      }
+
+      .top-hero h1 {
+        font-size: clamp(2.15rem, 11.2vw, 3rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .story-text {
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .lesson-body {
+        padding: 17px;
+      }
+
+      .block {
+        padding: 15px;
+      }
+
+      body[data-view="presentation"] .presentation-stage {
+        padding: 128px 8px 10px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .top-hero {
+        min-height: 72vh;
+        padding: 88px 18px 24px;
+      }
+
+      .hero-logo-badge img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-logo-badge {
+        font-size: 12.5px;
+      }
+
+      .top-hero h1 {
+        font-size: clamp(2rem, 10.8vw, 2.7rem);
+      }
+
+      .mobile-pill {
+        min-height: 32px;
+        padding: 5px 9px;
+        font-size: .86rem;
+      }
+
+      .content {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .story-text {
+        font-size: 18px;
+        line-height: 1.78;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm 16mm;
+    }
+
+    @media print {
+      html,
+      body {
+        background: var(--white) !important;
+      }
+
+      body {
+        color: #000;
+        font-size: 11.5pt;
+      }
+
+      .top-hero,
+      .overview-section,
+      .side-nav,
+      .mobile-nav,
+      .toolbar,
+      .global-topbar,
+      .presentation-stage,
+      .skip-link {
+        display: none !important;
+      }
+
+      body[data-view="presentation"] {
+        overflow: visible;
+      }
+
+      body[data-view="presentation"] .layout {
+        display: block !important;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .content,
+      .content-shell {
+        max-width: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .grade-section,
+      .grade-section.is-hidden {
+        display: block !important;
+      }
+
+      body[data-print-mode="current"] .grade-section {
+        display: none !important;
+      }
+
+      body[data-print-mode="current"] .grade-section.print-active {
+        display: block !important;
+      }
+
+      .grade-cover {
+        page-break-before: always;
+        min-height: 240mm;
+        margin: 0 0 10mm;
+        border: 2px solid #1a2740;
+        border-radius: 0;
+        color: #000;
+        background: #fff !important;
+        box-shadow: none;
+      }
+
+      .grade-section:first-of-type .grade-cover {
+        page-break-before: auto;
+      }
+
+      .grade-cover::before {
+        border-color: #888;
+      }
+
+      .grade-logo-badge {
+        top: 14mm;
+        left: 12mm;
+        color: #333;
+      }
+
+      .grade-logo-badge img {
+        width: 16mm;
+        height: 16mm;
+        border: 1px solid #aaa;
+        background: #fff;
+      }
+
+      .grade-kicker,
+      .grade-subtitle,
+      .grade-summary {
+        color: #000;
+      }
+
+      .summary-panel,
+      .lesson-card,
+      .pending-panel {
+        break-inside: avoid;
+        box-shadow: none;
+        background: #fff;
+      }
+
+      .lesson-card {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      .lesson-header {
+        color: #000;
+        background: #e7ebf0 !important;
+      }
+
+      .lesson-core {
+        color: #333;
+      }
+
+      .lesson-number {
+        color: #000;
+        border-color: #333;
+      }
+
+      .block {
+        background: #fff !important;
+        break-inside: avoid;
+      }
+
+      .teacher-answer {
+        display: none !important;
+      }
+
+      .story-text {
+        max-width: none;
+        font-size: 11.5pt;
+        line-height: 1.85;
+      }
+
+      .pending-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .manual-table th {
+        color: #000;
+        background: #e7ebf0 !important;
+      }
+
+      .site-footer {
+        margin-top: 10mm;
+        padding-top: 5mm;
+        page-break-inside: avoid;
+      }
+
+    }
+  </style>
+</head>
+<body data-print-mode="current" data-view="reading">
+  <a class="skip-link" href="#mainContent">跳到主要內容</a>
+
+  <div class="global-topbar" aria-label="全域控制列">
+    <div class="topbar-brand">法治教育學生手冊｜三～六年級適用</div>
+    <div class="mode-switch" aria-label="模式切換">
+      <button class="mode-button is-active" type="button" id="readingModeButton" aria-pressed="true">閱讀模式</button>
+      <button class="mode-button" type="button" id="presentationModeButton" aria-pressed="false">簡報模式</button>
+    </div>
+    <div class="topbar-print" aria-label="列印工具">
+      <button class="print-button secondary" type="button" id="topPrintCurrent">列印目前年級</button>
+      <button class="print-button" type="button" id="topPrintAll">列印全冊</button>
+    </div>
+  </div>
+
+  <header class="top-hero" id="top">
+    <div class="hero-logo-badge">
+      <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
+      <span>新竹市香山區內湖國民小學</span>
+    </div>
+    <div class="hero-inner">
+      <h1>法治教育學生手冊</h1>
+      <p class="hero-subtitle">陪孩子學會判斷、尊重與保護自己</p>
+      <p class="hero-applicable">三～六年級適用</p>
+      <span class="version-mark">v1</span>
+      <p class="hero-footer">從界線、尊重、責任到修復，讓規則成為保護自己的力量。</p>
+    </div>
+  </header>
+
+  <section class="overview-section" aria-labelledby="overviewTitle">
+    <div class="section-inner">
+      <h2 class="section-title" id="overviewTitle">課程總覽</h2>
+      <div class="overview-grid" id="overviewGrid"></div>
+    </div>
+  </section>
+
+  <nav class="mobile-nav" aria-label="手機版導覽">
+    <div class="mobile-row" id="mobileGradeNav"></div>
+    <div class="mobile-row" id="mobileLessonNav"></div>
+  </nav>
+
+  <div class="layout">
+    <aside class="side-nav" aria-label="桌機版導覽">
+      <p class="side-brand">法治教育學生手冊<br>三～六年級整合版</p>
+      <p class="nav-label">年級切換</p>
+      <div class="nav-group">
+        <div class="grade-buttons" id="desktopGradeNav"></div>
+      </div>
+      <p class="nav-label">本年級課程</p>
+      <div class="nav-group">
+        <div class="lesson-links" id="desktopLessonNav"></div>
+      </div>
+    </aside>
+
+    <main class="content" id="mainContent" tabindex="-1">
+      <div class="content-shell">
+        <div class="toolbar" aria-label="列印工具">
+          <button class="print-button secondary" type="button" id="printCurrent">列印目前年級</button>
+          <button class="print-button" type="button" id="printAll">列印全冊</button>
+        </div>
+        <div id="gradeContainer"></div>
+        <footer class="site-footer">
+          <p>COPYRIGHT © 2026 HSINCHU NEI HU PRIMARY SCHOOL</p>
+          <p>新竹市香山區內湖國民小學</p>
+          <p>維護：總務主任 江志宏</p>
+          <p>Email：smallcannon@nhps.hc.edu.tw</p>
+          <p>Tel：03-5373184#130</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <section class="presentation-stage" id="presentationStage" aria-label="簡報模式" tabindex="-1">
+    <div class="presentation-hint">建議橫向觀看簡報模式</div>
+    <div class="slide-frame" id="slideFrame"></div>
+    <div class="presentation-controls" aria-label="簡報操作">
+      <button class="slide-control" type="button" id="previousSlide">上一張</button>
+      <span class="slide-count" id="slideCount">01 / 56</span>
+      <button class="slide-control" type="button" id="nextSlide">下一張</button>
+      <button class="slide-control" type="button" id="returnReading">回閱讀模式</button>
+    </div>
+  </section>
+
+  <script>
+    const handbookData = [
+      {
+        gradeId: "g3",
+        gradeTitle: "三年級",
+        gradeSubtitle: "我知道界線，也知道可以求助",
+        gradeSummary: "三年級從生活中最常遇到的身體、物品、玩笑、照片與求助情境出發，練習說清楚感受、尊重別人的界線，並知道遇到不舒服或危險時可以找可信任的大人。",
+        lessons: [
+          {
+            title: "我的身體有界線",
+            core: "認識身體自主與不舒服的感覺。",
+            story: "下課時，阿哲和同學玩追逐遊戲。小宇從後面抱住阿哲，想把他拉回隊伍。阿哲嚇了一跳，覺得很不舒服，但又怕說出來會被笑「太小氣」。回教室後，阿哲一直悶悶不樂。老師注意到他的表情，陪他到旁邊說話。阿哲才小聲說：「我不喜歡別人突然抱我，可是我不知道能不能拒絕。」老師告訴他，身體是自己的，覺得不舒服時可以清楚說停，也可以請老師協助把規則說清楚。",
+            think: [
+              "阿哲覺得不舒服時，他的身體和心情可能出現哪些提醒？",
+              "如果你是小宇，聽到同學說不喜歡被抱住，可以怎麼回應？",
+              "玩遊戲時，大家可以先約定哪些安全規則？"
+            ],
+            reminder: "每個人都有身體自主權。別人碰觸我們的身體前，應該尊重我們的感受；我們也要尊重別人的身體界線。讓人害怕、疼痛或不舒服的碰觸，不應被當成玩笑。",
+            actions: [
+              "用清楚句子說：「請停下來，我不喜歡這樣。」",
+              "往安全的地方移動，和對方保持距離。",
+              "告訴老師、家人或學校輔導人員，請大人協助處理。",
+              "如果看到同學被不舒服地碰觸，可以陪他找大人。"
+            ],
+            quiz: [
+              { q: "有人突然碰你，讓你覺得不舒服，你可以怎麼做？", a: "可以說停、離開現場，並找可信任的大人協助。" },
+              { q: "朋友說「只是玩一下」，所以不舒服也一定要忍耐嗎？", a: "不用。只要覺得不舒服，就可以表達拒絕。" },
+              { q: "尊重身體界線只保護自己嗎？", a: "不是，也包含尊重別人的感受與拒絕。" }
+            ]
+          },
+          {
+            title: "借用以前先問問",
+            core: "理解物品所有權與使用同意。",
+            story: "美術課前，小晴忘了帶色鉛筆。她看到桌上有一盒彩色筆，以為是同組同學的，就先拿來用。下課時，小恩發現自己的筆少了幾支，急得快哭了。小晴才知道那盒彩色筆是小恩最珍惜的生日禮物。她說：「我只是借一下，又沒有偷。」小恩卻覺得很受傷。老師請大家討論：不是故意拿走，為什麼仍然會讓人難過？最後小晴向小恩道歉，整理好筆盒，也約定下次要先問過。",
+            think: [
+              "小晴沒有惡意，為什麼小恩仍然會覺得被冒犯？",
+              "「借用」和「自己決定拿來用」差在哪裡？",
+              "如果真的很需要用別人的東西，可以怎麼開口？"
+            ],
+            reminder: "物品有主人，使用別人的東西前要先取得同意。即使只是短時間使用，沒有先問也可能侵犯別人的權益，還會破壞信任。",
+            actions: [
+              "先問：「我可以借用你的色鉛筆嗎？」",
+              "說明用途和時間，使用後完整歸還。",
+              "如果不小心拿錯或弄壞，要立刻說明並負責。",
+              "別人拒絕時要接受，不用嘲笑或逼迫。"
+            ],
+            quiz: [
+              { q: "看到同學桌上的橡皮擦，急著用時可以直接拿嗎？", a: "不可以，應該先詢問並取得同意。" },
+              { q: "借來的物品壞了，最好的做法是什麼？", a: "誠實說明、道歉，並和對方或老師討論如何補救。" },
+              { q: "別人不借你東西，是不是一定不友善？", a: "不一定。每個人都有決定自己物品如何使用的權利。" }
+            ]
+          },
+          {
+            title: "玩笑也有界線",
+            core: "分辨玩笑、嘲笑與傷害。",
+            story: "午餐時間，幾位同學模仿小杰說話比較慢的樣子，大家笑成一團。小杰一開始也跟著笑，後來越聽越難過，就低頭不說話。有人說：「我們只是開玩笑，你不要玻璃心。」老師請大家停下來，問：「如果一個玩笑讓人覺得被看不起，還能算是大家都開心的玩笑嗎？」同學們才發現，真正的玩笑應該讓彼此都感到輕鬆，而不是讓其中一個人受傷。",
+            think: [
+              "小杰一開始笑了，代表他一定不在意嗎？",
+              "怎麼判斷一句話是玩笑還是嘲笑？",
+              "旁邊的人跟著笑，可能讓事情變得怎樣？"
+            ],
+            reminder: "言語也可能造成傷害。故意嘲笑、取綽號、排擠或讓同學難堪，可能形成霸凌。尊重他人名譽與人格，是一起生活的重要規則。",
+            actions: [
+              "聽到讓人難受的話，可以說：「這樣說不舒服，請停止。」",
+              "不要跟著起鬨、轉傳或補上一句嘲笑。",
+              "向被嘲笑的同學表達支持，陪他找老師。",
+              "如果自己說錯話，要承認、道歉，並停止重複。"
+            ],
+            quiz: [
+              { q: "只要多數人覺得好笑，就一定是可以的玩笑嗎？", a: "不是。被開玩笑的人是否受傷也很重要。" },
+              { q: "看到同學被取笑，旁觀者可以做什麼？", a: "停止起鬨、表達不贊成，並協助找大人。" },
+              { q: "道歉後還一直重複同樣的嘲笑，可以嗎？", a: "不可以。道歉也要包含改變行為。" }
+            ]
+          },
+          {
+            title: "照片和影片不能亂傳",
+            core: "認識肖像、隱私與網路分享責任。",
+            story: "校外教學那天，柏安拍到同學在車上睡著、嘴巴微開的照片。他覺得很好笑，想傳到班級群組。傳出去前，旁邊的佳穎提醒他：「如果是你的照片被大家笑，你會喜歡嗎？」柏安猶豫了一下，想到同學醒來後可能會很尷尬。回校後，老師帶大家討論：拍照不只是按下快門，還包含對被拍的人負責。最後柏安刪掉照片，也學會分享照片前要先問同意。",
+            think: [
+              "為什麼照片傳出去後，事情可能變得難以控制？",
+              "拍到別人出糗的畫面，可以因為好笑就分享嗎？",
+              "如果你不想被拍或被傳，可以怎麼說？"
+            ],
+            reminder: "每個人都有隱私與肖像被尊重的權利。拍攝、分享或轉傳別人的照片影片前，應先取得同意；讓人難堪、受辱或害怕的影像不應散布。",
+            actions: [
+              "拍照前先問：「我可以拍你嗎？」",
+              "傳給別人前再問一次：「這張可以分享嗎？」",
+              "收到讓人難堪的照片，不轉傳、不留言嘲笑。",
+              "發現影像被亂傳時，保留證據並告訴老師或家人。"
+            ],
+            quiz: [
+              { q: "朋友睡著的照片很有趣，可以直接傳到群組嗎？", a: "不可以，應先尊重對方意願。" },
+              { q: "收到別人出糗影片，最好的做法是什麼？", a: "不要轉傳，必要時提醒傳送者停止，並告知大人。" },
+              { q: "只有班上同學看得到，所以就沒有關係嗎？", a: "不是。群組內容仍可能被截圖、轉傳，造成更大傷害。" }
+            ]
+          },
+          {
+            title: "讓我不舒服的秘密要說出來",
+            core: "分辨安全秘密與危險秘密。",
+            story: "放學後，安安在走廊遇到高年級學生。對方要她幫忙把同學的水壺藏起來，還說：「這是我們的小秘密，不准告訴老師。」安安覺得怪怪的，心裡一直不安。回家路上，她想到老師說過：讓人害怕、擔心或可能傷害別人的秘密，不是應該獨自守住的秘密。第二天，安安告訴導師。老師沒有責怪她，反而肯定她勇敢求助，並協助處理水壺事件。",
+            think: [
+              "什麼樣的秘密會讓人覺得不舒服或有壓力？",
+              "對方說「不准告訴任何人」時，安安為什麼更需要找大人？",
+              "如果擔心說出來會被罵，可以先找誰？"
+            ],
+            reminder: "安全的秘密通常是驚喜、禮物或短時間保密，不會傷害任何人。讓人害怕、羞愧、受威脅，或要求你做不對事情的秘密，應該告訴可信任的大人。",
+            actions: [
+              "相信自己的不舒服感，不必獨自承擔。",
+              "找導師、家人、輔導老師或學校行政人員說明。",
+              "如果第一位大人沒有理解，繼續找第二位可信任的大人。",
+              "說出時間、地點、人物和發生的事情。"
+            ],
+            quiz: [
+              { q: "同學準備生日驚喜，請你先不要說，這通常屬於哪一種秘密？", a: "通常是安全秘密，因為不會傷害別人。" },
+              { q: "有人要求你做會傷害同學的事，還要你保密，該怎麼辦？", a: "拒絕並告訴可信任的大人。" },
+              { q: "求助代表自己很脆弱嗎？", a: "不是。求助是保護自己和他人的重要能力。" }
+            ]
+          },
+          {
+            title: "遇到衝突，我會找方法",
+            core: "練習停止、表達、協商與求助。",
+            story: "體育課分組比賽時，兩隊為了球有沒有出界吵了起來。冠廷說自己看得很清楚，怡萱也堅持沒有出界。聲音越來越大，有人開始推人。老師吹哨暫停，請大家先離開爭執點，各自說出看到的事實，而不是急著罵人。最後同學決定重發球，並約定下一次由旁邊兩位同學一起判斷。比賽重新開始後，大家都比較願意遵守共同決定。",
+            think: [
+              "衝突剛開始時，哪些做法可能讓火氣更大？",
+              "說事實和罵人有什麼不同？",
+              "為什麼有時候需要第三個人協助？"
+            ],
+            reminder: "衝突不一定代表有人很壞，但推擠、辱罵或威脅會造成新的傷害。學校規則保護每個人的安全，也提醒我們用合適方式解決爭議。",
+            actions: [
+              "先停下來，讓身體離開可能推擠的位置。",
+              "用「我看到、我覺得、我希望」表達。",
+              "一起找規則、找證人或重新約定方法。",
+              "無法安全溝通時，請老師或值日人員協助。"
+            ],
+            quiz: [
+              { q: "吵架時先推對方一下，讓他知道你很生氣，可以嗎？", a: "不可以。推擠可能造成傷害，也會讓衝突升高。" },
+              { q: "用哪三個句型可以幫助表達？", a: "我看到、我覺得、我希望。" },
+              { q: "找老師協助是不是告狀？", a: "不是。當衝突難以安全處理時，求助是負責任的做法。" }
+            ]
+          },
+          {
+            title: "公共空間大家一起守護",
+            core: "理解公共規則、公物與共同責任。",
+            story: "圖書館新買了一套漫畫，大家都很期待。幾天後，老師發現其中一本封面被折壞，還有頁面被畫上鉛筆線。借閱紀錄顯示很多人都看過，沒有人承認。班上討論時，品妤說：「反正是學校的，又不是某一個人的。」圖書老師請大家想想：如果公共物品被破壞，下一個想閱讀的人會失去什麼？同學們最後一起訂出借閱守則，也安排整理書櫃的輪值，讓更多人能好好使用。",
+            think: [
+              "公共物品不是自己的，為什麼仍然要珍惜？",
+              "破壞公物會影響哪些人？",
+              "班級可以設計哪些共同守護的方法？"
+            ],
+            reminder: "學校的教室、操場、圖書、器材都是大家共同使用的資源。愛護公物、遵守公共空間規則，是尊重他人使用權益，也是在為自己的學習環境負責。",
+            actions: [
+              "使用前確認規則，使用後恢復原狀。",
+              "發現公物損壞，主動告知老師，不隱瞞。",
+              "借用器材要登記、按時歸還。",
+              "看到浪費或破壞，可以提醒或請大人協助。"
+            ],
+            quiz: [
+              { q: "公物不是私人財產，所以弄壞也沒關係嗎？", a: "不對。公物屬於共同資源，破壞會影響大家。" },
+              { q: "不小心弄壞教具，應該怎麼做？", a: "立刻誠實告知老師，並討論補救方式。" },
+              { q: "公共規則的目的只有處罰人嗎？", a: "不是，主要是讓大家能公平、安全地使用空間和資源。" }
+            ]
+          },
+          {
+            title: "我的求助地圖",
+            core: "整理可信任大人與求助步驟。",
+            story: "班會時，老師請大家畫一張「求助地圖」。一開始，翔翔只寫了媽媽，因為他覺得遇到事只能回家再說。老師提醒，學校裡也有很多可以協助的人，例如導師、科任老師、輔導老師、護理師、主任和警衛。翔翔想到，如果下課時馬上需要幫忙，知道找誰會比較安心。大家完成地圖後，把它放進聯絡簿。老師說：「會求助不是麻煩別人，而是讓問題不要變得更大。」",
+            think: [
+              "為什麼求助名單最好不只一個人？",
+              "在學校、家裡、網路上遇到問題時，可以找的人一樣嗎？",
+              "說明事情時，哪些資訊能幫助大人理解？"
+            ],
+            reminder: "兒童有被保護、被照顧和安全學習的權利。遇到危險、威脅、霸凌、隱私被侵犯或自己無法處理的問題時，可以向可信任的大人求助，也可以透過學校通報與輔導系統獲得協助。",
+            actions: [
+              "寫下至少三位可信任大人，包含學校和家中人選。",
+              "求助時說出人、事、時、地、物，以及自己的感受。",
+              "若情況緊急，先到人多且安全的地方。",
+              "問題沒有被處理時，繼續找下一位大人。"
+            ],
+            quiz: [
+              { q: "求助地圖為什麼需要三位以上大人？", a: "因為不同時間和地點可能需要不同協助，也避免只有一個選擇。" },
+              { q: "說明事件時，可以提供哪些重點？", a: "人物、時間、地點、發生什麼事、自己感受和需要。" },
+              { q: "第一位大人沒聽懂，就一定不能再說了嗎？", a: "不是。可以換一位可信任的大人繼續求助。" }
+            ]
+          }
+        ]
+      },
+      {
+              gradeId: "g4",
+              gradeTitle: "四年級",
+              gradeSubtitle: "我看見傷害，也學會負責",
+              gradeSummary: "四年級完成 8 課內容，從竊盜、言語霸凌、肢體衝突、尊重差異、威脅勒索、遺失物、惡作劇與旁觀者責任出發，練習看見傷害、停止傷害，並用合適的方法負責與求助。",
+              lessons: [
+                      {
+                              title: "便利商店的餅乾",
+                              core: "便利商店的商品不是沒有人要的東西。",
+                              story: "星期二放學後，小偉經過便利商店。店門一開，冷氣吹出來，貨架上有洋芋片、巧克力和他最喜歡的草莓夾心餅乾。<br><br>小偉摸摸口袋，才想起今天身上沒有錢。<br><br>他站在貨架前看了很久，心裡想：「只是拿一包而已，應該不會怎樣吧？」<br><br>櫃檯前有客人在排隊，店員忙著結帳。小偉伸手拿起餅乾，慢慢塞進書包，低著頭走出店門。<br><br>一路上，他覺得書包變得很重。明明只是一包餅乾，卻像一顆石頭壓在背上。<br><br>隔天，學務處老師到班上找小偉。原來便利商店發現商品不見，調閱監視器後，請學校協助了解。<br><br>小偉一開始低著頭不說話。後來，他小聲說：「我只是很想吃……我沒有錢。」<br><br>老師說：「想吃餅乾，這個心情可以理解。但沒有付錢就拿走，是不對的。那包餅乾不是我們的。」<br><br>下午，媽媽帶小偉到便利商店。小偉把錢還給店員，也低著頭說：「對不起，我沒有付錢就拿走餅乾。」<br><br>回家的路上，小偉問：「如果我真的很想要一樣東西，可是沒有錢怎麼辦？」<br><br>媽媽說：「你可以告訴我，也可以存零用錢，或等需要時再討論。想要不是錯，用錯方法才會讓事情變糟。」<br><br>那天晚上，小偉在聯絡簿旁貼了一張紙條：<br><br><strong>想要的東西，要用正當的方法得到。</strong>",
+                              think: [
+                                      "小偉為什麼想把餅乾放進書包？",
+                                      "他走出便利商店後，為什麼心裡不舒服？",
+                                      "如果很想買東西但沒有錢，可以有哪些正當方法？"
+                              ],
+                              reminder: "便利商店的商品不是沒有人要的東西。付錢以前，商品還是店家的。<br><br>沒有經過同意，也沒有付錢，就把商品帶走，是侵犯別人的財產。即使東西不貴，也不是「沒關係」。<br><br>法治教育提醒我們：<br><br>**想要，不代表可以拿。  <br>沒有人看見，不代表可以做。  <br>誠實面對錯誤，是負責任的開始。**",
+                              actions: [
+                                      "先確認自己有沒有錢。",
+                                      "跟家人討論能不能購買。",
+                                      "存零用錢。",
+                                      "等需要時再買。",
+                                      "想想是不是一定要買。",
+                                      "誠實說出來。",
+                                      "把東西歸還或付錢。",
+                                      "道歉。",
+                                      "接受老師和家人的協助。",
+                                      "想清楚下次怎麼做。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "便利商店的商品，在付錢以前還不是我的東西。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "只拿一包很便宜的餅乾，就不算錯。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "想要東西時，可以存錢或和家人討論。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你看到同學想把便利商店的糖果偷偷放進口袋，你可以怎麼提醒他？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "買不起的球鞋",
+                              core: "每個人的家庭狀況都不一樣。",
+                              story: "四年甲班最近很流行討論球鞋。有人穿了新款運動鞋，大家圍過去看；有人說鞋底很彈，有人說顏色很帥。<br><br>小明平常穿哥哥留下來的舊鞋。鞋子洗得很乾淨，但鞋頭已經有一點磨白。<br><br>有一天，小明終於穿了一雙新球鞋來學校。那是爸爸發薪水後，特地帶他去買的。不是很貴，卻是小明自己選的。他前一天晚上還把鞋放在床邊，看了好幾次才睡著。<br><br>小安看見了，笑著說：「小明，你有新鞋耶！」<br><br>小明有點害羞，但眼睛亮亮的。<br><br>這時，小華走過來，看了一眼那雙鞋，撇撇嘴說：「這又不是名牌，有什麼好高興的？」<br><br>小明愣了一下。<br><br>小華接著說：「你家是不是很窮啊？都穿哥哥的舊鞋。這雙該不會是特價品吧？」<br><br>旁邊幾個同學聽了，有人笑出來。<br><br>接下來幾天，小華常常拿小明的鞋開玩笑。排隊時說：「小心喔，鞋子不要壞掉。」打球時說：「你那雙鞋跑得動嗎？」甚至還說：「你爸爸是不是沒錢，才買那種鞋？」<br><br>小明越來越不想穿那雙鞋。他開始故意走在隊伍最後面，也不想參加球賽。<br><br>導師發現後，找小明談話。小明小聲說：「老師，我不想穿這雙鞋了。」<br><br>隔天綜合課，老師在黑板上寫：<br><br>**穿著，不是取笑別人的理由。  <br>家庭，也不是拿來嘲笑的話題。**<br><br>老師問全班：「如果有人一直笑你的鞋子，還說你的家人不好，你會有什麼感覺？」<br><br>教室安靜了。<br><br>下課後，小華走到小明旁邊說：「對不起。我不應該笑你的鞋，也不應該說你家。」<br><br>小明說：「我真的很喜歡這雙鞋。可是你一直笑，我就不想穿了。」<br><br>那天下午，小明又穿著那雙球鞋去操場。那不是最貴的鞋，卻是爸爸的心意，也是小明重新抬起頭的勇氣。",
+                              think: [
+                                      "小明一開始為什麼很喜歡那雙球鞋？",
+                                      "小華說了哪些話讓小明受傷？",
+                                      "如果你是旁邊的同學，可以怎麼做？"
+                              ],
+                              reminder: "每個人的家庭狀況都不一樣。有些人穿新鞋，有些人穿舊鞋；有些人有很多玩具，有些人沒有。這些差異，不應該變成取笑別人的理由。<br><br>如果一直用言語嘲笑別人的穿著、外表、家庭或經濟狀況，可能讓對方難過、害怕、被排擠，甚至不想上學。<br><br>法治教育提醒我們：<br><br>**說話不能只想自己好不好笑，  <br>也要想對方會不會受傷。**",
+                              actions: [
+                                      "「請不要這樣說我的鞋子。」",
+                                      "「你這樣說我的家人，我會很難過。」",
+                                      "「請停止。」",
+                                      "「我要去找老師。」",
+                                      "不跟著笑。",
+                                      "陪被取笑的同學。",
+                                      "私下告訴老師。",
+                                      "幫忙把話題轉開。",
+                                      "邀請被排擠的同學一起活動。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "別人的鞋子、衣服或家庭狀況，不應該拿來嘲笑。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果大家都在笑，被取笑的人就不能覺得難過。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "看到同學被嘲笑，可以不跟著笑，也可以找老師幫忙。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果有人取笑你的衣服、鞋子或家人，你可以怎麼說？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "球場衝突",
+                              core: "在學校裡，同學可能因為遊戲、比賽或誤會而生氣。",
+                              story: "四年乙班很喜歡在下課打籃球。每到大下課，幾個同學就衝到球場集合。<br><br>小廷運球快，阿凱防守強。兩個人只要碰在一起，球場上的氣氛就會變得很緊張。<br><br>這天，小廷帶球上籃，阿凱伸手想把球拍掉。「啪！」的一聲，球飛出去了。<br><br>小廷抱著手喊：「你打到我的手！犯規！」<br><br>阿凱皺著眉說：「我明明打到球！」<br><br>「你就是犯規！」小廷越說越大聲。<br><br>「你輸不起啦！」阿凱也不甘示弱。<br><br>小廷走上前，用力推了阿凱一下。阿凱往後退了一步，也推回去。<br><br>「你幹嘛推我？」  <br>「是你先推我的！」<br><br>下一秒，小廷揮手打到阿凱的臉。阿凱痛得蹲下來，眼角紅了一片。<br><br>球場瞬間安靜。<br><br>體育老師趕緊請大家停下來，先帶阿凱到健康中心冰敷，再請小廷坐到旁邊冷靜。<br><br>小廷低著頭說：「我不是故意要打那麼大力……我只是很生氣。」<br><br>老師說：「生氣可以說，但不能用手打人。因為一旦有人受傷，事情就不只是比賽輸贏了。」<br><br>後來，老師和同學一起訂出球場規則：<br><br>1. 有爭議時，先暫停。<br>2. 請旁邊同學或老師協助判斷。<br>3. 不推人、不拉人、不揮拳。<br>4. 情緒太大時，先離場休息。<br>5. 受傷時，先處理傷勢，不繼續爭吵。<br><br>幾天後，小廷又遇到爭議球。這一次，他沒有推人，而是舉手說：「暫停一下，剛剛那球我覺得有打手。」<br><br>他慢慢學會，真正厲害的人，不是永遠不生氣，而是生氣時，還能讓自己的手停下來。",
+                              think: [
+                                      "小廷為什麼會生氣？",
+                                      "阿凱說「你輸不起」後，事情有沒有變好？",
+                                      "如果比賽中覺得不公平，可以有哪些比較好的方法？"
+                              ],
+                              reminder: "在學校裡，同學可能因為遊戲、比賽或誤會而生氣。生氣是正常的，但用推、打、踢、拉、撞的方式讓別人受傷，就不是解決問題的方法。<br><br>法治教育提醒我們：<br><br>**情緒可以被看見，  <br>但身體不能拿來傷害別人。**<br><br>比賽有輸贏，衝突有方法。情緒太大時，先停下來，比繼續吵下去更勇敢。",
+                              actions: [
+                                      "先暫停。",
+                                      "深呼吸。",
+                                      "說出問題：「我覺得剛剛有犯規。」",
+                                      "請同學或老師協助判斷。",
+                                      "情緒太大時，先離場休息。",
+                                      "「先停一下。」",
+                                      "「不要推人。」",
+                                      "「我們請老師來看。」",
+                                      "「先去健康中心。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "比賽時生氣，可以直接推人讓對方知道我不高興。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果有人受傷，應該先告訴老師或帶去健康中心。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "覺得犯規時，可以先暫停，請旁邊的人協助判斷。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你在球場上和同學有爭執，你可以用什麼方法讓事情不要變成打架？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "不一定要一樣",
+                              core: "每個人都有不同的興趣、個性和能力。",
+                              story: "四年丙班要準備校慶表演。老師讓大家自由選擇社團體驗活動：有人選鼓隊，有人選舞蹈，有人選美術布置，也有人選運動闖關。<br><br>小恩很想選舞蹈。他從小就喜歡跟著音樂動一動，只要音樂一響，腳就會忍不住踩出節奏。<br><br>可是填志願時，小恩的筆停在半空中。<br><br>旁邊的阿哲問：「你要選什麼？」<br><br>小恩小聲說：「我想選舞蹈。」<br><br>阿哲笑了一下：「男生選舞蹈喔？你不選鼓隊或運動嗎？」<br><br>後面的同學也湊過來：「男生跳舞很奇怪耶。」「你是不是要當公主？」<br><br>小恩的臉一下子紅了。最後，他把第一志願改成鼓隊。<br><br>可是接下來幾天，小恩上鼓隊練習時，總是提不起精神。舞蹈隊在活動中心練習時，音樂從門縫傳出來。小恩經過時，忍不住停下腳步。<br><br>導師發現後問：「你是不是原本想選舞蹈？」<br><br>小恩低著頭說：「可是大家說男生選舞蹈很奇怪。」<br><br>隔天綜合課，老師在黑板上寫：<br><br>**男生可以跳舞。  <br>女生可以打鼓。  <br>男生可以溫柔。  <br>女生可以勇敢。**<br><br>老師問：「如果用一句『男生應該』或『女生應該』，把別人的選擇關起來，會發生什麼事？」<br><br>小晴說：「他可能不敢做自己喜歡的事。」<br><br>後來，阿哲向小恩道歉。老師也協助小恩重新調整志願。校慶那天，小恩站在舞台上，動作乾淨又有力量。<br><br>他明白，不一定要和別人一樣，才是對的。能自在地做自己，也是一種勇敢。",
+                              think: [
+                                      "小恩一開始為什麼不敢選舞蹈？",
+                                      "「男生跳舞很奇怪」這句話可能讓人有什麼感覺？",
+                                      "如果同學因為興趣被嘲笑，可以怎麼做？"
+                              ],
+                              reminder: "每個人都有不同的興趣、個性和能力。有人喜歡運動，有人喜歡跳舞；有人喜歡畫畫，有人喜歡科學。<br><br>這些差異，不應該被一句「男生應該這樣」或「女生應該那樣」限制住。<br><br>法治教育提醒我們：<br><br>**不因為性別嘲笑別人。  <br>不使用刻板印象限制別人。  <br>每個人都可以安心發展自己的能力。**",
+                              actions: [
+                                      "「我喜歡跳舞，這沒有不對。」",
+                                      "「每個人喜歡的事情不一樣。」",
+                                      "「請不要用男生女生來笑我。」",
+                                      "「男生也可以跳舞啊。」",
+                                      "「女生也可以打鼓、踢球。」",
+                                      "「不要笑他的選擇。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "男生可以喜歡跳舞，女生也可以喜歡打球。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果同學的興趣和我不一樣，就可以取笑他。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "用「男生應該」「女生應該」限制別人，可能讓人不敢做自己。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "小柔很想參加足球社，但有人說：「女生踢什麼足球？」你可以怎麼說？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "保護費",
+                              core: "在學校裡，不可以用年級比較高、人比較多、力氣比較大，去威脅別人。",
+                              story: "四年丁班的小睿最近放學時，總是走得很快。以前他會和同學慢慢收書包、聊天，再走到校門口。可是這幾天，放學鐘一響，他就低著頭往樓梯走。<br><br>這天午休後，小睿到福利社幫媽媽買一瓶水。走到操場旁時，五年級的阿豪和兩個同學擋在他前面。<br><br>阿豪看著小睿手上的零錢，說：「你今天有錢喔？」<br><br>小睿愣了一下：「我要買水。」<br><br>阿豪笑了笑：「那順便幫我們買飲料啊。」<br><br>小睿小聲說：「可是這是我媽媽給我的錢。」<br><br>阿豪往前一步：「叫你買就買。不然以後下課不要來這邊打球。」<br><br>旁邊兩個同學也說：「對啊，不然你就小心一點。」<br><br>小睿很害怕。最後，他拿著錢去買了三瓶飲料，自己的水反而沒有買。<br><br>接下來幾天，阿豪又找小睿。有時候要他請飲料，有時候要他把遊戲卡借出去，有一次還說：「你明天帶二十元來，不要忘記。」<br><br>小睿想告訴媽媽，又怕阿豪更生氣；想告訴老師，又怕同學說他愛告狀。<br><br>導師發現小睿不太對勁，輕聲問：「你最近是不是有心事？」<br><br>小睿低著頭，很久才說：「老師，如果有人一直叫我請飲料，不請就威脅我，這算告狀嗎？」<br><br>老師蹲下來說：<br><br><strong>「不是。這叫求助。被威脅不是你的錯。」</strong><br><br>學校了解後，要求阿豪把錢還給小睿，向小睿道歉，也安排老師協助後續輔導。<br><br>小睿知道，害怕的事情說出來，不是自己變弱，而是讓傷害有機會停止。",
+                              think: [
+                                      "小睿為什麼不敢拒絕阿豪？",
+                                      "阿豪說「只是請飲料」，為什麼仍然不對？",
+                                      "「告狀」和「求助」有什麼不同？"
+                              ],
+                              reminder: "在學校裡，不可以用年級比較高、人比較多、力氣比較大，去威脅別人。<br><br>逼別人交出金錢、物品、點數或請客，會讓對方害怕，也可能涉及嚴重的校園問題。<br><br>法治教育提醒我們：<br><br>**被威脅不是你的錯。  <br>不敢拒絕時，更要找大人幫忙。**",
+                              actions: [
+                                      "先保護自己的安全。",
+                                      "不單獨到偏僻地方。",
+                                      "找老師或家人說明。",
+                                      "記下發生的時間、地點和對方說了什麼。",
+                                      "請信任的同學陪我一起求助。",
+                                      "「這樣不對，不要逼他。」",
+                                      "「我們去找老師。」",
+                                      "「你還好嗎？要不要我陪你？」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "用威脅的方式叫別人請飲料，是不對的。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "被威脅時，找老師幫忙就是愛告狀。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果有人逼我交出錢或物品，我可以找大人協助。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你看到同學被別人逼著請飲料，你可以怎麼幫忙？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "遊戲機不見了",
+                              core: "在學校、路上或公共場所撿到東西時，那個東西還是有主人的。",
+                              story: "星期五下午，四年戊班的教室特別熱鬧。期中考剛結束，老師讓大家整理抽屜、打掃教室，也提醒大家把自己的物品帶回家。<br><br>小安在教室後面的置物櫃旁，看見一個黑色小包包。拉鍊沒有完全拉上，裡面露出一台掌上型遊戲機。<br><br>小安睜大眼睛：「這不是最近很流行的那一台嗎？」<br><br>他看了看四周，同學有的在掃地，有的在倒垃圾，沒有人注意他。<br><br>小安心裡想：「不知道是誰掉的。反正放在這裡，說不定沒人要了。」<br><br>他把小包包放進自己的書包。<br><br>放學回家後，小安打開遊戲機。螢幕亮起時，他的心跳也變快了。遊戲機裡有一張名字貼紙，寫著：「四戊 12 號 林柏宇」。<br><br>小安知道這不是自己的東西。可是另一個聲音又在心裡說：「你只是撿到，又不是偷的。」<br><br>星期一早上，柏宇一進教室就急著找東西：「我的遊戲機不見了！那是我生日禮物！」<br><br>小安坐在座位上，覺得自己的書包好像一直在發出聲音。<br><br>午休時，他終於走到老師旁邊，小聲說：「老師，我撿到了柏宇的遊戲機，可是我沒有馬上交出來。」<br><br>老師說：「你願意說出來，是負責任的開始。但你也要知道，撿到東西以後，不能把它當成自己的。」<br><br>下午，老師陪小安把遊戲機還給柏宇。小安低著頭說：「對不起。我撿到後沒有馬上交給老師，還帶回家了。」<br><br>柏宇說：「我找很久，真的很擔心。」<br><br>小安知道，真正屬於自己的東西，拿著才會安心。不是自己的東西，就算再喜歡，也要讓它回到主人身邊。",
+                              think: [
+                                      "小安撿到遊戲機時，心裡可能出現哪些想法？",
+                                      "為什麼「撿到」不代表「變成我的」？",
+                                      "小安後來願意說出來，為什麼是負責任的開始？"
+                              ],
+                              reminder: "在學校、路上或公共場所撿到東西時，那個東西還是有主人的。<br><br>撿到別人的東西，應該交給老師、學務處、警衛室或其他可以協助的大人。不能因為沒有人看見，就把它帶回家、自己使用，或說成是自己的。<br><br>法治教育提醒我們：<br><br>**撿到，不代表擁有。  <br>喜歡，不代表可以留下。  <br>誠實，是把東西帶回主人身邊的路。**",
+                              actions: [
+                                      "不打開亂看。",
+                                      "不放進自己的書包。",
+                                      "交給導師。",
+                                      "交到學務處或警衛室。",
+                                      "如果知道主人是誰，可以請老師協助歸還。",
+                                      "盡快告訴老師或家人。",
+                                      "把東西完整歸還。",
+                                      "向主人道歉。",
+                                      "誠實說明發生什麼事。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "撿到別人的東西，不代表可以自己留下來。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果東西很漂亮，我可以先拿回家玩幾天。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "在學校撿到物品，可以交給老師或學務處。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你撿到一個沒有寫名字的錢包，你會怎麼處理？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "過了頭的惡作劇",
+                              core: "玩笑和惡作劇，有時候只差一條界線。",
+                              story: "四年己班最近很流行「整人」。一開始，只是把同學的鉛筆盒藏到抽屜深處，或是在椅子上放一張便利貼。被整的人找到東西後，大家笑一笑，事情就過去了。<br><br>可是慢慢地，惡作劇變得越來越誇張。<br><br>有一天午休後，小凱趁小芸站起來交作業時，把她的椅子往後拉了一點。<br><br>小芸回來時沒有注意，一坐下去，整個人跌坐在地上。<br><br>「砰！」的一聲，全班都嚇了一跳。<br><br>小芸痛得皺起眉頭，好一會兒才站起來。<br><br>小凱卻笑著說：「我只是開玩笑啦！」旁邊幾個同學也笑了起來。<br><br>小芸沒有笑。她的手掌紅紅的，膝蓋也撞到了桌腳。可是看到大家都在笑，她只好低下頭，假裝沒事。<br><br>過了幾天，小凱又從後面拉小芸的外套帽子。小芸嚇得水壺掉到地上，水灑了一地。<br><br>她終於忍不住說：「我不喜歡你這樣！」<br><br>小凱卻說：「大家都玩得起，只有你那麼小氣。」<br><br>導師知道後，問小凱：「如果一個玩笑讓人跌倒、受傷、害怕，還能叫作玩笑嗎？」<br><br>隔天，老師在黑板上寫：<br><br>**好玩的遊戲，要大家都安全。  <br>真正的玩笑，要對方也覺得可以。  <br>有人說不要，就要停止。**<br><br>後來，小凱向小芸道歉。班上也訂了一條新公約：<br><br>**玩之前，先想安全；  <br>笑之前，先看對方。**",
+                              think: [
+                                      "小凱一開始覺得自己在做什麼？",
+                                      "小芸為什麼沒有跟著大家一起笑？",
+                                      "「只是開玩笑」可以成為讓別人受傷的理由嗎？"
+                              ],
+                              reminder: "玩笑和惡作劇，有時候只差一條界線。<br><br>如果一個行為讓別人受傷、害怕、不舒服，或讓對方說了不要還繼續做，就不應該再說「只是開玩笑」。<br><br>法治教育提醒我們：<br><br>**玩笑要有界線。  <br>對方說不要，就要停止。  <br>讓別人受傷，就要負責。**",
+                              actions: [
+                                      "「我不喜歡這樣，請停止。」",
+                                      "「不要拉我的椅子。」",
+                                      "「不要從後面碰我。」",
+                                      "「我要去找老師。」",
+                                      "「不要拉椅子，會受傷。」",
+                                      "「他已經說不要了。」",
+                                      "「我們換一個安全的遊戲。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "如果同學說不喜歡，我們就應該停止惡作劇。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "拉椅子讓別人跌倒，只要說「開玩笑」就沒關係。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "看到危險惡作劇，可以提醒同學或找老師。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "請寫出一個「玩笑過頭」的例子，並寫出比較好的做法。"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "我只是跟著笑",
+                              core: "在校園裡，傷害不一定只有動手才算。",
+                              story: "四年庚班的下課時間很熱鬧。有人去操場打球，有人在走廊聊天，也有人留在教室玩桌遊。<br><br>小祐平常動作比較慢，說話也小小聲。班上有幾個同學常常拿他開玩笑。<br><br>「小祐又慢半拍了。」  <br>「你是不是還沒睡醒？」  <br>「他走路好像機器人喔。」<br><br>一開始，小祐只是低頭笑笑，沒有回話。可是後來，玩笑越來越多。<br><br>有一天午餐後，小祐端著餐盤要走回座位，阿哲突然學他的走路樣子，故意把腳抬得很高，手也僵硬地擺動。<br><br>「大家看，小祐機器人！」<br><br>幾個同學笑了起來。小祐的臉紅了。他想快點走回座位，卻因為緊張，湯匙掉到地上。<br><br>小凱也在旁邊。他沒有學小祐，也沒有罵小祐，可是他跟著笑了。<br><br>旁邊的小恩拿出平板，說：「這個好好笑，我要拍下來。」<br><br>小凱本來想說不要，可是看到大家都在笑，他也沒有出聲。影片很快被傳到幾個同學的聊天群組。<br><br>隔天，小祐沒有像平常一樣準時到校。導師接到家長電話，才知道小祐早上哭著說不想上學。<br><br>老師了解後，對相關同學說：<br><br>「有時候，傷害不是只有一個人造成的。模仿的人讓小祐難過，拍影片的人讓事情傳出去，跟著笑的人讓他覺得全班都在笑他。」<br><br>老師在黑板上寫：<br><br><strong>旁觀，不是沒有選擇。</strong><br><br>後來，小凱向小祐道歉。幾天後，有人想再提「機器人」時，小凱說：「不要再叫那個了。」<br><br>有時候，讓傷害停止的第一步，不是大聲英雄登場，而是在大家都笑的時候，選擇不把笑聲借給傷害。",
+                              think: [
+                                      "小祐為什麼不想來上學？",
+                                      "模仿、拍影片、跟著笑，分別讓傷害變成什麼？",
+                                      "如果你是小凱，當下可以做哪一件事？"
+                              ],
+                              reminder: "在校園裡，傷害不一定只有動手才算。<br><br>如果有人被模仿、嘲笑、排擠，旁邊的人跟著笑、起鬨、拍影片、轉傳，可能會讓被欺負的人更害怕、更難過。<br><br>法治教育提醒我們：<br><br>**不動手，不代表沒有影響。  <br>不轉傳，是保護別人。  <br>不跟著笑，是一種勇敢。**",
+                              actions: [
+                                      "不跟著笑。",
+                                      "不起鬨。",
+                                      "不拍影片。",
+                                      "不轉傳。",
+                                      "陪同學離開現場。",
+                                      "私下告訴老師。",
+                                      "「不要再笑他了。」",
+                                      "「這樣不好笑。」",
+                                      "「不要拍。」",
+                                      "「不要傳出去。」",
+                                      "「我們去找老師。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "看到同學被嘲笑時，跟著笑可能讓傷害變大。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "只要我沒有動手，就完全沒有影響。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "拍下同學被嘲笑的影片再轉傳，可能讓事情更嚴重。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你看到同學被大家嘲笑，你可以做一件什麼事，讓傷害不要變大？"
+                                      }
+                              ]
+                      }
+              ]
+      },
+      {
+              gradeId: "g5",
+              gradeTitle: "五年級",
+              gradeSubtitle: "我判斷責任，也學會修復",
+              gradeSummary: "五年級完成 8 課內容，從師生界線、危險惡作劇、毀損責任、群組截圖、AI 改圖、毒品防制、校園安全與修復行動出發，練習判斷責任並學會修復。",
+              lessons: [
+                      {
+                              title: "老師，我可以喜歡你嗎？",
+                              core: "學生可能會欣賞一位老師，喜歡老師的課、喜歡老師的鼓勵，這是可以被理解的感受。",
+                              story: "五年甲班這學期多了一位新的社團老師，大家都叫他林老師。<br><br>林老師年輕、幽默，上課時常常帶大家玩節奏遊戲，也會記得每個人的名字。只要學生表現好，他就會說：「你很棒，我有看到你的努力。」<br><br>小羽很喜歡上林老師的社團課。<br><br>她覺得林老師和其他老師不太一樣。林老師會聽她說話，會稱讚她的作品，也會在她緊張時鼓勵她。慢慢地，小羽開始很期待每週的社團課。<br><br>有一次課後，小羽留下來收器材。<br><br>林老師說：「你今天表現很好，謝謝你幫忙。」<br><br>小羽聽了很開心，回家後還一直想著這句話。<br><br>後來，她開始在聯絡簿空白處畫林老師的樣子，也會在下課時特地經過社團教室，只希望能看見老師一眼。<br><br>有一天，小羽鼓起勇氣，在社團課後問：<br><br>「老師，我可以加你的私人帳號嗎？我想傳我的練習影片給你看。」<br><br>林老師停了一下，溫和地說：<br><br>「如果是課程作品，可以傳到班級平台，或請導師協助。老師不適合和學生用私人帳號單獨聯絡。」<br><br>小羽愣住了，臉紅了起來。她覺得有點失望，也有點丟臉。<br><br>隔天，小羽把這件事告訴同學小安。小安聽完，小聲說：「你是不是喜歡林老師啊？」<br><br>小羽嚇了一跳：「我不知道……我只是很喜歡他上課，也很想跟他說話。」<br><br>小安沒有笑她，只說：「可是老師是老師耶。你可以跟輔導老師聊聊吧。」<br><br>後來，小羽去找輔導老師。輔導老師沒有責備她，只是很溫柔地聽她說。<br><br>小羽小聲問：「老師，我這樣是不是很糟糕？」<br><br>輔導老師搖搖頭：<br><br>「喜歡、崇拜、想親近一位老師，這些感覺不一定是錯的。可是老師和學生之間有不一樣的位置。老師有教導、照顧和保護學生的責任，所以更要保持清楚的界線。」<br><br>小羽慢慢鬆了一口氣。<br><br>後來，林老師仍然在社團課上鼓勵小羽，但所有課程聯繫都透過班級平台或導師。小羽也學會把對老師的欣賞，放回學習裡。<br><br>有些喜歡，像陽光一樣，可以照亮自己。  <br>但不是每一道光，都要變成靠得很近的關係。",
+                              think: [
+                                      "小羽為什麼會特別喜歡林老師？",
+                                      "林老師為什麼不適合和學生用私人帳號單獨聯絡？",
+                                      "喜歡老師的課、欣賞老師，和想要私下單獨親近老師，有什麼不同？"
+                              ],
+                              reminder: "學生可能會欣賞一位老師，喜歡老師的課、喜歡老師的鼓勵，這是可以被理解的感受。<br><br>但是老師和學生之間，不是普通朋友關係，也不是同學之間的關係。老師有教學、管理、輔導、照顧學生的責任，學生也需要在安全、清楚的界線裡學習。<br><br>師生之間應避免私下用私人帳號單獨聊天、單獨約見面、傳送和課程無關的親密訊息，或發展超出師生關係的互動。<br><br>法治教育提醒我們：<br><br>**喜歡一位老師的課，不是錯。  <br>但師生關係需要界線。  <br>清楚的界線，是保護學生，也是保護老師。**",
+                              actions: [
+                                      "專心上課。",
+                                      "在課堂上表達感謝。",
+                                      "透過正式管道交作業或問問題。",
+                                      "把欣賞變成學習的動力。",
+                                      "和輔導老師或家人聊聊自己的感受。",
+                                      "相信自己的感受。",
+                                      "不答應單獨保密。",
+                                      "找導師、輔導老師或家人。",
+                                      "保留相關訊息。",
+                                      "請學校協助了解與處理。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "喜歡老師的課、欣賞老師的優點，不一定是錯。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "老師和學生可以像情侶一樣單獨交往，完全沒有問題。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "老師不加學生私人帳號，可能是在保護清楚的師生界線。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你很欣賞一位老師，但又對自己的感受有點困惑，你可以怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "飲料裡的惡作劇",
+                              core: "食物和飲料是會進到身體裡的東西。",
+                              story: "五年乙班最近正在準備班際大隊接力。<br><br>小葉和小何都跑得很快，常常被老師安排在同一組練習。可是兩個人的個性很不一樣。小何動作快，說話也直；小葉比較安靜，常常覺得小何太愛指揮別人。<br><br>有一天練習接棒時，小何大聲說：<br><br>「小葉，你剛剛又慢了啦！這樣我們會輸。」<br><br>小葉的臉沉了下來：「你很厲害是不是？那你自己跑就好了。」<br><br>兩個人吵了起來。老師趕過來勸開後，事情看起來結束了，但小葉心裡一直不舒服。<br><br>隔天中午，小何把運動飲料放在座位旁，準備下午練習前喝。<br><br>小葉看見了，心裡突然冒出一個念頭。他從書包裡拿出一包很酸的梅子粉，對旁邊同學說：「我只是加一點，讓他酸到皺臉而已。」<br><br>同學一開始笑了。<br><br>「這樣會不會太誇張？」有人小聲問。<br><br>小葉說：「又不是毒藥，只是惡作劇。」<br><br>趁教室沒什麼人注意，小葉打開小何的飲料瓶，把梅子粉倒了一些進去，又趕快蓋上。<br><br>下午練習前，小何拿起飲料喝了一大口。他的表情立刻變了。<br><br>「這什麼味道？」<br><br>沒多久，小何開始覺得喉嚨不舒服，肚子也怪怪的。老師發現後，立刻帶他到健康中心，並通知家長。<br><br>小何一邊休息，一邊說：「我的飲料好像被加東西了。」<br><br>班上氣氛一下子緊張起來。<br><br>導師沒有立刻在全班質問，而是先確認小何的身體狀況，再逐步了解中午發生了什麼事。<br><br>一開始，小葉說：「我只是開玩笑，沒有想害他。」<br><br>老師問他：<br><br>「如果你不知道飲料裡被加了什麼，還會安心喝嗎？」  <br>「如果小何對梅子粉過敏呢？」  <br>「如果他喝完後身體真的出問題呢？」<br><br>小葉的臉慢慢白了。<br><br>他原本只想讓小何出糗，卻沒有想過事情可能變得這麼嚴重。<br><br>後來，班上訂了一條很清楚的規定：<br><br>**不碰別人的食物和飲料。  <br>不對入口的東西開玩笑。  <br>看到有人要這樣做，要立刻阻止或找老師。**",
+                              think: [
+                                      "小葉為什麼想對小何惡作劇？",
+                                      "為什麼不能對別人的食物或飲料動手腳？",
+                                      "旁邊的同學看到後沒有阻止，可能造成什麼結果？"
+                              ],
+                              reminder: "食物和飲料是會進到身體裡的東西。<br><br>對別人的食物、飲料動手腳，不管是加粉末、加水、加調味料，或放進奇怪的東西，都不是普通玩笑。<br><br>因為你不知道對方會不會過敏，東西乾不乾淨，或對方喝下去會不會不舒服。<br><br>法治教育提醒我們：<br><br>**生氣可以說出來，  <br>但不能用傷害身體安全的方式報復。**<br><br>如果讓別人生病、受傷或害怕，就可能需要負擔嚴重責任。",
+                              actions: [
+                                      "先離開現場冷靜。",
+                                      "找老師協助溝通。",
+                                      "說出自己的感受。",
+                                      "寫下想說的話。",
+                                      "用安全的方法處理衝突。",
+                                      "動別人的食物或飲料。",
+                                      "藏別人的藥品或水壺。",
+                                      "在別人杯子裡加東西。",
+                                      "鼓勵同學一起惡作劇。",
+                                      "說「只是開玩笑」就不負責。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "對別人的飲料加東西，只要不是毒藥，就只是玩笑。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "看到同學要對別人的食物動手腳，應該立刻阻止或找老師。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "食物和飲料會進到身體裡，所以不能拿來惡作劇。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你看到同學想把辣椒粉加進別人的便當裡，你可以怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "被刮花的車門",
+                              core: "汽車、腳踏車、門窗、桌椅、牆壁、廁所門、消防設備，都是有主人或管理人的財物。",
+                              story: "五年丙班的小宏最近放學後，常常和幾個同學留在校門口附近聊天。<br><br>校門旁邊有一排住家的停車格。每天放學時間，路邊停著許多汽車，有的是家長來接孩子，有的是附近住戶的車。<br><br>這天，小宏心情不太好。下午體育課時，他和同學發生爭執，又被老師提醒說話太衝。放學後，他沒有馬上回家，而是坐在校門旁的矮牆上，踢著腳邊的小石子。<br><br>阿哲走過來說：「你還在生氣喔？」<br><br>小宏沒有回答，只是撿起一顆尖尖的小石頭，在地上畫線。<br><br>阿哲看見旁邊有一台深藍色汽車，車門亮亮的，像一面鏡子。<br><br>他開玩笑說：「你敢不敢在那台車上畫一下？」<br><br>小宏皺眉：「那是別人的車耶。」<br><br>阿哲笑了：「你不是很氣嗎？畫一下又不會怎樣，反正沒有人看到。」<br><br>旁邊幾個同學也湊過來：<br><br>「畫個小圖案啦。」  <br>「不要那麼膽小。」  <br>「反正車子本來就會有刮痕。」<br><br>小宏被這幾句話一激，心裡那股悶悶的氣又冒上來。<br><br>他拿著石頭，走到車門旁。一開始只是輕輕碰一下，接著在車門上畫了一條短短的線。<br><br>石頭刮過烤漆，發出刺耳的聲音。<br><br>小宏嚇了一跳，卻又不想在同學面前停下來。於是他又畫了幾下，在車門上刮出一個歪歪的笑臉。<br><br>隔天早上，學務處老師到班上找他。<br><br>原來車主發現車門被刮傷，查看附近監視器後，請學校協助了解。小宏坐在辦公室裡，手一直抓著褲子。<br><br>老師問：「你知道那台車不是學校的，也不是你的，對嗎？」<br><br>小宏點點頭。<br><br>「你知道刮傷後，車主可能需要花錢修理嗎？」<br><br>小宏小聲說：「我以為只是小刮痕……」<br><br>後來，家長也被請到學校。小宏在老師和家長陪同下，向車主道歉。車主說，車門需要送修烤漆，會產生維修費用。<br><br>小宏終於明白，有些錯看起來只是一小下，修復起來卻可能要花很久。",
+                              think: [
+                                      "小宏為什麼會去刮車門？",
+                                      "阿哲和旁邊同學的起鬨，對小宏有什麼影響？",
+                                      "為什麼「只是小刮痕」仍然需要負責？"
+                              ],
+                              reminder: "汽車、腳踏車、門窗、桌椅、牆壁、廁所門、消防設備，都是有主人或管理人的財物。<br><br>不可以因為無聊、生氣、好玩，或被同學起鬨，就去刮、畫、踢、折、拆、破壞。<br><br>如果物品因為我們的行為壞掉、受損、不能正常使用，就可能需要修理、賠償，也可能進入學校或法律的處理程序。<br><br>法治教育提醒我們：<br><br>**不是自己的東西，不能破壞。  <br>公共的東西，也不是沒有人負責的東西。  <br>一時逞強，可能留下很久的責任。**",
+                              actions: [
+                                      "先離開現場。",
+                                      "不拿東西刮、砸、踢。",
+                                      "說：「這樣會破壞別人的東西，我不要。」",
+                                      "找老師或家人談談。",
+                                      "用運動、寫字、深呼吸讓自己冷靜。",
+                                      "「不要，那是別人的車。」",
+                                      "「這樣要賠錢。」",
+                                      "「不要亂畫學校的牆。」",
+                                      "「我們離開這裡。」",
+                                      "「我去找老師。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "別人的車子、腳踏車或物品，不可以因為好玩就刮傷。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "公共設施是大家的，所以弄壞也沒關係。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "破壞東西後，可能需要道歉、修復或賠償。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "同學拿著筆想在廁所門上寫字，還問你：「你敢不敢也寫？」你可以怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "班級群組的截圖",
+                              core: "私訊、照片、聊天內容，常常包含一個人只想對特定對象說的話。",
+                              story: "五年丁班有一個班級聊天群組。<br><br>群組一開始是為了提醒作業、討論分組報告，也會分享班上活動照片。後來，大家開始在裡面聊天、貼貼圖、開玩笑。<br><br>小芸平常不太在群組裡說話。她打字比較慢，也不太確定自己說的話好不好笑。每次看到同學很快地回訊息，她常常看一看，就把手機放下。<br><br>有一天，美勞課要分組做海報。小芸和小婷分在同一組。<br><br>晚上，小芸傳私訊給小婷：<br><br>「我明天可以帶色紙，可是我不太會畫標題，可以請你幫忙嗎？」<br><br>小婷回：「可以啊。」<br><br>小芸又傳了一句：<br><br>「謝謝你，我有點怕拖累大家。」<br><br>那句話，是她想了很久才打出來的。<br><br>小婷看到後，原本只是想跟另一位同學討論分工。她把小芸的訊息截圖傳給阿凱，還加了一句：<br><br>「她也太沒自信了吧。」<br><br>阿凱看了覺得好笑，就把截圖傳到另一個沒有小芸的小群組。<br><br>很快地，截圖在幾個同學之間傳開。有人留言：<br><br>「怕拖累就不要一組啊。」  <br>「她每次都很慢。」  <br>「明天不要讓她畫啦。」<br><br>隔天早上，小芸一進教室，就覺得氣氛怪怪的。幾個同學看見她，突然停止聊天。有人低頭看手機，有人偷偷笑。<br><br>午休時，一位同學小聲告訴她：<br><br>「你的私訊被截圖傳出去了。」<br><br>小芸整個人愣住。她原本只是想向同組同學求助，沒想到那句「我怕拖累大家」，變成大家嘲笑她的話題。<br><br>老師了解後，問小婷和阿凱：<br><br>「如果你私下說的一句話，被別人截圖拿去笑，你會有什麼感覺？」  <br>「私訊為什麼叫私訊？」  <br>「截圖傳出去後，你能控制誰會看到嗎？」<br><br>教室裡安靜了。<br><br>後來，老師請同學們刪除截圖，不再轉傳，也協助小婷和阿凱向小芸道歉。班上也訂定了「群組使用公約」：<br><br>**不截圖嘲笑同學。  <br>不轉傳別人的私訊。  <br>不在沒有本人的群組裡討論、排擠他。**",
+                              think: [
+                                      "小芸為什麼只把那句話傳給小婷？",
+                                      "小婷把私訊截圖傳出去，哪裡不尊重小芸？",
+                                      "如果你收到別人的私訊截圖，可以怎麼做？"
+                              ],
+                              reminder: "私訊、照片、聊天內容，常常包含一個人只想對特定對象說的話。<br><br>就算你看得到，不代表你可以任意截圖、轉傳或拿來嘲笑。尤其是把別人的私訊傳到群組，讓更多人評論、取笑、排擠，會讓對方很受傷，也可能形成網路霸凌。<br><br>法治教育提醒我們：<br><br>**私訊不是公共展覽品。  <br>截圖前，要想想對方是否願意。  <br>轉傳前，要想想傷害會不會擴大。**",
+                              actions: [
+                                      "尊重對方原本的說話對象。",
+                                      "不任意截圖。",
+                                      "不拿去嘲笑。",
+                                      "不傳到群組。",
+                                      "如果內容讓我擔心，可以找老師或家人協助，而不是公開散布。",
+                                      "「這是他的私訊，不要再傳了。」",
+                                      "「你有問過他可以傳嗎？」",
+                                      "「這樣他會很難過。」",
+                                      "「我們刪掉，不要轉傳。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "別人傳給我的私訊，我可以不經同意就截圖嘲笑。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "收到不適當的截圖時，可以不轉傳，並提醒對方停止。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "網路上的截圖一旦傳出去，就可能很難完全收回。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "小傑傳來一張同學私訊截圖，還說：「快看，他超好笑。」你比較好的做法是什麼？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "AI 改圖不是玩笑",
+                              core: "AI 可以幫助我們學習、創作和設計，但不能拿來傷害別人。",
+                              story: "五年戊班最近在資訊課認識了 AI 工具。<br><br>老師介紹 AI 可以幫忙整理資料、生成圖片、設計海報，也提醒大家：「工具本身沒有好壞，重點是人怎麼使用。」<br><br>一開始，大家覺得很新鮮。有人用 AI 做科展封面，有人把校園照片變成水彩風格，也有人做出一張「未來城市」的想像圖。<br><br>阿凱也覺得 AI 很有趣。<br><br>某天放學後，他在家裡試著把同學照片丟進一個改圖工具。工具一下子就把照片變成漫畫風、機器人風、外星人風。<br><br>阿凱笑了出來。<br><br>他想到班上的小言。<br><br>小言平常比較安靜，拍照時常常不敢看鏡頭。上次班級活動照片裡，小言剛好閉眼，表情有點奇怪。<br><br>阿凱把那張照片截下來，用 AI 改成一張誇張的「怪獸臉」，還加上大大的字：<br><br>「五戊怪獸出沒！」<br><br>他越看越覺得好笑，就傳到幾個同學的小群組。<br><br>「你們看，超像吧！」<br><br>群組裡立刻有人回：<br><br>「哈哈哈太好笑了。」  <br>「再做一張！」  <br>「傳給大家看啦！」<br><br>阿凱一開始有點猶豫，但看到大家一直催，就把圖片傳到更多同學的群組。<br><br>隔天早上，小言走進教室時，幾個同學看著手機偷笑。有人小聲說：「怪獸來了。」有人故意模仿圖片裡的表情，也有人把那張圖設成聊天貼圖，在群組裡一直貼。<br><br>小言看到那張被 AI 改過的照片時，整個人愣住。那是她的臉，可是又不像她。那張圖被改得很醜，還被加上嘲笑的字。<br><br>她小聲說：「我沒有同意他們改我的照片……」<br><br>老師了解後，找阿凱和相關轉傳的同學談話。<br><br>阿凱一開始說：「老師，那是 AI 做的，又不是我真的畫的。而且我只是開玩笑。」<br><br>老師問他：<br><br>「照片是誰選的？」  <br>「文字是誰加的？」  <br>「圖片是誰傳出去的？」  <br>「小言有沒有同意？」<br><br>阿凱低下頭。<br><br>老師說：「AI 是工具，但使用工具的人要負責。不能因為是 AI 做的，就把責任推給 AI。」<br><br>後來，老師請同學們刪除圖片，不再使用那張圖當貼圖，也協助小言確認還有哪些群組出現過。<br><br>阿凱終於明白，AI 可以做出很多圖片，但不能拿來把一個人的尊嚴，變成大家的笑話。",
+                              think: [
+                                      "阿凱為什麼一開始覺得 AI 改圖很好玩？",
+                                      "小言看到自己的照片被改成怪獸圖時，可能有什麼感覺？",
+                                      "「是 AI 做的」可以讓使用者不用負責嗎？"
+                              ],
+                              reminder: "AI 可以幫助我們學習、創作和設計，但不能拿來傷害別人。<br><br>同學的照片、臉、聲音、名字，都和這個人有關。沒有經過同意，就拿來改圖、惡搞、合成、加上羞辱文字，可能會傷害對方的名譽、隱私和感受。<br><br>如果圖片還被傳到群組，讓更多人嘲笑、留言、排擠，傷害會變得更大。<br><br>法治教育提醒我們：<br><br>**AI 是工具，使用的人要負責。  <br>做圖的人要負責，轉傳的人也要想清楚。  <br>看得到照片，不代表可以改；做得出圖片，不代表可以傳。**",
+                              actions: [
+                                      "這張照片是我自己的嗎？",
+                                      "對方有同意我使用嗎？",
+                                      "圖片會不會讓對方難堪？",
+                                      "圖片會不會嘲笑外表、身體或性別？",
+                                      "傳出去後，我能不能負責？",
+                                      "「這是他的照片，不要亂改。」",
+                                      "「他沒有同意，不要再傳。」",
+                                      "「這樣會讓人很難過。」",
+                                      "「請刪掉。」",
+                                      "「我們找老師處理。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "AI 做出來的圖片，就不需要使用的人負責。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "沒有經過同意，不應該拿同學照片惡搞或轉傳。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "收到羞辱同學的 AI 圖時，不轉傳是一種保護。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你想用 AI 做圖，為什麼不應該拿同學的照片惡搞？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "來路不明的糖果",
+                              core: "來路不明的東西，不能隨便吃、喝或吸。",
+                              story: "五年己班最近下課時，常常有人討論線上遊戲。<br><br>小杰很會玩遊戲，帳號等級高，常常有同學圍在他旁邊聽他講攻略。<br><br>有一天放學後，小杰神祕兮兮地拿出一個小夾鏈袋。<br><br>袋子裡有幾顆顏色很亮的糖果，看起來像水果軟糖，又不像平常便利商店會看到的包裝。<br><br>阿廷問：「這是什麼？」<br><br>小杰壓低聲音說：「我表哥給我的，說吃了會很放鬆，很酷。」<br><br>旁邊的同學小宇皺眉：「糖果為什麼沒有包裝？」<br><br>小杰聳聳肩：「你很膽小耶。又不是毒藥，只是糖果啦。」<br><br>他拿起一顆，在手上晃了晃。<br><br>「誰敢吃？吃一顆我就借你們看我的稀有裝備。」<br><br>幾個同學笑了起來。<br><br>阿廷其實有點想試。他不想被說膽小，也想看小杰的遊戲裝備。可是他看著那個沒有標示、沒有包裝的糖果，心裡又覺得怪怪的。<br><br>這時，小杰又從口袋裡拿出一支細細的東西。<br><br>「還有這個，聞起來是水果味。表哥說現在很多人都有。」<br><br>小宇小聲問：「那是不是電子煙？」<br><br>小杰說：「不知道啦，反正不是香菸。試一下又不會怎樣。」<br><br>阿廷想起健康課老師說過：有些東西看起來像糖果、飲料或香味煙霧，但裡面可能含有不該碰的成分。來路不明的東西，不要因為別人說沒事就嘗試。<br><br>小杰把糖果遞過來：「阿廷，你敢不敢？」<br><br>阿廷看著那顆糖果，深吸一口氣。<br><br>「我不要。」他說。<br><br>小杰笑了一聲：「膽小鬼。」<br><br>阿廷臉有點熱，但還是說：「沒有包裝，也不知道裡面是什麼，我不吃。」<br><br>小宇也跟著說：「我也不要。這個應該拿去給老師看。」<br><br>隔天早上，他們一起去找導師，把昨天看到的情況說出來。<br><br>老師聽完後說：<br><br>「你們願意說出來，是保護自己，也保護同學。」<br><br>阿廷知道，那天自己說不要，是對的。真正的勇敢，不是什麼都敢試，而是在大家起鬨時，還能保護自己的身體。",
+                              think: [
+                                      "阿廷為什麼一開始有點猶豫？",
+                                      "小杰用了哪些話讓同學想嘗試？",
+                                      "為什麼沒有包裝、來源不清楚的糖果或飲料不能吃？"
+                              ],
+                              reminder: "來路不明的東西，不能隨便吃、喝或吸。<br><br>有些東西看起來像糖果、飲料、餅乾、香味煙霧，卻可能含有會傷害身體的成分。也有些東西會讓人上癮，影響健康、情緒、學習和生活。<br><br>不管同學怎麼說：<br><br>「試一次沒關係。」  <br>「大家都有。」  <br>「這不是毒品啦。」  <br>「你不敢就是膽小。」<br><br>只要你不知道裡面是什麼，就可以拒絕。<br><br>法治教育提醒我們：<br><br>**身體是自己的，不能拿來冒險。  <br>好奇可以問大人，不要用身體試。  <br>拒絕不安全的東西，不是膽小，是保護自己。**",
+                              actions: [
+                                      "「我不要。」",
+                                      "「我不知道裡面是什麼，所以不碰。」",
+                                      "「這個不能帶來學校吧。」",
+                                      "「我要去問老師。」",
+                                      "「你不要再分給別人。」",
+                                      "離開現場。",
+                                      "找信任的同學一起求助。",
+                                      "告訴導師或家人。",
+                                      "不幫忙保密。",
+                                      "不把東西拿來試。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "沒有包裝、來源不明的糖果，不應該隨便吃。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "同學說「試一次沒關係」，就一定真的沒關係。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "拒絕不安全的東西，是保護自己。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "小豪拿出一支水果味的電子煙，說：「這不是香菸，試一下啦。」你可以怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "花式傳球",
+                              core: "有些傷害不是故意造成的，而是因為沒有注意安全。",
+                              story: "五年庚班最近很流行看運動短影片。<br><br>影片裡的球員可以把球從背後傳出去，也可以閉著眼睛投籃，還有人把球繞過身體一圈，再準確傳到隊友手上。<br><br>小翔看得入迷。他本來就喜歡籃球，看到這些花式動作後，更想在同學面前試試看。<br><br>這天午休後，教室裡有些同學在看書，有些人在整理抽屜。小翔從置物櫃旁拿出一顆軟式躲避球，對阿廷說：<br><br>「你看，我昨天學到一招超帥的。」<br><br>阿廷看了看教室：「在這裡喔？會不會打到人？」<br><br>小翔說：「這是軟球啦，又不是籃球。」<br><br>他把球放在手上，模仿影片裡的動作，從背後一甩。<br><br>球沒有照他想的方向飛出去，而是偏到旁邊，打到了正在喝水的小妤。<br><br>小妤嚇了一跳，水灑在桌上，眼鏡也歪了一邊。<br><br>「對不起！」小翔趕緊跑過去。<br><br>小妤揉著眼角，眼睛紅紅的。<br><br>老師聽見聲音走進教室，先帶小妤到健康中心檢查。雖然還好沒有嚴重受傷，但小妤的眼角紅腫，也嚇了很大一跳。<br><br>回到教室後，老師請小翔坐下來談。<br><br>小翔低著頭說：「老師，我真的不是故意要打她。」<br><br>老師點點頭：「我相信你不是故意的。但是不是故意，不代表完全不用負責。」<br><br>老師問：「教室裡有人在走動、有人在喝水、桌上有很多東西。這裡適合練習花式傳球嗎？」<br><br>小翔小聲說：「不適合。」<br><br>那天綜合課，老師帶全班討論「影片模仿與校園安全」。<br><br>老師在黑板上寫：<br><br>**影片裡可以，不代表學校裡可以。  <br>操場可以，不代表教室可以。  <br>軟球比較安全，不代表完全不會受傷。**<br><br>幾天後，小翔又想練那招花式傳球。這一次，他沒有在教室試。<br><br>他走到操場，先看了看四周有沒有人，再對阿廷說：「你站遠一點，我慢慢練。」<br><br>他知道，真正厲害的人，不只是會做帥氣的動作，也知道什麼地方可以做、什麼時候該停下來。",
+                              think: [
+                                      "小翔為什麼想在教室裡表演花式傳球？",
+                                      "阿廷提醒「會不會打到人」時，小翔可以怎麼做？",
+                                      "為什麼「我不是故意的」不代表完全不用負責？"
+                              ],
+                              reminder: "有些傷害不是故意造成的，而是因為沒有注意安全。<br><br>例如在教室、走廊、樓梯間玩球、揮球拍、甩水壺、丟硬物，可能讓別人受傷。即使你只是想表演、想開玩笑，或覺得「應該不會怎樣」，如果真的造成同學受傷，就需要面對責任。<br><br>法治教育提醒我們：<br><br>**不是故意，不等於沒有責任。  <br>公共空間裡，要先想到別人的安全。  <br>想玩、想練習，要選對地方。**",
+                              actions: [
+                                      "這個地方適合嗎？",
+                                      "附近有沒有人？",
+                                      "會不會打到眼睛、頭或臉？",
+                                      "會不會讓人跌倒？",
+                                      "有沒有老師允許？"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "只要是軟球，就可以在教室裡隨便丟。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "不是故意造成別人受傷，也可能需要負責。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "想模仿影片動作時，要先想場地和旁人安全。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "小豪想在走廊模仿影片，把水壺往上拋再接住。你可以怎麼提醒他？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "道歉之後呢？",
+                              core: "當一個人長時間被取笑、排擠、孤立、群組攻擊，可能會感到害怕、難過，甚至不想上學。",
+                              story: "五年辛班最近氣氛有點安靜。<br><br>以前下課時，大家總會聚在教室後面聊天、打牌、玩桌遊。可是這幾天，只要小柏走進教室，幾個同學就會突然停下來。<br><br>小柏知道，大家還在想上星期的事。<br><br>那時候，他和阿哲、家豪常常拿小恩開玩笑。<br><br>小恩個子比較瘦，跑步也不快。每次體育課分隊時，小柏都會說：<br><br>「不要選他啦，他會拖累我們。」<br><br>一開始，小恩只是低頭不說話。後來，小柏他們越來越過分：午餐時故意不讓小恩坐旁邊；分組時說「我們這組不要他」；還在群組裡傳訊息：「今天不要理小恩，看他會怎樣。」<br><br>直到有一天，小恩在聯絡簿裡寫：<br><br>「我不想去學校，因為大家都不想跟我一組。」<br><br>導師看到後，立刻找小恩談話，也開始了解班上的情況。<br><br>在老師和輔導老師協助下，小柏向小恩道歉。<br><br>他說：「對不起，我不應該排擠你，也不應該在群組裡叫大家不要理你。」<br><br>小恩沒有看他，只是小聲說：「嗯。」<br><br>小柏以為道歉完，事情就會結束。<br><br>可是第二天，小恩還是不太敢進教室。分組時，小恩還是先看老師，不敢自己選組。群組裡雖然沒有人再說他，但小恩也不敢發言。<br><br>小柏小聲跟老師說：「老師，我已經道歉了，為什麼他還是不跟我講話？」<br><br>老師問：<br><br>「如果你每天被排擠，忽然有一天對方說對不起，你會馬上安心嗎？」<br><br>小柏想了很久，搖搖頭。<br><br>老師說：<br><br>「道歉是開始，不是結束。真正的修復，是讓對方慢慢重新感覺安全。」<br><br>後來，老師和輔導老師陪小柏訂了一份「修復計畫」：<br><br>1. 不再在群組裡談論、嘲笑或排擠小恩。<br>2. 分組時不再帶頭說「不要他」。<br>3. 如果其他人又開始排擠，小柏要練習說停止。<br>4. 不要求小恩立刻原諒。<br>5. 班上重新討論分組規則和群組公約。<br><br>幾週後，班上做自然小組實驗。小柏和小恩剛好同組。小柏沒有急著裝熟，只是按照分工說：「我記錄，你觀察，這樣可以嗎？」<br><br>小恩點點頭。<br><br>那節課，他們沒有變成很好的朋友，但他們完成了實驗，也沒有再讓任何人被丟在旁邊。",
+                              think: [
+                                      "小柏他們做了哪些事情，讓小恩覺得被排擠？",
+                                      "小柏為什麼一開始覺得「我已經道歉了，事情應該結束」？",
+                                      "修復計畫和單純說「對不起」有什麼不同？"
+                              ],
+                              reminder: "當一個人長時間被取笑、排擠、孤立、群組攻擊，可能會感到害怕、難過，甚至不想上學。<br><br>如果傷害已經發生，道歉很重要，但道歉不是唯一的責任。<br><br>真正的負責，還包括：<br><br>- 停止傷害<br>- 不再重複<br>- 協助刪除不當訊息<br>- 不要求對方立刻原諒<br>- 配合老師輔導<br>- 讓班級重新建立安全感<br><br>法治教育提醒我們：<br><br>**道歉不是句點。  <br>修復，才是責任的開始。**",
+                              actions: [
+                                      "停止原本的行為。",
+                                      "誠實承認自己做了什麼。",
+                                      "向對方道歉。",
+                                      "不要求對方立刻原諒。",
+                                      "接受老師或輔導老師協助。",
+                                      "如果有群組訊息或圖片，協助刪除並停止轉傳。",
+                                      "下次看到別人繼續排擠時，練習說停止。",
+                                      "停止跟著笑。",
+                                      "不再轉傳。",
+                                      "不在群組裡起鬨。",
+                                      "陪被排擠的同學。",
+                                      "告訴老師自己看到的事情。",
+                                      "在別人又開始時，說一句停止。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "做錯事後，只要說一次對不起，對方就一定要立刻原諒。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "道歉之後，還要停止傷害，並用行動修復。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "被排擠的人需要時間重新感到安全。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "為什麼「道歉」不是事情的結束？請寫出一個理由。"
+                                      }
+                              ]
+                      }
+              ]
+      },
+      {
+              gradeId: "g6",
+              gradeTitle: "六年級",
+              gradeSubtitle: "我保護自己，也尊重他人",
+              gradeSummary: "六年級完成 8 課內容，聚焦交通安全、情感界線、跟蹤騷擾、年齡界線、兒少性影像、匿名攻擊、程序正義與畢業前統整，銜接國中生活中的法治判斷。",
+              lessons: [
+                      {
+                              title: "下車前，請注意後方來車",
+                              core: "交通安全不只和駕駛有關，乘客也有責任。",
+                              story: "六年甲班的小華每天早上都由爸爸開車送到學校。<br><br>爸爸總是提醒他：「快到校門口了，東西先收好，下車前要看後面。」<br><br>小華每次都說：「知道啦。」可是他其實很少真的注意。<br><br>這天早上，車流比平常多。校門口旁邊有家長的車、機車、腳踏車，也有剛下車的學生背著書包往校門走。<br><br>爸爸把車停在路邊，轉頭說：「小華，等一下，先看後面有沒有車。」<br><br>小華正忙著把水壺塞進書包，另一手已經握住車門把手。手機群組裡剛好跳出同學訊息：<br><br>「快點！今天要先去操場集合！」<br><br>小華一急，沒有等爸爸說完，就把車門打開。<br><br>下一秒，後方一台機車剛好騎過來。<br><br>「砰！」<br><br>車門撞上機車，騎士連人帶車摔倒在地。<br><br>小華整個人愣住。爸爸立刻下車，趕緊查看騎士的狀況，並請旁邊老師協助報警和叫救護車。<br><br>騎士是一位要上班的阿姨。她的手肘擦傷，腳也扭到了，痛得坐在地上站不起來。<br><br>小華站在路邊，臉色發白。<br><br>他一直說：「我不是故意的……我真的不是故意的……」<br><br>爸爸沒有責罵他，只是先處理現場。警察到場後，記錄車門位置、機車行駛方向，也詢問發生經過。<br><br>後來，爸爸告訴小華，騎士需要就醫檢查，也可能要休息幾天，後續還要處理醫療費、交通事故責任和保險。<br><br>小華小聲問：「可是我不是故意撞她的，也要負責嗎？」<br><br>爸爸說：<br><br>「有些事情不是故意，還是會造成傷害。因為我們本來就應該注意。」<br><br>隔天，導師在班上安排了一堂交通安全課，教大家「安全開門三步驟」：<br><br>**先停。  <br>轉頭看。  <br>慢慢開。**<br><br>也介紹「反手開門」的方法：用離車門較遠的那隻手開門，身體自然會轉過去，比較容易看見後方來車。<br><br>那天放學，小華坐上爸爸的車。到了家門口時，他沒有急著開門。<br><br>他先停了一下，轉頭看後方。確認沒有車後，才慢慢把門打開。<br><br>一扇車門，看起來很輕。  <br>但如果沒有注意，它也可能重得讓別人受傷，讓自己後悔很久。",
+                              think: [
+                                      "小華為什麼沒有注意後方來車？",
+                                      "為什麼「不是故意」仍然可能需要負責？",
+                                      "開車門前應該做哪幾個動作？"
+                              ],
+                              reminder: "交通安全不只和駕駛有關，乘客也有責任。<br><br>開車門前，如果沒有注意後方的人車，可能會讓機車、腳踏車或行人受到傷害。即使不是故意，也可能因為沒有注意安全而造成責任。<br><br>如果有人因此受傷，可能會出現醫療費用、交通事故處理、保險理賠、民事賠償或過失傷害責任。<br><br>法治教育提醒我們：<br><br>**不是故意，不代表沒有責任。  <br>一個小動作，也可能影響別人的安全。  <br>下車前多看一眼，就是保護自己，也保護別人。**",
+                              actions: [
+                                      "不急著開門。",
+                                      "先停下動作。",
+                                      "轉頭看後方。",
+                                      "確認沒有機車、腳踏車、行人。",
+                                      "慢慢開一小縫，再確認一次。",
+                                      "使用反手開門。",
+                                      "「等一下，先看後面。」",
+                                      "「有機車，先不要開。」",
+                                      "「慢慢開。」",
+                                      "「我們用反手開門。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "下車開門前，要先注意後方來車。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "只要不是故意，造成別人受傷也完全不用負責。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "反手開門可以幫助我們轉身看後方。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "爸爸車子停在校門口，小安急著下車。這時他應該怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "喜歡，也要尊重拒絕",
+                              core: "喜歡一個人，是成長過程中可能出現的感受。",
+                              story: "六年乙班最近有一點不一樣。<br><br>快畢業了，大家開始寫畢業紀念冊，也有人會偷偷討論誰和誰走得比較近。<br><br>小成喜歡同班的小美。<br><br>小美成績好，跑步也快，笑起來眼睛彎彎的。小成從五年級開始就注意她，只是不太敢說。<br><br>升上六年級後，他們剛好同一組做自然專題。小美做事很細心，常常提醒大家記錄觀察結果。小成覺得，和她一起討論作業，是一件很開心的事。<br><br>有一天放學前，小成鼓起勇氣，拿了一張卡片給小美。<br><br>卡片上寫：<br><br>「我喜歡你，可以跟我交往嗎？」<br><br>小美看了很緊張。<br><br>她沒有討厭小成，但她現在不想談感情，也不想讓同學知道這件事。她把卡片收起來，小聲說：<br><br>「謝謝你告訴我，可是我沒有想要交往。我們還是當同學就好。」<br><br>小成聽了，心裡像突然空了一塊。他很失望，也覺得有點丟臉。可是他還是點點頭，說：「好。」<br><br>如果事情到這裡停下來，也許兩個人都能慢慢回到原來的同學關係。<br><br>但是小成沒有真的停下來。<br><br>隔天早上，他把早餐放在小美桌上。小美退回去，說：「不用，謝謝。」<br><br>第三天，小成又傳訊息問：<br><br>「你真的不能再想想嗎？」  <br>「我會等你。」  <br>「你是不是因為怕別人知道？」<br><br>小美一開始有回：「我已經說過了，我沒有想交往。」<br><br>可是小成還是不停傳。有時候是晚上十點，有時候是早上剛起床，有時候上課前，小美一打開手機，就看到好幾則未讀訊息。<br><br>幾天後，小成開始在放學時等小美。<br><br>「我陪你走到校門口。」  <br>「不用。」  <br>「沒關係啊，順路。」  <br>「我想自己走。」<br><br>小美越來越不舒服。她不是討厭小成這個人。她只是已經說了不要，卻發現自己的不要沒有被聽見。<br><br>有一天，小美終於把事情告訴導師。<br><br>她低著頭說：「老師，我有拒絕他，可是他一直傳訊息、送東西、等我。我不知道是不是我太兇。」<br><br>導師告訴她：<br><br>「你說不要，就是很清楚的界線。你沒有做錯。」<br><br>老師也找小成談話。<br><br>小成一開始很委屈：「我只是喜歡她，又沒有罵她，也沒有打她。」<br><br>老師問他：「你有沒有聽見她說不要？」<br><br>小成沉默了。<br><br>老師接著說：「喜歡一個人，不是只看自己的心情，也要看對方願不願意。當對方拒絕後，你還一直傳訊息、送東西、等待她，對她來說，就可能變成壓力。」<br><br>後來，小成停止傳訊息，也不再放早餐或等小美放學。輔導老師也陪他談失望的感覺，讓他知道，被拒絕很難受，但不能把難受變成對別人的壓力。<br><br>有些喜歡，不一定會得到回應。  <br>但學會在被拒絕時停下來，是一個人長大很重要的功課。",
+                              think: [
+                                      "小美第一次拒絕小成時，說得清不清楚？",
+                                      "小成後來做了哪些事情，讓小美覺得有壓力？",
+                                      "為什麼「我只是喜歡她」不能成為一直打擾對方的理由？"
+                              ],
+                              reminder: "喜歡一個人，是成長過程中可能出現的感受。<br><br>但是，喜歡不代表可以一直要求對方回應。當對方說不要、不願意、不想交往、不想收禮物、不想被陪回家時，就應該停止。<br><br>尊重拒絕，是很重要的界線。<br><br>如果在對方拒絕後，仍然一直傳訊息、送東西、等對方、跟著對方，讓對方害怕、不舒服或影響生活，就不再只是單純的喜歡。<br><br>法治教育提醒我們：<br><br>**喜歡可以說出口，  <br>但拒絕也要被聽見。  <br>對方說不要，就是停止的時候。**",
+                              actions: [
+                                      "尊重對方的感受。",
+                                      "用合適、不造成壓力的方式表達。",
+                                      "接受對方可能不喜歡我。",
+                                      "被拒絕後停止追問。",
+                                      "找朋友、家人或輔導老師聊聊失望的心情。",
+                                      "「謝謝你，但我不想交往。」",
+                                      "「請不要再送我東西。」",
+                                      "「請不要一直傳訊息給我。」",
+                                      "「請不要等我放學。」",
+                                      "「我要找老師協助。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "喜歡一個人可以，但對方拒絕後應該尊重。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "對方說不要，還是可以每天送禮物，因為這代表真心。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果追求讓我不舒服，可以找老師或家人幫忙。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果你被拒絕了，可以怎麼處理自己的失望？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "跟蹤，是騷擾，也是罪",
+                              core: "跟蹤騷擾不是只有在黑暗巷子裡跟著別人才算。",
+                              story: "六年丙班的小真最近很怕放學。<br><br>以前放學鐘一響，她會和朋友一起慢慢收書包，聊今天的作業和社團。可是這幾天，她總是故意拖到最後才離開教室。<br><br>因為她知道，小宇可能又會在樓梯口等她。<br><br>小宇喜歡小真，這件事班上有些同學都知道。<br><br>一開始，小宇只是傳訊息問：<br><br>「你今天作業寫了嗎？」  <br>「你明天會去社團嗎？」  <br>「你可以陪我聊天嗎？」<br><br>小真覺得有點尷尬，但還是簡單回覆。<br><br>後來，小宇的訊息越來越多。早上還沒到校，他就傳：「你出門了嗎？」午休時傳：「你怎麼都不看我？」晚上十點多又傳：「你是不是討厭我？」<br><br>小真回他：「請你不要一直傳訊息給我，我會有壓力。」<br><br>小宇卻說：「我只是關心你，你不要想太多。」<br><br>從那天開始，小真不太回訊息了。可是小宇沒有停。<br><br>他開始在校門口等她。她去圖書館，他也出現在附近。她和朋友去合作社，他就站在走廊轉角看著她。有時候，小真走快一點，他也跟著走快。<br><br>小真的朋友小芸發現後，問：「你還好嗎？」<br><br>小真搖搖頭：「我覺得很不舒服。我已經跟他說不要了，可是他還是一直出現。」<br><br>小芸說：「那要不要跟老師說？」<br><br>小真猶豫了一下。<br><br>「可是他沒有打我，也沒有罵我。大家會不會覺得我小題大作？」<br><br>那天下午放學，小真和小芸一起走到校門口。小宇又站在旁邊。<br><br>他看著小真說：「你為什麼都不回我？我只是想陪你回家。」<br><br>小真往後退了一步：「我不想。請你不要再等我。」<br><br>小宇皺著眉：「你以前明明會回我訊息，現在是怎樣？」<br><br>小真沒有回答，拉著小芸快步走進校門旁的導護區。<br><br>導護老師看見小真的臉色，問她：「怎麼了？」<br><br>小真終於把事情說出來。<br><br>導師對小真說：<br><br>「你已經清楚表達不要，對方仍然反覆傳訊息、等你、跟著你，讓你害怕，這件事需要被重視。」<br><br>小真低著頭，小聲說：「所以不是我太敏感嗎？」<br><br>老師說：「不是。你的害怕是真實的。」<br><br>學校也找小宇談話。<br><br>老師問他：<br><br>「她有沒有說不要？」  <br>「你有沒有繼續傳訊息？」  <br>「你有沒有在她不願意時等她、跟著她？」  <br>「她因此害怕，不敢自己放學，這算不算影響她的生活？」<br><br>小宇慢慢安靜下來。<br><br>真正的喜歡，不會讓人害怕。  <br>真正的尊重，是在對方說不要的時候，停下腳步。",
+                              think: [
+                                      "小真什麼時候已經清楚表達「不要」？",
+                                      "小宇做了哪些反覆、持續的行為？",
+                                      "為什麼「我只是喜歡她」不能成為一直跟著、等著、傳訊息的理由？"
+                              ],
+                              reminder: "跟蹤騷擾不是只有在黑暗巷子裡跟著別人才算。<br><br>如果一個人已經表示不願意，對方仍然反覆或持續做出讓人害怕、困擾或影響生活的行為，就可能是很嚴重的問題。<br><br>例如：<br><br>- 一直傳訊息、打電話<br>- 在校門口或常出現的地方等人<br>- 跟著對方走<br>- 打聽對方行蹤<br>- 要求約會或聯絡<br>- 明明被拒絕，還繼續追求<br>- 讓對方害怕、不敢出門、不敢上學或改變生活習慣<br><br>法治教育提醒我們：<br><br>**喜歡不是通行證。  <br>關心不是壓力。  <br>對方說不要，就要停止。**",
+                              actions: [
+                                      "清楚表達：「請你停止。」",
+                                      "不單獨處理。",
+                                      "告訴導師、學務處老師或家人。",
+                                      "保留訊息、通話紀錄或截圖。",
+                                      "記下發生時間、地點和對方行為。",
+                                      "盡量結伴行動，前往安全地點。",
+                                      "如果情況嚴重，由大人協助報警或尋求保護。",
+                                      "停止追問。",
+                                      "不再持續傳訊息。",
+                                      "不去等對方或跟著對方。",
+                                      "找朋友、家人或輔導老師談自己的難過。",
+                                      "接受對方不想回應的權利。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "對方已經說不要，仍然一直傳訊息、等候或跟著，可能造成嚴重問題。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "只要是因為喜歡，就可以一直追求到對方答應。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果被持續打擾而害怕，可以保留訊息並找大人協助。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果有人已經拒絕你，你還是很難過，可以怎麼做？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "兩小無猜與年齡界線",
+                              core: "青春期開始，對別人產生好感，是可能發生的事。",
+                              story: "六年丁班的小智和小琪，是從三年級就同班的好朋友。<br><br>他們一起做過自然實驗，一起參加過校慶接力，也常常在圖書館交換喜歡的小說。到了六年級，兩個人變得比以前更常聊天。<br><br>有時候，小智會幫小琪留午餐水果；有時候，小琪會提醒小智不要忘記帶數學作業。<br><br>同學們看見他們常常一起行動，就開始開玩笑：<br><br>「你們是不是在交往？」  <br>「小智喜歡小琪啦！」  <br>「畢業前告白一下啊！」<br><br>一開始，小智和小琪都覺得很不好意思。可是慢慢地，他們也發現，自己真的很在意對方。<br><br>有一天放學前，小智問小琪：<br><br>「那……我們算不算在一起？」<br><br>小琪臉紅了很久，最後點點頭。<br><br>剛開始，他們只是一起聊天、一起準備畢業表演。可是班上有些同學知道後，開始傳一些奇怪的話。<br><br>有人說：「交往就要牽手吧。」  <br>有人說：「你們有沒有抱抱？」  <br>還有人說：「男女朋友就是要更親密啊。」<br><br>小琪聽了覺得不舒服。<br><br>小智也覺得壓力很大。他其實只是喜歡和小琪相處，並沒有想那麼多。<br><br>有一天，小智收到朋友傳來的訊息：<br><br>「你們都在一起了，還那麼普通喔？」  <br>「你不敢牽她手嗎？」  <br>「太弱了吧。」<br><br>隔天放學時，他和小琪一起走到校門口附近。小智突然問：<br><br>「我可以牽你的手嗎？」<br><br>小琪停了一下，小聲說：「我現在不想。」<br><br>小智有點失望，但他把手收回來。<br><br>原本事情可以到這裡結束。可是晚上，小智一直想著朋友的話，越想越煩。他傳訊息給小琪：<br><br>「我們不是在一起嗎？為什麼不可以？」  <br>「你是不是不喜歡我？」  <br>「大家都說男女朋友會牽手。」<br><br>小琪看著訊息，心裡越來越不舒服。<br><br>她回：<br><br>「我喜歡你，但我不想被逼。我說不想，就是不想。」<br><br>隔天，小琪找輔導老師談話。她很擔心自己是不是太奇怪，也害怕小智會不高興。<br><br>輔導老師聽完後說：<br><br>「你說不想，是很清楚的界線。喜歡一個人，不代表你要答應所有親密行為。」<br><br>後來，小智也被導師找去談。<br><br>老師說：<br><br>「親密互動不是用來證明喜歡的。牽手、擁抱，甚至更進一步的身體接觸，都需要雙方真正願意。只要有一方不想，就要停止。」<br><br>老師也提醒他們：<br><br>「你們現在還是未成年人。法律對未成年人的身體和性自主有特別保護。有些大人世界裡的親密行為，不適合、也不應該發生在你們現在的年紀。」<br><br>小智問：「所以我們喜歡對方，是不是錯的？」<br><br>老師搖搖頭：<br><br>「喜歡不是錯。但喜歡要有界線。真正尊重對方，是不把同儕壓力變成對方的壓力。」<br><br>青春期的喜歡，有時像一陣突然吹來的風。它讓人心跳變快，也讓人有點慌張。  <br>但真正重要的，不是被別人推著往前，而是知道：我的身體有界線，別人的界線也要被尊重。",
+                              think: [
+                                      "小智和小琪為什麼會受到同學起鬨影響？",
+                                      "小琪說「我現在不想」時，小智應該怎麼做？",
+                                      "為什麼親密互動不能用來證明喜歡？"
+                              ],
+                              reminder: "青春期開始，對別人產生好感，是可能發生的事。<br><br>但是，喜歡不代表可以要求對方答應親密互動。牽手、擁抱或其他身體接觸，都需要尊重對方意願。只要對方說不要、不想、還沒準備好，就應該停止。<br><br>同意也不是一次答應，就代表以後都答應。每一次互動，都要尊重當下的感受。<br><br>法律也特別保護未成年人。因為孩子和青少年還在成長，身體、心理和判斷能力都需要被保護，所以有些親密或性相關行為，即使看起來是雙方願意，也可能涉及法律責任。<br><br>法治教育提醒我們：<br><br>**喜歡不是要求。  <br>同意不是壓力下的答應。  <br>年齡界線，是法律對未成年人的保護。**",
+                              actions: [
+                                      "尊重對方感受。",
+                                      "不用親密行為證明喜歡。",
+                                      "對方說不想，就停止。",
+                                      "不把同學的起鬨當成壓力。",
+                                      "有困惑時找大人討論。",
+                                      "「我現在不想。」",
+                                      "「請尊重我的界線。」",
+                                      "「我不想被逼。」",
+                                      "「不要把我們的事拿去給別人討論。」",
+                                      "「我要找老師談談。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "喜歡一個人，不代表可以要求對方答應所有親密互動。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "對方說不想，就應該停止。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "只要兩個人都未成年，任何親密行為都完全不會有法律問題。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "同學一直起鬨，要你做你不想做的親密互動，你可以怎麼說？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "不拍、不傳、不存",
+                              core: "身體隱私非常重要。",
+                              story: "六年戊班快畢業了。<br><br>最近大家很常拍照，想把最後一段國小生活留下來。有人拍操場，有人拍教室，有人拍畢業倒數牌，也有人在群組裡分享搞笑自拍。<br><br>小珊平常很喜歡拍照，但她不喜歡被別人亂拍。她覺得照片一旦傳出去，就不知道會被誰看見。<br><br>有一天晚上，小珊收到同學阿杰傳來的訊息。<br><br>阿杰說：<br><br>「你可以傳一張只有我看的照片嗎？」<br><br>小珊問：「什麼照片？」<br><br>阿杰回：「比較私人的那種，不會給別人看啦。」<br><br>小珊看著手機，心裡突然緊了一下。她沒有回。<br><br>過了一會兒，阿杰又傳：<br><br>「我們不是朋友嗎？」  <br>「你不傳就是不信任我。」  <br>「我保證不會給別人看。」<br><br>小珊越看越不舒服。<br><br>她回：「我不想傳。請你不要再問。」<br><br>阿杰安靜了一下。<br><br>隔天到學校，小珊原本以為事情結束了。可是午休時，她聽見幾個同學在走廊說：「阿杰昨天跟小珊要照片耶。」<br><br>小珊整個人僵住。<br><br>下午，阿杰又傳訊息：<br><br>「你不要那麼誇張啦，我只是開玩笑。」  <br>「如果你不理我，我就跟大家說你很做作。」<br><br>小珊看著訊息，眼眶慢慢紅了。<br><br>她一開始很想把訊息刪掉，假裝沒有發生。可是她想起健康課老師曾經說過：<br><br><strong>讓你不舒服的私密要求，不要自己承受。</strong><br><br>於是她截圖保存，拿給導師看。<br><br>導師看完後，先讓小珊坐下，輕聲說：<br><br>「你拒絕是對的。這不是你的錯。」<br><br>小珊小聲問：「可是我沒有傳照片，這樣也可以說嗎？」<br><br>老師點點頭：<br><br>「可以。有人要求你傳私密照片，或用威脅、壓力讓你覺得害怕，都需要被大人知道。」<br><br>後來，學校找阿杰談話。<br><br>阿杰一開始說：「我只是開玩笑，又沒有真的拿到照片。」<br><br>老師問他：<br><br>「對方有沒有說不想？」  <br>「你有沒有繼續要求？」  <br>「你有沒有用『不傳就是不信任我』讓她有壓力？」  <br>「你有沒有威脅要散布不好的話？」<br><br>阿杰低下頭。<br><br>老師說：<br><br>「私密照片不是玩笑。要求、威脅、保存、轉傳，都可能造成很嚴重的傷害與法律責任。即使沒有真的拿到照片，你讓對方害怕，也已經越界。」<br><br>後來，班上上了一堂數位安全課。老師在螢幕上放出四句話：<br><br>**不拍。  <br>不傳。  <br>不存。  <br>不威脅。**<br><br>真正值得留下的照片，應該讓人安心，而不是害怕。",
+                              think: [
+                                      "小珊為什麼覺得阿杰的要求讓她不舒服？",
+                                      "阿杰說「不傳就是不信任我」，這句話給小珊什麼壓力？",
+                                      "為什麼小珊選擇截圖後找老師，是正確的做法？"
+                              ],
+                              reminder: "身體隱私非常重要。<br><br>任何讓人裸露、私密、羞恥或不舒服的影像，都不能被要求、拍攝、保存、散布或拿來威脅。<br><br>就算對方是朋友、同學、喜歡的人，或網路上認識的人，也不可以要求別人傳私密照片。如果對方說不要，就要停止。<br><br>如果有人用「你不傳就是不信任我」「你不傳我就生氣」「你不傳我就散布你的事」來施壓，這不是關心，也不是玩笑。<br><br>法治教育提醒我們：<br><br>**私密影像不是玩笑。  <br>不拍、不傳、不存、不威脅。  <br>看到、收到或被要求時，要立刻求助。**",
+                              actions: [
+                                      "「我不傳。」",
+                                      "「請你不要再要求。」",
+                                      "「這讓我很不舒服。」",
+                                      "「我要找老師或家人協助。」",
+                                      "不答應。",
+                                      "不繼續單獨爭辯。",
+                                      "截圖保存訊息。",
+                                      "告訴導師、輔導老師或家人。",
+                                      "封鎖或停止互動，由大人協助處理。",
+                                      "不轉傳。",
+                                      "不存來欣賞或取笑。",
+                                      "不拿來威脅別人。",
+                                      "不傳到群組。",
+                                      "保留必要資訊後找大人協助。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "朋友要求我傳私密照片，如果我不舒服，可以拒絕。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "收到同學的私密影像，只要不傳出去，存在手機裡就一定沒問題。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "私密影像不能拿來威脅、嘲笑或轉傳。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "如果群組裡出現同學的私密照片，你比較好的做法是什麼？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "匿名帳號不是隱形斗篷",
+                              core: "網路匿名，不代表可以任意罵人、嘲笑、影射或散布不實訊息。",
+                              story: "六年己班快畢業了。<br><br>最近班上很多人開始經營自己的社群帳號。有些人分享日常照片，有些人放手作作品，也有人在限時動態裡記錄畢業倒數。<br><br>阿哲也開了一個匿名帳號。<br><br>那個帳號沒有放真名，也沒有頭像，只用一張灰色圖片當大頭貼。阿哲一開始只是拿來看影片、按讚，後來慢慢覺得，匿名帳號好像可以說一些平常不敢說的話。<br><br>有一天，班上選畢業典禮代表。小晴被選上了。<br><br>小晴平常認真、負責，老師和同學都覺得她適合代表班級致詞。可是阿哲心裡不太服氣。他也想被選上，只是投票結果差了一些。<br><br>晚上，阿哲用匿名帳號發了一則限時動態：<br><br>「某些人真的很愛裝乖，老師面前一套，同學面前一套。」<br><br>他沒有寫小晴的名字。<br><br>可是他加了一個畢業典禮麥克風的圖案，又寫了「代表」兩個字。班上很多同學一看，就猜到是在說小晴。<br><br>隔天，有人把截圖傳到群組。<br><br>「這是不是在講小晴？」  <br>「感覺很像耶。」  <br>「誰發的啊？」  <br>「匿名帳號好敢講。」<br><br>小晴看著那幾行字，心裡沉了一下。<br><br>她不知道是誰寫的，也不知道有多少人看過。更難受的是，明明沒有指名道姓，卻像有一支看不見的箭，往她身上射過來。<br><br>接下來幾天，那個匿名帳號又發了幾則動態。<br><br>「有些人靠討好老師得到機會。」  <br>「大家自己知道我在說誰。」  <br>「裝乖代表，笑死。」<br><br>同學開始猜測帳號主人是誰，也有人在群組裡跟著留言。<br><br>小晴變得很沉默。她不再主動練習畢業致詞，甚至想跟老師說自己不要當代表了。<br><br>導師發現後，私下找小晴談話。小晴把截圖拿給老師看，眼眶紅紅地說：<br><br>「老師，他沒有寫我的名字，可是大家都知道是在說我。」<br><br>老師點點頭：<br><br>「影射也可能造成傷害。沒有寫名字，不代表沒有責任。」<br><br>幾天後，阿哲被找去談話。<br><br>一開始，他說：「老師，我又沒有寫她名字，而且那是匿名帳號。」<br><br>老師問他：<br><br>「如果大家都知道你在說誰，這還算沒有影響嗎？」  <br>「你用匿名帳號，是不是因為你知道這些話不適合當面說？」  <br>「如果有人用匿名帳號這樣說你，你會有什麼感覺？」<br><br>阿哲低著頭，沒有回答。<br><br>老師說：<br><br>「匿名不是隱形斗篷。網路上的話，會留下痕跡；更重要的是，它會落在真實的人身上。」<br><br>後來，阿哲刪除那些動態，向小晴道歉，也在輔導老師協助下，學習面對落選的失望。<br><br>匿名帳號不是隱形斗篷。  <br>它遮得住名字，遮不住責任。",
+                              think: [
+                                      "阿哲為什麼用匿名帳號發文？",
+                                      "他沒有寫小晴的名字，為什麼小晴還是受到傷害？",
+                                      "群組裡跟著猜測、留言的人，對事情有什麼影響？"
+                              ],
+                              reminder: "網路匿名，不代表可以任意罵人、嘲笑、影射或散布不實訊息。<br><br>有些人以為沒有寫真名，就不用負責。可是如果內容讓大家能猜出是在說誰，並造成對方被嘲笑、排擠、名譽受損或心裡害怕，仍然可能成為嚴重問題。<br><br>網路上的行為也會留下痕跡，例如截圖、留言紀錄、轉傳紀錄、帳號資料與同學的證明。<br><br>法治教育提醒我們：<br><br>**匿名不是隱形。  <br>影射也是傷害。  <br>網路上的話，也要負責。**",
+                              actions: [
+                                      "先讓自己冷靜。",
+                                      "找老師或輔導老師談。",
+                                      "用合適方式表達感受。",
+                                      "不用匿名帳號攻擊。",
+                                      "不在群組或限動影射對方。",
+                                      "截圖保留。",
+                                      "不急著公開反擊。",
+                                      "告訴導師或家人。",
+                                      "請老師協助停止轉傳和留言。",
+                                      "不把別人的惡意全都變成自己的錯。",
+                                      "不按讚。",
+                                      "不留言起鬨。",
+                                      "不轉傳截圖。",
+                                      "提醒別人停止猜測。",
+                                      "把內容交給老師或家人協助。"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "匿名帳號發文，就一定不會留下任何責任。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "沒有寫名字，但大家都猜得到是在說誰，也可能造成傷害。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "看到匿名攻擊同學時，不轉傳、不留言起鬨，是一種保護。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "你看到匿名帳號發文影射同學，群組裡大家開始猜是誰。你比較好的做法是什麼？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "我可以說明嗎？",
+                              core: "法治教育不只是告訴我們「做錯事要負責」，也提醒我們：處理事情要公平。",
+                              story: "六年庚班的畢業旅行快到了。<br><br>班上最近都在討論分房、晚會表演和要帶什麼零食。大家心情很興奮，教室裡常常像一鍋快要滾起來的湯。<br><br>這天午休後，導師發現班上的畢業旅行費用袋少了一包。<br><br>那是早上幾位同學交來的費用，老師原本放在講桌抽屜裡，準備下午交給總務處。<br><br>老師先請全班不要離開教室，接著詢問：「今天午休時間，誰有靠近講桌？」<br><br>教室裡一下子安靜下來。<br><br>有人小聲說：「我看到小澤午休時在講桌旁邊。」<br><br>幾個人的眼神立刻轉向小澤。<br><br>小澤愣住：「我只是去拿粉筆。」<br><br>另一位同學說：「可是我看到你有打開抽屜。」<br><br>小澤急著說：「我沒有拿錢！」<br><br>他的聲音太大，反而讓教室更緊張。<br><br>有同學小聲說：「他那麼激動，很可疑吧。」  <br>也有人說：「之前他不是也忘記交錢？」<br><br>小澤的臉漲紅，手緊緊握著。<br><br>老師看見氣氛越來越亂，立刻說：<br><br>「還沒有查清楚以前，不能先說誰拿了。大家先停止猜測。」<br><br>老師沒有讓全班繼續討論，而是先請學生回座位，接著一一確認上午的狀況。<br><br>小澤被請到旁邊說明。<br><br>他低著頭說：「老師，我真的只是去拿粉筆。因為黑板旁邊沒有了，我看到講桌抽屜有一盒，就打開拿。」<br><br>老師問：「你願意把當時的情形再說清楚嗎？」<br><br>小澤點點頭。<br><br>老師也請當時看到他的同學說明看見的內容：看到小澤打開抽屜，但沒有看到他拿費用袋。<br><br>接著，老師檢查教室周圍，也請班長協助回想早上收費流程。<br><br>後來，事情終於釐清。<br><br>原來早上老師整理資料時，把其中一包費用袋夾在畢業旅行同意書資料夾裡。資料夾後來被放進辦公室櫃子，並沒有遺失。<br><br>老師回到班上，向大家說明：<br><br>「費用袋找到了，不是同學拿走。剛才有人被懷疑，老師也要提醒大家，沒有查清楚以前，不可以亂指責。」<br><br>小澤坐在位置上，眼眶有點紅。<br><br>老師走到他旁邊說：<br><br>「剛才讓你承受很多壓力，老師也跟你說聲抱歉。謝謝你願意說明。」<br><br>隔天綜合課，老師在黑板上寫下：<br><br>**做錯事，要負責。  <br>被懷疑時，也有說明的權利。  <br>處理事情，要先查清楚。**<br><br>法治不是只在有人做錯時出現。  <br>法治也在一個人被懷疑時，替他留下一個能說明的位置。",
+                              think: [
+                                      "為什麼同學一聽到小澤靠近講桌，就開始懷疑他？",
+                                      "如果沒有查清楚就公開指責，可能造成什麼傷害？",
+                                      "「做錯事要負責」和「被懷疑時可以說明」有沒有衝突？"
+                              ],
+                              reminder: "法治教育不只是告訴我們「做錯事要負責」，也提醒我們：處理事情要公平。<br><br>如果有人被懷疑，不能只靠猜測、傳言或大家的印象，就直接認定他做錯。應該先了解事實，聽相關的人說明，再依情況處理。<br><br>學生也有被尊重、被聽見、被公平對待的權利。<br><br>法治教育提醒我們：<br><br>**懷疑，不等於事實。  <br>說明，不等於狡辯。  <br>公平處理，是保護每一個人。**<br><br>如果真的做錯了，還是要面對責任。但責任應該建立在清楚的事實上，而不是起鬨、猜測或公開羞辱上。",
+                              actions: [
+                                      "先讓自己冷靜。",
+                                      "清楚說明發生經過。",
+                                      "請老師讓我完整說明。",
+                                      "提供能幫助釐清的資料。",
+                                      "如果覺得害怕，可以請家人或輔導老師協助。",
+                                      "「我想說明當時發生什麼事。」",
+                                      "「我沒有拿，我可以說清楚。」",
+                                      "「請不要在還沒查清楚前說是我。」",
+                                      "「我需要老師協助釐清。」",
+                                      "「還沒查清楚，不要先說是他。」",
+                                      "「我們讓老師處理。」",
+                                      "「先不要傳。」",
+                                      "「有看到什麼，就說看到的事實，不要加猜測。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "懷疑某個人，就可以直接說他一定做錯。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "被懷疑時，學生有說明事情經過的權利。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "如果真的做錯了，還是要負責。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "班上有人說小安偷拿同學的筆，但沒有人真的看到。你比較好的做法是什麼？"
+                                      }
+                              ]
+                      },
+                      {
+                              title: "畢業前的法治小考",
+                              core: "法治教育不是只背法條，也不是只記得「做錯會被罰」。",
+                              story: "六年辛班的畢業考結束後，導師林老師沒有立刻讓大家放鬆玩桌遊，而是在黑板上寫下幾個大字：<br><br><strong>畢業前的法治小考</strong><br><br>全班一看到「小考」兩個字，立刻發出一陣哀號。<br><br>「老師，畢業考才剛結束耶！」  <br>「這也要考嗎？」  <br>「會不會算成績？」<br><br>林老師笑了笑，搖頭說：<br><br>「這次不考背法條，也不考誰記得比較多。今天要考的是，你們遇到事情時，會不會判斷。」<br><br>老師把全班分成六組，每組拿到一張闖關卡。<br><br>第一關，叫作「撿到耳機」。<br><br>卡片上寫：<br><br>你在操場撿到一副很新的無線耳機，旁邊沒有名字。朋友說：「先拿回去用看看，沒人找再說。」你會怎麼做？<br><br>小宇說：「交給老師或學務處。」<br><br>小晴補充：「不能因為撿到就變成自己的。」<br><br>第二關，叫作「群組裡的截圖」。<br><br>卡片上寫：<br><br>有人把同學的私訊截圖傳到群組，大家開始嘲笑。你收到截圖時，可以怎麼做？<br><br>小恩說：「不要再傳。」<br><br>小婷說：「可以提醒大家，這是別人的私訊。」<br><br>阿哲想了想：「如果已經很多人傳，就找老師幫忙處理，不要自己一直吵。」<br><br>第三關，叫作「我只是開玩笑」。<br><br>卡片上寫：<br><br>有人拉同學椅子，害對方跌倒，還說：「只是開玩笑啦。」你覺得這樣可以嗎？<br><br>全組同時搖頭。<br><br>小杰說：「讓人受傷就不能只說開玩笑。」<br><br>第四關，叫作「喜歡與拒絕」。<br><br>卡片上寫：<br><br>有同學向喜歡的人告白，對方拒絕後，他還是每天傳訊息、送東西、等對方放學。這樣算是真心嗎？<br><br>小真說：「不算。對方拒絕後，就要停止。」<br><br>第五關，叫作「匿名帳號」。<br><br>卡片上寫：<br><br>有人用匿名帳號影射同學，雖然沒有寫名字，但大家都猜得到是在說誰。你會怎麼判斷？<br><br>阿凱說：「匿名不是沒責任。」<br><br>第六關，叫作「我可以說明嗎？」<br><br>卡片上寫：<br><br>班上有東西不見了，有人說一定是某位同學拿的，但沒有人真的看到。這時候班上應該怎麼做？<br><br>小澤說：「不能先說是他。」<br><br>小晴說：「要讓相關的人說明。」<br><br>小宇補充：「先查清楚，再處理。」<br><br>六關結束後，老師請各組把闖關卡貼在黑板上。<br><br>黑板慢慢被一張張卡片填滿：<br><br>**不是自己的東西，要先問。  <br>說話不能傷人。  <br>身體界線要尊重。  <br>網路留言也要負責。  <br>看到霸凌，不跟著笑。  <br>不拍、不傳、不存私密影像。  <br>被拒絕後，要停下來。  <br>做錯事，要修復。  <br>被懷疑時，也有說明的權利。**<br><br>林老師看著全班，輕聲說：<br><br>「這些不是為了讓你們害怕法律，而是希望你們進入國中後，遇到事情時，能多想一下。」<br><br>法治不是害怕被處罰，  <br>是知道怎麼讓自己和別人都安全。",
+                              think: [
+                                      "這些闖關情境中，哪一個最接近你可能遇到的生活？",
+                                      "你覺得法治教育是在教人害怕法律，還是在教人做判斷？",
+                                      "進入國中後，你最想提醒自己哪一句法治小句？"
+                              ],
+                              reminder: "法治教育不是只背法條，也不是只記得「做錯會被罰」。<br><br>真正的法治，是在生活裡學會：<br><br>- 尊重別人的身體<br>- 尊重別人的物品<br>- 尊重別人的名譽<br>- 尊重別人的隱私<br>- 尊重別人的拒絕<br>- 遇到事情時先查清楚<br>- 做錯事後願意負責<br>- 受到傷害時知道求助<br><br>法律像一條界線。它不是要把人困住，而是提醒我們：自己的自由不能傷害別人的安全和尊嚴。<br><br>法治教育提醒我們：<br><br>**做決定前，先想界線。  <br>傷害發生時，記得求助。  <br>做錯事後，學會修復。  <br>被懷疑時，也要公平處理。**",
+                              actions: [
+                                      "停一下：在生氣、想轉傳、想惡作劇、想回罵時，先停三秒。",
+                                      "說清楚：當我不舒服時，可以說「我不喜歡」「請停止」「我不同意」。",
+                                      "不跟著：看到別人嘲笑、排擠、轉傳、起鬨時，我可以不加入。",
+                                      "找大人：遇到威脅、霸凌、性平、私密影像、跟蹤騷擾、重大衝突時，不要自己一個人承受。",
+                                      "願意修復：如果我做錯了，我可以承認、道歉、停止、補救、避免再犯。",
+                                      "不跟著笑。",
+                                      "不轉傳。",
+                                      "不拍攝。",
+                                      "不幫忙起鬨。",
+                                      "陪同學離開。",
+                                      "私下告訴老師。",
+                                      "保留必要資料，交給大人處理。",
+                                      "說一句：「這樣不太對。」"
+                              ],
+                              quiz: [
+                                      {
+                                              type: "tf",
+                                              q: "法治教育只是要我們害怕被處罰。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "看到同學被嘲笑時，不跟著笑也是一種幫忙。"
+                                      },
+                                      {
+                                              type: "tf",
+                                              q: "網路上的截圖、留言和匿名攻擊，也可能造成真實傷害。"
+                                      },
+                                      {
+                                              type: "scenario",
+                                              q: "請寫下你畢業前最想帶走的一句法治提醒，並說明原因。"
+                                      }
+                              ]
+                      }
+              ]
+      }
+    ];
+
+    const presentationLessonNotes = [
+      {
+        openingCore: "身體是自己的，不舒服可以說停。",
+        summary: [
+          "小宇玩遊戲時突然抱住阿哲。",
+          "阿哲覺得不舒服，卻怕被笑。",
+          "老師陪阿哲把感受說出來。",
+          "大家學會：遊戲也要尊重身體界線。"
+        ],
+        think: [
+          "身體不舒服時，可能有哪些提醒？",
+          "聽到同學說不喜歡，你可以怎麼回應？",
+          "玩遊戲前，可以先約定哪些安全規則？"
+        ],
+        discussion: [
+          "這件事裡，誰覺得不舒服？",
+          "哪一個時候可以停下來？",
+          "如果你在現場，可以做一件什麼事？"
+        ],
+        lawMain: "每個人都有身體自主權。",
+        lawDetail: "讓人害怕、疼痛或不舒服的碰觸，不應被當成玩笑。",
+        actions: [
+          "清楚說：請停下來。",
+          "移到安全距離。",
+          "告訴可信任的大人。",
+          "陪被困擾的同學求助。"
+        ]
+      },
+      {
+        openingCore: "借用以前，要先得到同意。",
+        summary: [
+          "小晴忘了帶色鉛筆。",
+          "她沒有先問，就拿同學的筆使用。",
+          "小恩發現珍惜的筆被動過，很難過。",
+          "小晴道歉，約定下次先詢問。"
+        ],
+        think: [
+          "沒有惡意，為什麼仍可能傷害別人？",
+          "借用和自己拿來用，有什麼不同？",
+          "很需要物品時，可以怎麼開口？"
+        ],
+        discussion: [
+          "誰的物品需要被尊重？",
+          "小晴可以在哪一步先停下來？",
+          "你會怎麼開口借用？"
+        ],
+        lawMain: "物品有主人，使用前要先取得同意。",
+        lawDetail: "尊重別人的物品，也是在保護彼此的信任。",
+        actions: [
+          "先問可不可以借。",
+          "說清楚用途和時間。",
+          "用完完整歸還。",
+          "弄壞時誠實補救。"
+        ]
+      },
+      {
+        openingCore: "真正的玩笑，不能讓人受傷。",
+        summary: [
+          "同學模仿小杰說話比較慢。",
+          "大家笑了，小杰卻越來越難過。",
+          "有人說只是開玩笑。",
+          "老師提醒：玩笑要讓彼此都舒服。"
+        ],
+        think: [
+          "同學笑了，代表他一定不在意嗎？",
+          "玩笑和嘲笑要怎麼分辨？",
+          "旁觀者跟著笑，會造成什麼影響？"
+        ],
+        discussion: [
+          "這個玩笑讓誰不舒服？",
+          "哪一句話可以提醒大家停下來？",
+          "旁觀者可以幫忙做什麼？"
+        ],
+        lawMain: "言語也可能造成傷害。",
+        lawDetail: "嘲笑、取綽號、排擠或讓人難堪，都可能破壞尊重。",
+        actions: [
+          "說：這樣讓人不舒服。",
+          "不跟著起鬨。",
+          "支持被嘲笑的同學。",
+          "說錯話就道歉並停止。"
+        ]
+      },
+      {
+        openingCore: "照片和影片，分享前要先想一想。",
+        summary: [
+          "柏安拍到同學睡著的照片。",
+          "他覺得好笑，想傳到群組。",
+          "佳穎提醒：如果是你會喜歡嗎？",
+          "柏安刪掉照片，學會先問同意。"
+        ],
+        think: [
+          "照片傳出去後，為什麼難以控制？",
+          "出糗畫面可以因為好笑就分享嗎？",
+          "不想被拍或被傳時，可以怎麼說？"
+        ],
+        discussion: [
+          "照片裡的人可能有什麼感受？",
+          "傳出去前，可以先問哪一句？",
+          "收到照片時，怎樣做比較安全？"
+        ],
+        lawMain: "每個人都有隱私與肖像被尊重的權利。",
+        lawDetail: "讓人難堪、受辱或害怕的影像，不應拍攝或散布。",
+        actions: [
+          "拍照前先問。",
+          "分享前再確認。",
+          "收到出糗影像不轉傳。",
+          "被亂傳時保留證據並求助。"
+        ]
+      },
+      {
+        openingCore: "讓你不安的秘密，可以說出來。",
+        summary: [
+          "高年級學生要安安藏水壺。",
+          "對方要求保密，不准告訴老師。",
+          "安安心裡覺得怪怪的。",
+          "她告訴導師，老師協助處理。"
+        ],
+        think: [
+          "什麼秘密會讓人感到壓力？",
+          "被要求不准說時，為什麼更需要求助？",
+          "如果怕被罵，可以先找誰？"
+        ],
+        discussion: [
+          "安安哪裡覺得不對勁？",
+          "你會怎麼跟老師說？",
+          "還可以找哪一位大人？"
+        ],
+        lawMain: "危險秘密不需要獨自守住。",
+        lawDetail: "讓人害怕、羞愧、受威脅，或會傷害人的秘密，應該告訴可信任的大人。",
+        actions: [
+          "相信自己的不舒服感。",
+          "找可信任的大人說明。",
+          "說出人、事、時、地。",
+          "沒被理解時繼續求助。"
+        ]
+      },
+      {
+        openingCore: "衝突可以處理，不必讓傷害變大。",
+        summary: [
+          "兩隊為了球有沒有出界爭執。",
+          "聲音變大，甚至有人開始推人。",
+          "老師請大家先暫停、說事實。",
+          "同學重新約定判斷方法。"
+        ],
+        think: [
+          "哪些做法會讓衝突升高？",
+          "說事實和罵人有什麼不同？",
+          "什麼時候需要第三人協助？"
+        ],
+        discussion: [
+          "哪一個時候可以先暫停？",
+          "怎樣說比較不會吵更大？",
+          "如果你在現場，可以做什麼？"
+        ],
+        lawMain: "規則保護每個人的安全。",
+        lawDetail: "衝突可以討論，但推擠、辱罵或威脅會造成新的傷害。",
+        actions: [
+          "先停下來，拉開距離。",
+          "用事實和感受表達。",
+          "一起找規則。",
+          "無法溝通時找老師。"
+        ]
+      },
+      {
+        openingCore: "公共空間，需要大家一起守護。",
+        summary: [
+          "圖書館新漫畫被折壞、畫線。",
+          "有人覺得公物不是自己的。",
+          "老師提醒：破壞會影響下一位使用者。",
+          "班上訂出借閱守則與輪值。"
+        ],
+        think: [
+          "公物不是自己的，為什麼仍要珍惜？",
+          "破壞公物會影響哪些人？",
+          "班級可以怎麼共同守護？"
+        ],
+        discussion: [
+          "這件事影響了哪些人？",
+          "看到公物受損，可以怎麼做？",
+          "班上可以訂一個什麼規則？"
+        ],
+        lawMain: "公共資源屬於大家，也需要大家負責。",
+        lawDetail: "愛護公物，是尊重他人的使用權，也是維護自己的學習環境。",
+        actions: [
+          "使用前確認規則。",
+          "用完恢復原狀。",
+          "損壞時主動告知。",
+          "看到破壞時提醒或求助。"
+        ]
+      },
+      {
+        openingCore: "會求助，是保護自己的能力。",
+        summary: [
+          "老師請大家畫求助地圖。",
+          "翔翔一開始只想到媽媽。",
+          "老師提醒：學校也有許多可求助的大人。",
+          "大家把求助名單放進聯絡簿。"
+        ],
+        think: [
+          "為什麼求助名單不只一個人？",
+          "不同地點可以找的人一樣嗎？",
+          "說明事情時，哪些資訊最重要？"
+        ],
+        discussion: [
+          "你在學校可以找誰求助？",
+          "你會怎麼把事情說清楚？",
+          "如果第一次沒成功，還能怎麼做？"
+        ],
+        lawMain: "兒童有被保護與安全學習的權利。",
+        lawDetail: "遇到危險、霸凌、威脅或自己處理不了的問題，可以向可信任的大人求助。",
+        actions: [
+          "寫下三位可信任大人。",
+          "說清楚人、事、時、地。",
+          "緊急時先到安全地方。",
+          "看到同學需要，也陪他求助。"
+        ]
+      }
+    ];
+
+    const presentationQuizNotes = [
+      {
+        tf: [
+          "別人碰你讓你不舒服時，可以說停。",
+          "玩遊戲時，也要尊重同學的身體界線。"
+        ],
+        scenario: "同學突然抱住你，你可以怎麼做？"
+      },
+      {
+        tf: [
+          "使用別人的物品前，要先問過主人。",
+          "借來的東西弄壞了，要誠實說明。"
+        ],
+        scenario: "忘了帶文具，你會怎麼借？"
+      },
+      {
+        tf: [
+          "讓人難過的話，不適合說成只是玩笑。",
+          "看到同學被取笑，可以選擇不跟著笑。"
+        ],
+        scenario: "有人取笑同學，你可以做什麼？"
+      },
+      {
+        tf: [
+          "分享別人的照片前，要先得到同意。",
+          "收到讓人難堪的照片，不應該再轉傳。"
+        ],
+        scenario: "收到出糗照片，怎樣比較安全？"
+      },
+      {
+        tf: [
+          "讓人害怕的秘密，可以告訴可信任的大人。",
+          "有人要求你做不對的事時，可以拒絕。"
+        ],
+        scenario: "有人要你保密壞事，你找誰？"
+      },
+      {
+        tf: [
+          "衝突變激烈時，可以先暫停再說。",
+          "推人或罵人會讓衝突更難處理。"
+        ],
+        scenario: "比賽快吵起來，怎麼先停下？"
+      },
+      {
+        tf: [
+          "公物是大家一起使用的資源。",
+          "發現公物壞了，可以主動告訴老師。"
+        ],
+        scenario: "看到圖書被畫線，可以怎麼做？"
+      },
+      {
+        tf: [
+          "求助不是麻煩別人，是保護自己的方法。",
+          "第一位大人沒聽懂時，還可以找下一位。"
+        ],
+        scenario: "遇到難題，你會怎麼說清楚？"
+      }
+    ];
+
+    let currentGradeId = handbookData[0].gradeId;
+    const activeLessonByGrade = Object.fromEntries(handbookData.map((grade) => [grade.gradeId, 0]));
+
+    const overviewGrid = document.getElementById("overviewGrid");
+    const desktopGradeNav = document.getElementById("desktopGradeNav");
+    const desktopLessonNav = document.getElementById("desktopLessonNav");
+    const mobileGradeNav = document.getElementById("mobileGradeNav");
+    const mobileLessonNav = document.getElementById("mobileLessonNav");
+    const gradeContainer = document.getElementById("gradeContainer");
+    const printCurrentButton = document.getElementById("printCurrent");
+    const printAllButton = document.getElementById("printAll");
+    const topPrintCurrentButton = document.getElementById("topPrintCurrent");
+    const topPrintAllButton = document.getElementById("topPrintAll");
+    const readingModeButton = document.getElementById("readingModeButton");
+    const presentationModeButton = document.getElementById("presentationModeButton");
+    const presentationStage = document.getElementById("presentationStage");
+    const slideFrame = document.getElementById("slideFrame");
+    const previousSlideButton = document.getElementById("previousSlide");
+    const nextSlideButton = document.getElementById("nextSlide");
+    const returnReadingButton = document.getElementById("returnReading");
+    const slideCount = document.getElementById("slideCount");
+    let presentationSlides = [];
+    let currentSlideIndex = 0;
+    let currentPresentationGradeId = currentGradeId;
+    let lastLessonSelectionAt = 0;
+
+    function getLessonId(gradeId, lessonIndex) {
+      return `${gradeId}-lesson-${lessonIndex + 1}`;
+    }
+
+    function createButton(text, className, onClick) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = className;
+      button.textContent = text;
+      button.addEventListener("click", onClick);
+      return button;
+    }
+
+    function renderOverview() {
+      overviewGrid.innerHTML = "";
+      handbookData.forEach((grade, index) => {
+        const card = document.createElement("article");
+        card.className = "overview-card";
+        card.innerHTML = `
+          <div>
+            <span class="overview-tag">${grade.gradeTitle}</span>
+            <strong>${grade.gradeSubtitle}</strong>
+            <p>${grade.gradeSummary}</p>
+          </div>
+          <p>${grade.lessons.length ? "已建立 8 課完整內容" : "內容整理中"}</p>
+        `;
+        card.addEventListener("click", () => {
+          setCurrentGrade(grade.gradeId, true);
+          document.getElementById("mainContent").focus({ preventScroll: true });
+        });
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `切換到${grade.gradeTitle}`);
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setCurrentGrade(handbookData[index].gradeId, true);
+          }
+        });
+        overviewGrid.appendChild(card);
+      });
+    }
+
+    function renderGradeNav() {
+      desktopGradeNav.innerHTML = "";
+      mobileGradeNav.innerHTML = "";
+      handbookData.forEach((grade) => {
+        const label = `${grade.gradeTitle}｜${grade.gradeSubtitle}`;
+        const desktopButton = createButton(label, "nav-button", () => setCurrentGrade(grade.gradeId, true));
+        desktopButton.dataset.gradeTarget = grade.gradeId;
+        desktopGradeNav.appendChild(desktopButton);
+
+        const mobileButton = createButton(grade.gradeTitle, "mobile-pill", () => setCurrentGrade(grade.gradeId, true));
+        mobileButton.dataset.gradeTarget = grade.gradeId;
+        mobileGradeNav.appendChild(mobileButton);
+      });
+    }
+
+    function renderLessonNav(grade) {
+      desktopLessonNav.innerHTML = "";
+      mobileLessonNav.innerHTML = "";
+
+      if (!grade.lessons.length) {
+        const desktopPending = document.createElement("p");
+        desktopPending.textContent = "內容整理中";
+        desktopPending.style.color = "rgba(255,255,255,.72)";
+        desktopPending.style.margin = "4px 0 0";
+        desktopLessonNav.appendChild(desktopPending);
+
+        const mobilePending = document.createElement("span");
+        mobilePending.className = "mobile-pill";
+        mobilePending.textContent = "內容整理中";
+        mobileLessonNav.appendChild(mobilePending);
+        return;
+      }
+
+      grade.lessons.forEach((lesson, index) => {
+        const lessonId = getLessonId(grade.gradeId, index);
+        const text = `${index + 1}. ${lesson.title}`;
+
+        const desktopLink = createButton(text, "lesson-link", () => scrollToLesson(lessonId));
+        desktopLink.dataset.lessonTarget = lessonId;
+        desktopLessonNav.appendChild(desktopLink);
+
+        const mobileLink = createButton(text, "mobile-pill", () => scrollToLesson(lessonId));
+        mobileLink.dataset.lessonTarget = lessonId;
+        mobileLessonNav.appendChild(mobileLink);
+      });
+
+      updateActiveLessonNav(grade.gradeId, activeLessonByGrade[grade.gradeId] || 0);
+    }
+
+    function renderGrades() {
+      gradeContainer.innerHTML = "";
+
+      handbookData.forEach((grade) => {
+        const section = document.createElement("section");
+        section.className = "grade-section";
+        section.id = grade.gradeId;
+        section.dataset.gradeSection = grade.gradeId;
+
+        section.appendChild(renderGradeCover(grade));
+        section.appendChild(renderSummaryPanel(grade));
+
+        if (grade.lessons.length) {
+          grade.lessons.forEach((lesson, index) => {
+            section.appendChild(renderLessonCard(grade, lesson, index));
+          });
+        } else {
+          const pending = document.createElement("div");
+          pending.className = "pending-panel";
+          pending.innerHTML = `
+            <span class="pending-status">正式佔位｜內容整理中</span>
+            <div>
+              <strong>${grade.gradeTitle}課程內容整理中</strong>
+              <p>本年級已建立封面、全冊整理表與 8 課擴充位置。後續補入課名、故事、討論題、法律提醒、行動方法與小測驗後，即可沿用同一版型。</p>
+            </div>
+            <div class="pending-grid" aria-label="${grade.gradeTitle}待補課程位置">
+              ${Array.from({ length: 8 }, (_, slotIndex) => `<div class="pending-slot">第 ${slotIndex + 1} 課<br>待補內容</div>`).join("")}
+            </div>
+          `;
+          section.appendChild(pending);
+        }
+
+        gradeContainer.appendChild(section);
+      });
+    }
+
+    function renderGradeCover(grade) {
+      const cover = document.createElement("article");
+      cover.className = "grade-cover";
+      cover.innerHTML = `
+        <div class="grade-logo-badge">
+          <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
+          <span>新竹市香山區內湖國民小學</span>
+        </div>
+        <div class="grade-cover-content">
+          <p class="grade-kicker">法治教育學生手冊｜${grade.gradeTitle}</p>
+          <h2>${grade.gradeTitle}</h2>
+          <p class="grade-subtitle">${grade.gradeSubtitle}</p>
+          <p class="grade-summary">${grade.gradeSummary}</p>
+        </div>
+      `;
+      return cover;
+    }
+
+    function renderSummaryPanel(grade) {
+      const panel = document.createElement("article");
+      panel.className = "summary-panel";
+
+      const rows = grade.lessons.length
+        ? grade.lessons.map((lesson, index) => `
+            <tr>
+              <td>第 ${index + 1} 課</td>
+              <td>${lesson.title}</td>
+              <td>${lesson.core}</td>
+            </tr>
+          `).join("")
+        : `
+            <tr>
+              <td>第 1～8 課</td>
+              <td>正式佔位</td>
+              <td>內容整理中。已保留 8 課擴充位置，待後續補入課名、故事與活動內容。</td>
+            </tr>
+          `;
+
+      panel.innerHTML = `
+        <h3 class="panel-title">${grade.gradeTitle}全冊整理表</h3>
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th scope="col">課次</th>
+              <th scope="col">主題</th>
+              <th scope="col">學習重點</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `;
+      return panel;
+    }
+
+    function renderLessonCard(grade, lesson, index) {
+      const card = document.createElement("article");
+      card.className = "lesson-card";
+      card.id = `${grade.gradeId}-lesson-${index + 1}`;
+
+      card.innerHTML = `
+        <header class="lesson-header">
+          <div class="lesson-number">${index + 1}</div>
+          <div>
+            <h3 class="lesson-title">${lesson.title}</h3>
+            <p class="lesson-core">${lesson.core}</p>
+          </div>
+        </header>
+        <div class="lesson-body">
+          <section class="block story">
+            <h4>故事</h4>
+            <p class="story-text">${lesson.story}</p>
+          </section>
+          <section class="block">
+            <h4>停一下，想一想</h4>
+            ${renderList(lesson.think, "ul")}
+          </section>
+          <section class="block reminder">
+            <h4>法律小提醒</h4>
+            <p>${lesson.reminder}</p>
+          </section>
+          <section class="block action">
+            <h4>我可以怎麼做</h4>
+            ${renderList(lesson.actions, "ol")}
+          </section>
+          <section class="block quiz">
+            <h4>小測驗</h4>
+            <div class="quiz-list">
+              ${renderQuizItems(lesson.quiz)}
+            </div>
+            ${renderTeacherAnswers(lesson.quiz)}
+          </section>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function renderList(items, tagName) {
+      return `<${tagName}>${items.map((item) => `<li>${item}</li>`).join("")}</${tagName}>`;
+    }
+
+    function renderQuizItems(items) {
+      return items.map((item, quizIndex) => {
+        const isScenario = item.type === "scenario";
+        const label = isScenario ? `情境題：${item.q}` : `${quizIndex + 1}. （　）${item.q}`;
+        return `
+          <div class="quiz-item">
+            <strong>${label}</strong>
+            <div class="response-lines" aria-hidden="true">
+              <div class="response-line"></div>
+              <div class="response-line"></div>
+              ${isScenario ? `<div class="response-line"></div>` : ""}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderTeacherAnswers(items) {
+      const answers = items.filter((item) => item.a);
+      if (!answers.length) return "";
+
+      return `
+        <details class="teacher-answer">
+          <summary>教師參考答案</summary>
+          <div class="teacher-answer-content">
+            <ol>
+              ${answers.map((item) => `<li>${item.a}</li>`).join("")}
+            </ol>
+          </div>
+        </details>
+      `;
+    }
+
+    function padNumber(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function splitStorySentences(text) {
+      const matches = text.match(/[^。！？]+[。！？]/g);
+      return matches ? matches.map((item) => item.trim()) : [text];
+    }
+
+    function trimSlideText(text, maxLength) {
+      if (!text || text.length <= maxLength) return text;
+      const clipped = text.slice(0, maxLength).replace(/[，、；：,.!?！？。]+$/, "");
+      return `${clipped}。`;
+    }
+
+    function updateActiveLessonNav(gradeId, lessonIndex) {
+      const lessonId = getLessonId(gradeId, lessonIndex);
+      document.querySelectorAll("[data-lesson-target]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.lessonTarget === lessonId);
+      });
+    }
+
+    function updateActiveLesson(gradeId, lessonIndex) {
+      const grade = handbookData.find((item) => item.gradeId === gradeId);
+      if (!grade || !grade.lessons.length) return;
+      const safeIndex = Math.max(0, Math.min(grade.lessons.length - 1, lessonIndex));
+      activeLessonByGrade[gradeId] = safeIndex;
+      updateActiveLessonNav(gradeId, safeIndex);
+    }
+
+    function syncReadingPositionFromViewport() {
+      const activeSection = document.querySelector(`[data-grade-section="${currentGradeId}"]:not(.is-hidden)`);
+      const gradeId = activeSection?.dataset.gradeSection || currentGradeId;
+      const grade = handbookData.find((item) => item.gradeId === gradeId);
+      if (!grade || !grade.lessons.length) return;
+
+      currentGradeId = gradeId;
+      const mobileNavHeight = window.innerWidth <= 1020 ? (document.querySelector(".mobile-nav")?.offsetHeight || 0) : 0;
+      const threshold = mobileNavHeight + 150;
+      const selectedLessonIndex = activeLessonByGrade[gradeId] || 0;
+      const isRecentLessonSelection = Date.now() - lastLessonSelectionAt < 2000;
+      if (isRecentLessonSelection) {
+        updateActiveLesson(gradeId, selectedLessonIndex);
+        return;
+      }
+
+      let lessonIndex = selectedLessonIndex;
+      let hasReachedLesson = false;
+
+      grade.lessons.forEach((lesson, index) => {
+        const lessonElement = document.getElementById(getLessonId(gradeId, index));
+        if (lessonElement && lessonElement.getBoundingClientRect().top <= threshold) {
+          lessonIndex = index;
+          hasReachedLesson = true;
+        }
+      });
+
+      updateActiveLesson(gradeId, hasReachedLesson ? lessonIndex : 0);
+    }
+
+    function buildGenericPresentationNotes(lesson) {
+      const storySentences = splitStorySentences(lesson.story || "").filter(Boolean).slice(0, 4);
+      const reminderSentences = splitStorySentences(lesson.reminder || "").filter(Boolean);
+      const quizQuestions = lesson.quiz || [];
+      const discussionItems = (lesson.think || []).slice(0, 2).map((item) => trimSlideText(item, 34));
+
+      if (discussionItems.length < 3) {
+        discussionItems.push("你可以怎麼保護自己或幫助別人？");
+      }
+
+      return {
+        openingCore: trimSlideText(lesson.core || lesson.title, 36),
+        summary: storySentences.map((item) => trimSlideText(item, 36)),
+        think: (lesson.think || []).slice(0, 3).map((item) => trimSlideText(item, 38)),
+        discussion: discussionItems.slice(0, 3),
+        lawMain: trimSlideText(reminderSentences[0] || lesson.reminder || lesson.core, 40),
+        lawDetail: trimSlideText(reminderSentences.slice(1).join("") || lesson.reminder || "", 58),
+        actions: (lesson.actions || []).slice(0, 4).map((item) => trimSlideText(item, 34)),
+        quiz: {
+          tf: quizQuestions.slice(0, 2).map((item) => trimSlideText(item.q, 36)),
+          scenario: trimSlideText((quizQuestions[2] || quizQuestions[0] || {}).q || "遇到類似情境時，你會怎麼做？", 44)
+        }
+      };
+    }
+
+    function getPresentationNotes(grade, lesson, lessonIndex) {
+      if (grade.gradeId === "g3" && presentationLessonNotes[lessonIndex] && presentationQuizNotes[lessonIndex]) {
+        return {
+          ...presentationLessonNotes[lessonIndex],
+          quiz: presentationQuizNotes[lessonIndex]
+        };
+      }
+
+      return buildGenericPresentationNotes(lesson);
+    }
+
+    function buildPresentationSlides(gradeId) {
+      const grade = handbookData.find((item) => item.gradeId === gradeId);
+      if (!grade || !grade.lessons.length) return [];
+
+      return grade.lessons.flatMap((lesson, lessonIndex) => {
+        const notes = getPresentationNotes(grade, lesson, lessonIndex);
+        if (!notes) return [];
+
+        return [
+          {
+            type: "opening",
+            slideType: "opening",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "故事開場",
+            core: notes.openingCore
+          },
+          {
+            type: "summary",
+            slideType: "summary",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "故事摘要",
+            items: notes.summary
+          },
+          {
+            type: "think",
+            slideType: "think",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "停一下，想一想",
+            items: notes.think
+          },
+          {
+            type: "discussion",
+            slideType: "discussion",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "小組討論",
+            subtitle: "2 分鐘討論",
+            items: notes.discussion
+          },
+          {
+            type: "law",
+            slideType: "law",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "法律小提醒",
+            emphasis: notes.lawMain,
+            detail: notes.lawDetail
+          },
+          {
+            type: "action",
+            slideType: "action",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "我可以怎麼做",
+            items: notes.actions,
+            note: "小測驗提醒：先想一想，再說出你的理由。"
+          },
+          {
+            type: "quiz",
+            slideType: "quiz",
+            gradeId: grade.gradeId,
+            lessonIndex,
+            title: lesson.title,
+            label: "小測驗",
+            tf: notes.quiz.tf,
+            scenario: notes.quiz.scenario
+          }
+        ];
+      });
+    }
+
+    function setPresentationStartFromReading() {
+      currentPresentationGradeId = currentGradeId;
+      presentationSlides = buildPresentationSlides(currentPresentationGradeId);
+      const lessonIndex = activeLessonByGrade[currentPresentationGradeId] || 0;
+      const startIndex = presentationSlides.findIndex((slide) => {
+        return slide.gradeId === currentPresentationGradeId && slide.lessonIndex === lessonIndex && slide.slideType === "opening";
+      });
+      currentSlideIndex = startIndex >= 0 ? startIndex : 0;
+    }
+
+    function renderPresentationSlide() {
+      if (!presentationSlides.length) {
+        const grade = handbookData.find((item) => item.gradeId === currentPresentationGradeId) || handbookData.find((item) => item.gradeId === currentGradeId);
+        slideFrame.innerHTML = `
+          <article class="slide slide-card">
+            <header class="slide-header">
+              <div class="slide-meta">${grade ? grade.gradeTitle : "本年級"}</div>
+              <h2 class="slide-title">本年級簡報整理中</h2>
+              ${grade?.gradeSubtitle ? `<p class="slide-subtitle">${grade.gradeSubtitle}</p>` : ""}
+            </header>
+            <div class="slide-body">
+              <p class="slide-core">閱讀模式內容已可使用，簡報版將依課程整理後補上。</p>
+            </div>
+          </article>
+        `;
+        slideCount.textContent = "00 / 00";
+        previousSlideButton.disabled = true;
+        nextSlideButton.disabled = true;
+        return;
+      }
+
+      const slide = presentationSlides[currentSlideIndex];
+      const total = presentationSlides.length;
+      const grade = handbookData.find((item) => item.gradeId === slide.gradeId);
+      const lessonLabel = `${grade ? grade.gradeTitle : "本年級"}｜第 ${slide.lessonIndex + 1} 課`;
+      currentGradeId = slide.gradeId;
+      currentPresentationGradeId = slide.gradeId;
+      activeLessonByGrade[slide.gradeId] = slide.lessonIndex;
+
+      let slideTitle = slide.label;
+      let slideSubtitle = slide.title;
+      let bodyContent = "";
+      if (slide.type === "opening") {
+        slideTitle = slide.title;
+        slideSubtitle = slide.label;
+        bodyContent = `
+          <p class="slide-core">${slide.core}</p>
+        `;
+      } else if (slide.type === "law") {
+        bodyContent = `
+          <div class="slide-emphasis">${slide.emphasis}</div>
+          ${slide.detail ? `<p class="slide-law-detail">${slide.detail}</p>` : ""}
+        `;
+      } else if (slide.type === "discussion") {
+        slideSubtitle = slide.subtitle;
+        bodyContent = `
+          <div class="discussion-grid">
+            ${slide.items.map((item) => `<div class="discussion-card">${item}</div>`).join("")}
+          </div>
+        `;
+      } else if (slide.type === "quiz") {
+        bodyContent = `
+          <div class="quiz-slide-grid">
+            ${slide.tf.map((item) => `
+              <div class="quiz-question-card">
+                <span class="quiz-blank">（　）</span>
+                <span>${item}</span>
+              </div>
+            `).join("")}
+            <div class="quiz-scenario-card">
+              <span>情境題</span>
+              ${slide.scenario}
+            </div>
+          </div>
+        `;
+      } else {
+        bodyContent = `
+          <ul class="slide-list">
+            ${slide.items.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+          ${slide.note ? `<p class="slide-reminder">${slide.note}</p>` : ""}
+        `;
+      }
+
+      slideFrame.innerHTML = `
+        <article class="slide slide-card">
+          ${currentSlideIndex === 0 ? `
+            <div class="slide-logo-badge">
+              <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
+              <span>新竹市香山區內湖國民小學</span>
+            </div>
+          ` : ""}
+          <header class="slide-header">
+            <div class="slide-meta">${lessonLabel}</div>
+            <h2 class="slide-title">${slideTitle}</h2>
+            ${slideSubtitle ? `<p class="slide-subtitle">${slideSubtitle}</p>` : ""}
+          </header>
+          <div class="slide-body">${bodyContent}</div>
+        </article>
+      `;
+
+      slideCount.textContent = `${padNumber(currentSlideIndex + 1)} / ${padNumber(total)}`;
+      previousSlideButton.disabled = currentSlideIndex === 0;
+      nextSlideButton.disabled = currentSlideIndex === total - 1;
+    }
+
+    function setViewMode(mode) {
+      const isPresentation = mode === "presentation";
+      const wasPresentation = document.body.dataset.view === "presentation";
+      if (isPresentation) {
+        syncReadingPositionFromViewport();
+        setPresentationStartFromReading();
+      }
+
+      document.body.dataset.view = isPresentation ? "presentation" : "reading";
+      readingModeButton.classList.toggle("is-active", !isPresentation);
+      presentationModeButton.classList.toggle("is-active", isPresentation);
+      readingModeButton.setAttribute("aria-pressed", String(!isPresentation));
+      presentationModeButton.setAttribute("aria-pressed", String(isPresentation));
+
+      if (isPresentation) {
+        renderPresentationSlide();
+        presentationStage.focus({ preventScroll: true });
+      } else if (wasPresentation) {
+        const slide = presentationSlides[currentSlideIndex];
+        const targetGradeId = slide?.gradeId || currentPresentationGradeId || currentGradeId;
+        const targetLessonIndex = slide?.lessonIndex ?? (activeLessonByGrade[targetGradeId] || 0);
+        setCurrentGrade(targetGradeId, false);
+        updateActiveLesson(targetGradeId, targetLessonIndex);
+        window.requestAnimationFrame(() => {
+          const target = document.getElementById(getLessonId(targetGradeId, targetLessonIndex)) || document.getElementById(targetGradeId);
+          scrollWithHeaderOffset(target);
+        });
+      }
+    }
+
+    function changeSlide(direction) {
+      if (document.body.dataset.view !== "presentation") return;
+      if (!presentationSlides.length) return;
+      const nextIndex = Math.max(0, Math.min(presentationSlides.length - 1, currentSlideIndex + direction));
+      if (nextIndex === currentSlideIndex) return;
+      currentSlideIndex = nextIndex;
+      renderPresentationSlide();
+    }
+
+    function setCurrentGrade(gradeId, shouldScroll) {
+      currentGradeId = gradeId;
+      const grade = handbookData.find((item) => item.gradeId === gradeId);
+
+      document.querySelectorAll("[data-grade-section]").forEach((section) => {
+        const isActive = section.dataset.gradeSection === gradeId;
+        section.classList.toggle("is-hidden", !isActive);
+        section.classList.toggle("print-active", isActive);
+      });
+
+      document.querySelectorAll("[data-grade-target]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.gradeTarget === gradeId);
+      });
+
+      renderLessonNav(grade);
+
+      if (shouldScroll) {
+        lastLessonSelectionAt = 0;
+        updateActiveLesson(gradeId, 0);
+        scrollWithHeaderOffset(document.getElementById(gradeId));
+      }
+    }
+
+    function scrollToLesson(lessonId) {
+      const target = document.getElementById(lessonId);
+      if (!target) return;
+      scrollWithHeaderOffset(target);
+      const match = lessonId.match(/^(g\d+)-lesson-(\d+)$/);
+      if (match) {
+        const gradeId = match[1];
+        const lessonIndex = Number(match[2]) - 1;
+        currentGradeId = gradeId;
+        lastLessonSelectionAt = Date.now();
+        updateActiveLesson(gradeId, lessonIndex);
+      }
+    }
+
+    function scrollWithHeaderOffset(target) {
+      if (!target) return;
+      const mobileNavHeight = window.innerWidth <= 1020 ? (document.querySelector(".mobile-nav")?.offsetHeight || 0) : 0;
+      const offset = mobileNavHeight + 12;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }
+
+    function printHandbook(mode) {
+      document.body.dataset.printMode = mode;
+      document.querySelectorAll("[data-grade-section]").forEach((section) => {
+        section.classList.toggle("print-active", section.dataset.gradeSection === currentGradeId);
+      });
+      window.print();
+      window.setTimeout(() => {
+        document.body.dataset.printMode = "current";
+      }, 500);
+    }
+
+    window.addEventListener("beforeprint", () => {
+      document.querySelectorAll("[data-grade-section]").forEach((section) => {
+        section.classList.toggle("print-active", section.dataset.gradeSection === currentGradeId);
+      });
+    });
+
+    printCurrentButton.addEventListener("click", () => printHandbook("current"));
+    printAllButton.addEventListener("click", () => printHandbook("all"));
+    topPrintCurrentButton.addEventListener("click", () => printHandbook("current"));
+    topPrintAllButton.addEventListener("click", () => printHandbook("all"));
+    readingModeButton.addEventListener("click", () => setViewMode("reading"));
+    presentationModeButton.addEventListener("click", () => setViewMode("presentation"));
+    returnReadingButton.addEventListener("click", () => setViewMode("reading"));
+    previousSlideButton.addEventListener("click", () => changeSlide(-1));
+    nextSlideButton.addEventListener("click", () => changeSlide(1));
+
+    window.addEventListener("keydown", (event) => {
+      if (document.body.dataset.view !== "presentation") return;
+
+      if (event.key === "ArrowRight" || event.key === " ") {
+        event.preventDefault();
+        changeSlide(1);
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        changeSlide(-1);
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        setViewMode("reading");
+      }
+    });
+
+    renderOverview();
+    renderGradeNav();
+    renderGrades();
+    presentationSlides = buildPresentationSlides(currentGradeId);
+    renderPresentationSlide();
+    setCurrentGrade(currentGradeId, false);
+  </script>
+</body>
+</html>

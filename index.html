@@ -711,6 +711,24 @@
       font-weight: 900;
     }
 
+    .slide-response-cue {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin: 8px 0 0;
+      color: #5d6b80;
+      font-size: .92em;
+      font-weight: 900;
+    }
+
+    .slide-response-cue::after {
+      content: "";
+      flex: 1 1 auto;
+      min-width: 4em;
+      height: 1em;
+      border-bottom: 1px solid #9da9b8;
+    }
+
     .presentation-controls {
       justify-self: center;
       display: flex;
@@ -1024,6 +1042,28 @@
     .response-line {
       height: 26px;
       border-bottom: 1px solid #9da9b8;
+    }
+
+    .quiz-response-prompt {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin: 14px 0 0;
+      color: var(--ink-soft);
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .quiz-response-prompt::after {
+      content: "";
+      flex: 1 1 auto;
+      min-width: 8em;
+      height: 1.3em;
+      border-bottom: 1px solid #9da9b8;
+    }
+
+    .response-lines.has-prompt {
+      margin-top: 8px;
     }
 
     .teacher-answer {
@@ -1918,6 +1958,21 @@
 
       .response-line {
         height: 7mm;
+      }
+
+      .quiz-response-prompt {
+        margin-top: 2.5mm;
+        color: #000;
+        font-size: 11.5pt;
+      }
+
+      .quiz-response-prompt::after,
+      .slide-response-cue::after {
+        border-bottom-color: #000;
+      }
+
+      .response-lines.has-prompt {
+        margin-top: 1.8mm;
       }
 
       .site-footer {
@@ -3743,18 +3798,45 @@
       return `<${tagName}>${items.map((item) => `<li>${item}</li>`).join("")}</${tagName}>`;
     }
 
+    function getQuizItemKind(item) {
+      if (item.type === "scenario") return "scenario";
+      if (item.type === "tf" || item.type === "choice") return "closed";
+
+      const question = String(item.q || "");
+      const responsePattern = /怎麼做|怎麼辦|做什麼|做法是什麼|最好的做法|為什麼|哪些|哪三個|哪一種|寫出|說明|理由|找誰|提供哪些|該怎麼/;
+      return responsePattern.test(question) ? "response" : "closed";
+    }
+
+    function getQuizResponsePrompt(kind, question) {
+      if (kind === "scenario") return "我會怎麼做：";
+      if (/怎麼做|怎麼辦|做什麼|做法|該怎麼/.test(question)) return "我會這樣做：";
+      return "我的想法：";
+    }
+
+    function renderQuizResponseLines(kind, question) {
+      const extraLines = kind === "scenario" ? 2 : 1;
+      return `
+        <p class="quiz-response-prompt">${getQuizResponsePrompt(kind, question)}</p>
+        <div class="response-lines has-prompt" aria-hidden="true">
+          ${Array.from({ length: extraLines }, () => `<div class="response-line"></div>`).join("")}
+        </div>
+      `;
+    }
+
     function renderQuizItems(items) {
       return items.map((item, quizIndex) => {
-        const isScenario = item.type === "scenario";
-        const label = isScenario ? `情境題：${item.q}` : `${quizIndex + 1}. （　）${item.q}`;
+        const kind = getQuizItemKind(item);
+        const isClosed = kind === "closed";
+        const label = kind === "scenario" ? `情境題：${item.q}` : `${quizIndex + 1}. ${isClosed ? "（　）" : ""}${item.q}`;
         return `
           <div class="quiz-item">
             <strong>${label}</strong>
-            <div class="response-lines" aria-hidden="true">
-              <div class="response-line"></div>
-              <div class="response-line"></div>
-              ${isScenario ? `<div class="response-line"></div>` : ""}
-            </div>
+            ${isClosed ? `
+              <div class="response-lines" aria-hidden="true">
+                <div class="response-line"></div>
+                <div class="response-line"></div>
+              </div>
+            ` : renderQuizResponseLines(kind, item.q)}
           </div>
         `;
       }).join("");
@@ -4049,6 +4131,7 @@
             <div class="quiz-scenario-card">
               <span>情境題</span>
               ${slide.scenario}
+              <p class="slide-response-cue">我會怎麼做：</p>
             </div>
           </div>
         `;

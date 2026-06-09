@@ -1124,14 +1124,33 @@
 
       .mobile-nav {
         display: block;
+        position: static;
       }
 
       .content {
         padding-top: 22px;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom));
       }
 
       .toolbar {
-        top: 92px;
+        position: static;
+      }
+
+      .global-topbar {
+        position: static;
+        right: auto;
+        z-index: 90;
+        justify-content: center;
+        border-width: 0 0 1px;
+        border-radius: 0;
+      }
+
+      .topbar-print {
+        display: none;
+      }
+
+      body[data-view="presentation"] .global-topbar {
+        position: fixed;
       }
     }
 
@@ -1209,7 +1228,7 @@
       }
 
       .content {
-        padding: 18px 14px 34px;
+        padding: 18px 14px calc(112px + env(safe-area-inset-bottom));
       }
 
       .toolbar {
@@ -1236,6 +1255,10 @@
 
       .lesson-card {
         scroll-margin-top: 104px;
+      }
+
+      .site-footer {
+        padding-bottom: calc(28px + env(safe-area-inset-bottom));
       }
 
       .lesson-header {
@@ -1294,7 +1317,7 @@
     @media (max-height: 520px) and (orientation: landscape) {
       body[data-view="presentation"] .presentation-stage {
         gap: 8px;
-        padding: 62px 10px 8px;
+        padding: calc(62px + env(safe-area-inset-top)) 10px calc(10px + env(safe-area-inset-bottom));
       }
 
       .slide-frame {
@@ -1446,10 +1469,18 @@
       .global-topbar {
         left: 12px;
         right: 12px;
-        top: 10px;
+        top: calc(10px + env(safe-area-inset-top));
         border-radius: 8px;
         justify-content: center;
         flex-wrap: wrap;
+      }
+
+      .mobile-nav {
+        top: auto;
+      }
+
+      .lesson-card {
+        scroll-margin-top: calc(158px + env(safe-area-inset-top));
       }
 
       .mode-button {
@@ -1464,7 +1495,7 @@
       }
 
       body[data-view="presentation"] .presentation-stage {
-        padding: 126px 10px 12px;
+        padding: calc(126px + env(safe-area-inset-top)) 10px calc(18px + env(safe-area-inset-bottom));
       }
 
       .slide-frame {
@@ -1480,6 +1511,7 @@
         width: 100%;
         border-radius: 8px;
         flex-wrap: wrap;
+        margin-bottom: env(safe-area-inset-bottom);
       }
 
       .slide-control {
@@ -1557,7 +1589,7 @@
       }
 
       body[data-view="presentation"] .presentation-stage {
-        padding: 128px 8px 10px;
+        padding: calc(128px + env(safe-area-inset-top)) 8px calc(16px + env(safe-area-inset-bottom));
       }
     }
 
@@ -3785,6 +3817,19 @@
       updateActiveLessonNav(gradeId, safeIndex);
     }
 
+    function getMobileHeaderOffset(extra = 12) {
+      if (window.innerWidth > 1020) return extra;
+
+      const mobileNav = document.querySelector(".mobile-nav");
+      if (!mobileNav) return extra;
+
+      const navStyle = getComputedStyle(mobileNav);
+      if (navStyle.display === "none" || !["fixed", "sticky"].includes(navStyle.position)) return extra;
+
+      const navTop = Number.parseFloat(navStyle.top) || 0;
+      return navTop + mobileNav.offsetHeight + extra;
+    }
+
     function syncReadingPositionFromViewport() {
       const activeSection = document.querySelector(`[data-grade-section="${currentGradeId}"]:not(.is-hidden)`);
       const gradeId = activeSection?.dataset.gradeSection || currentGradeId;
@@ -3792,8 +3837,7 @@
       if (!grade || !grade.lessons.length) return;
 
       currentGradeId = gradeId;
-      const mobileNavHeight = window.innerWidth <= 1020 ? (document.querySelector(".mobile-nav")?.offsetHeight || 0) : 0;
-      const threshold = mobileNavHeight + 150;
+      const threshold = getMobileHeaderOffset(150);
       const selectedLessonIndex = activeLessonByGrade[gradeId] || 0;
       const isRecentLessonSelection = Date.now() - lastLessonSelectionAt < 2000;
       if (isRecentLessonSelection) {
@@ -4117,8 +4161,7 @@
 
     function scrollWithHeaderOffset(target) {
       if (!target) return;
-      const mobileNavHeight = window.innerWidth <= 1020 ? (document.querySelector(".mobile-nav")?.offsetHeight || 0) : 0;
-      const offset = mobileNavHeight + 12;
+      const offset = getMobileHeaderOffset(12);
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     }

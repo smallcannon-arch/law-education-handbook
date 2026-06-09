@@ -505,7 +505,7 @@
       align-self: center;
       justify-self: center;
       display: grid;
-      overflow: hidden;
+      overflow: auto;
       border: 1px solid rgba(245, 241, 232, .34);
       border-radius: 8px;
       background: var(--paper);
@@ -1291,6 +1291,117 @@
       }
     }
 
+    @media (max-height: 520px) and (orientation: landscape) {
+      body[data-view="presentation"] .presentation-stage {
+        gap: 8px;
+        padding: 62px 10px 8px;
+      }
+
+      .slide-frame {
+        width: min(100%, calc((100vh - 126px) * 16 / 9));
+        max-height: calc(100vh - 126px);
+      }
+
+      .slide,
+      .slide-card {
+        gap: 8px;
+        padding: 14px 16px;
+      }
+
+      .slide-logo-badge {
+        gap: 6px;
+        font-size: .72rem;
+      }
+
+      .slide-logo-badge img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .slide-header {
+        gap: 5px;
+      }
+
+      .slide-meta {
+        font-size: .78rem;
+      }
+
+      .slide-title {
+        font-size: clamp(1.25rem, 4.4vh, 1.85rem);
+        line-height: 1.1;
+      }
+
+      .slide-subtitle {
+        font-size: clamp(.85rem, 3.2vh, 1.1rem);
+        line-height: 1.22;
+      }
+
+      .slide-core {
+        max-width: 32ch;
+        font-size: clamp(1rem, 3.2vh, 1.35rem);
+        line-height: 1.25;
+      }
+
+      .slide-list {
+        padding-left: 1rem;
+      }
+
+      .slide-list li {
+        font-size: clamp(.84rem, 2.7vh, 1rem);
+        line-height: 1.22;
+      }
+
+      .slide-emphasis {
+        font-size: clamp(1.05rem, 3.6vh, 1.45rem);
+        line-height: 1.2;
+      }
+
+      .slide-law-detail,
+      .slide-reminder {
+        margin-top: 8px;
+        font-size: .82rem;
+        line-height: 1.25;
+      }
+
+      .discussion-grid {
+        gap: 8px;
+      }
+
+      .discussion-card {
+        min-height: 76px;
+        padding: 10px;
+        font-size: .82rem;
+        line-height: 1.2;
+      }
+
+      .quiz-slide-grid {
+        gap: 6px;
+      }
+
+      .quiz-question-card,
+      .quiz-scenario-card {
+        padding: 7px 9px;
+        font-size: .78rem;
+        line-height: 1.18;
+      }
+
+      .quiz-blank {
+        min-width: 2.8em;
+      }
+
+      .presentation-controls {
+        min-height: 44px;
+        gap: 6px;
+        padding: 4px;
+      }
+
+      .slide-control {
+        min-height: 32px;
+        padding: 4px 10px;
+        font-size: .82rem;
+      }
+    }
+
       @media (max-width: 680px) {
       .top-hero {
         min-height: 76vh;
@@ -1488,7 +1599,7 @@
 
     @page {
       size: A4 portrait;
-      margin: 14mm 12mm 16mm;
+      margin: 12mm 14mm;
     }
 
     @media print {
@@ -1499,7 +1610,8 @@
 
       body {
         color: #000;
-        font-size: 11.5pt;
+        font-size: 12pt;
+        line-height: 1.6;
       }
 
       .top-hero,
@@ -1523,11 +1635,22 @@
 
       .layout {
         display: block;
+        grid-template-columns: none;
+        width: 100%;
+      }
+
+      .content,
+      .content-shell,
+      .grade-section,
+      .summary-panel,
+      .lesson-card,
+      .pending-panel {
+        width: 100%;
+        max-width: none;
       }
 
       .content,
       .content-shell {
-        max-width: none;
         padding: 0;
         margin: 0;
       }
@@ -1546,10 +1669,15 @@
       }
 
       .grade-cover {
+        break-before: page;
         page-break-before: always;
-        min-height: 240mm;
-        margin: 0 0 10mm;
-        border: 2px solid #1a2740;
+        break-after: avoid;
+        page-break-after: avoid;
+        min-height: 76mm;
+        margin: 0 0 6mm;
+        padding: 18mm 12mm 12mm;
+        border: 1px solid #98a3b3;
+        border-left: 4px solid #1a2740;
         border-radius: 0;
         color: #000;
         background: #fff !important;
@@ -1565,16 +1693,22 @@
       }
 
       .grade-logo-badge {
-        top: 14mm;
-        left: 12mm;
+        top: 8mm;
+        left: 10mm;
         color: #333;
+        font-size: 10pt;
       }
 
       .grade-logo-badge img {
-        width: 16mm;
-        height: 16mm;
+        width: 13mm;
+        height: 13mm;
         border: 1px solid #aaa;
         background: #fff;
+      }
+
+      .grade-cover h2 {
+        font-size: 28pt;
+        line-height: 1.15;
       }
 
       .grade-kicker,
@@ -1583,36 +1717,114 @@
         color: #000;
       }
 
+      .grade-kicker {
+        margin-bottom: 5mm;
+        font-size: 11pt;
+      }
+
+      .grade-subtitle {
+        margin-top: 5mm;
+        font-size: 15pt;
+        line-height: 1.4;
+      }
+
+      .grade-summary {
+        max-width: none;
+        margin-top: 4mm;
+        font-size: 11.5pt;
+        line-height: 1.6;
+      }
+
       .summary-panel,
       .lesson-card,
       .pending-panel {
-        break-inside: avoid;
+        margin: 0 0 6mm;
+        padding: 6mm 6mm;
+        border: 1px solid #c8ced8;
+        border-radius: 0;
         box-shadow: none;
         background: #fff;
       }
 
+      .summary-panel {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
       .lesson-card {
-        break-before: page;
-        page-break-before: always;
+        break-before: auto;
+        page-break-before: auto;
+        break-inside: auto;
+        page-break-inside: auto;
+        border-left: 3px solid #879b8d;
+        overflow: visible;
       }
 
       .lesson-header {
+        break-after: avoid;
+        page-break-after: avoid;
+        padding: 4.5mm 5mm;
         color: #000;
         background: #e7ebf0 !important;
       }
 
+      .lesson-title {
+        font-size: 20pt;
+        line-height: 1.25;
+      }
+
       .lesson-core {
+        margin-top: 2mm;
         color: #333;
+        font-size: 11.5pt;
+        line-height: 1.45;
       }
 
       .lesson-number {
         color: #000;
         border-color: #333;
+        width: 11mm;
+        height: 11mm;
+        font-size: 13pt;
+      }
+
+      .lesson-body {
+        padding: 5mm 5mm 5.5mm;
       }
 
       .block {
+        margin: 0 0 4.5mm;
+        padding: 4mm 4.5mm;
         background: #fff !important;
         break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #dde1e8;
+        border-left-width: 2px;
+        border-radius: 0;
+      }
+
+      .block.story {
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .block h4 {
+        margin-bottom: 2.5mm;
+        font-size: 14pt;
+        line-height: 1.35;
+      }
+
+      .block p,
+      .block li,
+      .quiz-item {
+        font-size: 11.5pt;
+        line-height: 1.6;
+      }
+
+      .block ul,
+      .block ol {
+        margin-top: 2mm;
+        padding-left: 6mm;
       }
 
       .teacher-answer {
@@ -1621,12 +1833,20 @@
 
       .story-text {
         max-width: none;
-        font-size: 11.5pt;
-        line-height: 1.85;
+        font-size: 12pt;
+        line-height: 1.62;
       }
 
       .pending-grid {
         grid-template-columns: repeat(4, 1fr);
+      }
+
+      .manual-table {
+        width: 100%;
+        table-layout: fixed;
+        font-size: 10.5pt;
+        line-height: 1.45;
+        border-radius: 0;
       }
 
       .manual-table th {
@@ -1634,9 +1854,44 @@
         background: #e7ebf0 !important;
       }
 
+      .manual-table th,
+      .manual-table td {
+        padding: 3mm 3.2mm;
+      }
+
+      .manual-table th:first-child,
+      .manual-table td:first-child {
+        width: 18%;
+      }
+
+      .manual-table th:nth-child(2),
+      .manual-table td:nth-child(2) {
+        width: 28%;
+      }
+
+      .quiz-list {
+        gap: 2.5mm;
+      }
+
+      .quiz-item {
+        padding: 3.5mm 4mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border-radius: 0;
+      }
+
+      .response-lines {
+        margin-top: 2.5mm;
+      }
+
+      .response-line {
+        height: 7mm;
+      }
+
       .site-footer {
-        margin-top: 10mm;
-        padding-top: 5mm;
+        margin-top: 6mm;
+        padding-top: 3mm;
+        font-size: 9.5pt;
         page-break-inside: avoid;
       }
 
@@ -1660,8 +1915,8 @@
 
   <header class="top-hero" id="top">
     <div class="hero-logo-badge">
-      <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
-      <span>新竹市香山區內湖國民小學</span>
+      <img src="logo.png" alt="法治教育主題標誌">
+      <span>法治教育</span>
     </div>
     <div class="hero-inner">
       <h1>法治教育學生手冊</h1>
@@ -1705,11 +1960,9 @@
         </div>
         <div id="gradeContainer"></div>
         <footer class="site-footer">
-          <p>COPYRIGHT © 2026 HSINCHU NEI HU PRIMARY SCHOOL</p>
-          <p>新竹市香山區內湖國民小學</p>
-          <p>維護：總務主任 江志宏</p>
-          <p>Email：smallcannon@nhps.hc.edu.tw</p>
-          <p>Tel：03-5373184#130</p>
+          <p>COPYRIGHT © 2026</p>
+          <p>法治教育學生手冊</p>
+          <p>編修：江志宏</p>
         </footer>
       </div>
     </main>
@@ -3253,7 +3506,7 @@
             <strong>${grade.gradeSubtitle}</strong>
             <p>${grade.gradeSummary}</p>
           </div>
-          <p>${grade.lessons.length ? "已建立 8 課完整內容" : "內容整理中"}</p>
+          <p>${grade.lessons.length ? "已建立 8 課完整內容" : "尚未建立課程"}</p>
         `;
         card.addEventListener("click", () => {
           setCurrentGrade(grade.gradeId, true);
@@ -3293,14 +3546,14 @@
 
       if (!grade.lessons.length) {
         const desktopPending = document.createElement("p");
-        desktopPending.textContent = "內容整理中";
+        desktopPending.textContent = "尚未建立課程";
         desktopPending.style.color = "rgba(255,255,255,.72)";
         desktopPending.style.margin = "4px 0 0";
         desktopLessonNav.appendChild(desktopPending);
 
         const mobilePending = document.createElement("span");
         mobilePending.className = "mobile-pill";
-        mobilePending.textContent = "內容整理中";
+        mobilePending.textContent = "尚未建立課程";
         mobileLessonNav.appendChild(mobilePending);
         return;
       }
@@ -3341,9 +3594,9 @@
           const pending = document.createElement("div");
           pending.className = "pending-panel";
           pending.innerHTML = `
-            <span class="pending-status">正式佔位｜內容整理中</span>
+            <span class="pending-status">正式佔位｜尚未建立課程</span>
             <div>
-              <strong>${grade.gradeTitle}課程內容整理中</strong>
+              <strong>${grade.gradeTitle}課程尚未建立</strong>
               <p>本年級已建立封面、全冊整理表與 8 課擴充位置。後續補入課名、故事、討論題、法律提醒、行動方法與小測驗後，即可沿用同一版型。</p>
             </div>
             <div class="pending-grid" aria-label="${grade.gradeTitle}待補課程位置">
@@ -3362,8 +3615,8 @@
       cover.className = "grade-cover";
       cover.innerHTML = `
         <div class="grade-logo-badge">
-          <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
-          <span>新竹市香山區內湖國民小學</span>
+          <img src="logo.png" alt="法治教育主題標誌">
+          <span>法治教育</span>
         </div>
         <div class="grade-cover-content">
           <p class="grade-kicker">法治教育學生手冊｜${grade.gradeTitle}</p>
@@ -3391,7 +3644,7 @@
             <tr>
               <td>第 1～8 課</td>
               <td>正式佔位</td>
-              <td>內容整理中。已保留 8 課擴充位置，待後續補入課名、故事與活動內容。</td>
+              <td>已保留 8 課擴充位置，待後續補入課名、故事與活動內容。</td>
             </tr>
           `;
 
@@ -3496,13 +3749,24 @@
     }
 
     function splitStorySentences(text) {
-      const matches = text.match(/[^。！？]+[。！？]/g);
-      return matches ? matches.map((item) => item.trim()) : [text];
+      const cleanText = normalizeSlideText(text);
+      const matches = cleanText.match(/[^。！？]+[。！？]/g);
+      return matches ? matches.map((item) => item.trim()) : [cleanText];
+    }
+
+    function normalizeSlideText(text) {
+      return String(text || "")
+        .replace(/<br\s*\/?>/gi, " ")
+        .replace(/<[^>]+>/g, "")
+        .replace(/\*\*/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
     }
 
     function trimSlideText(text, maxLength) {
-      if (!text || text.length <= maxLength) return text;
-      const clipped = text.slice(0, maxLength).replace(/[，、；：,.!?！？。]+$/, "");
+      const cleanText = normalizeSlideText(text);
+      if (!cleanText || cleanText.length <= maxLength) return cleanText;
+      const clipped = cleanText.slice(0, maxLength).replace(/[，、；：,.!?！？。]+$/, "");
       return `${clipped}。`;
     }
 
@@ -3555,7 +3819,9 @@
       const storySentences = splitStorySentences(lesson.story || "").filter(Boolean).slice(0, 4);
       const reminderSentences = splitStorySentences(lesson.reminder || "").filter(Boolean);
       const quizQuestions = lesson.quiz || [];
-      const discussionItems = (lesson.think || []).slice(0, 2).map((item) => trimSlideText(item, 34));
+      const discussionItems = (lesson.think || []).slice(0, 3).map((item) => trimSlideText(item, 34));
+      const trueFalseQuestions = quizQuestions.filter((item) => item.type !== "scenario").slice(0, 3);
+      const scenarioQuestion = quizQuestions.find((item) => item.type === "scenario") || quizQuestions[0];
 
       if (discussionItems.length < 3) {
         discussionItems.push("你可以怎麼保護自己或幫助別人？");
@@ -3567,11 +3833,11 @@
         think: (lesson.think || []).slice(0, 3).map((item) => trimSlideText(item, 38)),
         discussion: discussionItems.slice(0, 3),
         lawMain: trimSlideText(reminderSentences[0] || lesson.reminder || lesson.core, 40),
-        lawDetail: trimSlideText(reminderSentences.slice(1).join("") || lesson.reminder || "", 58),
+        lawDetail: trimSlideText(reminderSentences.slice(1, 3).join("") || lesson.reminder || "", 58),
         actions: (lesson.actions || []).slice(0, 4).map((item) => trimSlideText(item, 34)),
         quiz: {
-          tf: quizQuestions.slice(0, 2).map((item) => trimSlideText(item.q, 36)),
-          scenario: trimSlideText((quizQuestions[2] || quizQuestions[0] || {}).q || "遇到類似情境時，你會怎麼做？", 44)
+          tf: trueFalseQuestions.map((item) => trimSlideText(item.q, 36)),
+          scenario: trimSlideText((scenarioQuestion || {}).q || "遇到類似情境時，你會怎麼做？", 44)
         }
       };
     }
@@ -3684,7 +3950,7 @@
           <article class="slide slide-card">
             <header class="slide-header">
               <div class="slide-meta">${grade ? grade.gradeTitle : "本年級"}</div>
-              <h2 class="slide-title">本年級簡報整理中</h2>
+              <h2 class="slide-title">簡報資料尚未建立</h2>
               ${grade?.gradeSubtitle ? `<p class="slide-subtitle">${grade.gradeSubtitle}</p>` : ""}
             </header>
             <div class="slide-body">
@@ -3755,8 +4021,8 @@
         <article class="slide slide-card">
           ${currentSlideIndex === 0 ? `
             <div class="slide-logo-badge">
-              <img src="logo.png" alt="新竹市香山區內湖國民小學校徽">
-              <span>新竹市香山區內湖國民小學</span>
+              <img src="logo.png" alt="法治教育主題標誌">
+              <span>法治教育</span>
             </div>
           ` : ""}
           <header class="slide-header">

@@ -127,10 +127,14 @@
     .top-hero h1 {
       max-width: 880px;
       margin: 0;
-      font-size: clamp(2.55rem, 8vw, 6.25rem);
+      font-size: clamp(3.2rem, 7.2vw, 6.1rem);
       line-height: 1.08;
       font-weight: 800;
       letter-spacing: 0;
+    }
+
+    .hero-title-line {
+      display: inline;
     }
 
     .hero-subtitle {
@@ -362,7 +366,7 @@
     }
 
     .content-shell {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
@@ -998,7 +1002,7 @@
     }
 
     .story-text {
-      max-width: 72ch;
+      max-width: 68ch;
       font-size: 1.08rem;
       line-height: 2;
       letter-spacing: 0;
@@ -1168,8 +1172,11 @@
       }
 
       .content {
-        padding-top: 22px;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom));
+        padding: 26px clamp(24px, 4vw, 44px) calc(80px + env(safe-area-inset-bottom));
+      }
+
+      .content-shell {
+        max-width: 880px;
       }
 
       .toolbar {
@@ -1177,16 +1184,24 @@
       }
 
       .global-topbar {
-        position: static;
+        position: sticky;
         right: auto;
+        top: 0;
         z-index: 90;
         justify-content: center;
+        min-height: 52px;
+        padding: 4px 8px;
         border-width: 0 0 1px;
         border-radius: 0;
+        box-shadow: 0 4px 14px rgba(26, 39, 64, .08);
       }
 
       .topbar-print {
         display: none;
+      }
+
+      .mode-button {
+        min-height: 44px;
       }
 
       body[data-view="presentation"] .global-topbar {
@@ -1196,9 +1211,10 @@
 
     @media (max-width: 768px) {
       .top-hero {
-        min-height: 78vh;
+        min-height: 70vh;
+        min-height: 70svh;
         align-items: center;
-        padding: 96px 20px 28px;
+        padding: 84px 20px 24px;
       }
 
       .hero-inner {
@@ -1221,8 +1237,9 @@
       }
 
       .top-hero h1 {
-        max-width: 8.5em;
-        font-size: clamp(2.35rem, 12vw, 3.4rem);
+        max-width: 7.2em;
+        font-size: clamp(3rem, 9.2vw, 4.6rem);
+        line-height: 1.05;
       }
 
       .hero-subtitle {
@@ -1243,13 +1260,13 @@
       }
 
       .hero-footer {
-        margin-top: 34px;
+        margin-top: 28px;
         font-size: .9rem;
         line-height: 1.65;
       }
 
       .mobile-nav {
-        max-height: 86px;
+        max-height: none;
       }
 
       .mobile-row {
@@ -1262,13 +1279,13 @@
       }
 
       .mobile-pill {
-        min-height: 34px;
-        padding: 5px 10px;
+        min-height: 44px;
+        padding: 8px 12px;
         font-size: .9rem;
       }
 
       .content {
-        padding: 18px 14px calc(112px + env(safe-area-inset-bottom));
+        padding: 20px 20px calc(104px + env(safe-area-inset-bottom));
       }
 
       .toolbar {
@@ -1303,16 +1320,16 @@
 
       .lesson-header {
         gap: 12px;
-        padding: 18px;
+        padding: 20px;
       }
 
       .lesson-body {
         gap: 14px;
-        padding: 18px;
+        padding: 20px;
       }
 
       .block {
-        padding: 16px;
+        padding: 18px;
         border-left-width: 5px;
       }
 
@@ -1323,10 +1340,22 @@
 
       .story-text {
         max-width: none;
-        font-size: 18px;
+        font-size: 17.5px;
         line-height: 1.82;
         overflow-wrap: anywhere;
         word-break: break-word;
+      }
+
+      .block p,
+      .block li,
+      .quiz-item {
+        font-size: 16.5px;
+        line-height: 1.78;
+      }
+
+      .block .story-text {
+        font-size: 17.5px;
+        line-height: 1.82;
       }
 
       .block p,
@@ -1465,10 +1494,11 @@
       }
     }
 
-      @media (max-width: 680px) {
+    @media (max-width: 680px) {
       .top-hero {
-        min-height: 76vh;
-        padding: 94px 20px 28px;
+        min-height: 68vh;
+        min-height: 68svh;
+        padding: 78px 20px 22px;
       }
 
       .hero-logo-badge {
@@ -1509,10 +1539,11 @@
       .global-topbar {
         left: 12px;
         right: 12px;
-        top: calc(10px + env(safe-area-inset-top));
-        border-radius: 8px;
+        top: 0;
+        border-radius: 0;
         justify-content: center;
         flex-wrap: wrap;
+        padding: 4px 6px;
       }
 
       .mobile-nav {
@@ -1525,8 +1556,8 @@
 
       .mode-button {
         flex: 1 1 0;
-        min-height: 34px;
-        padding: 5px 8px;
+        min-height: 44px;
+        padding: 4px 8px;
       }
 
       body[data-view="presentation"] .topbar-brand {
@@ -1602,30 +1633,60 @@
       }
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: 480px) {
       .top-hero {
-        min-height: 74vh;
+        min-height: 66vh;
+        min-height: 66svh;
+        padding: 74px 20px 20px;
       }
 
       .top-hero h1 {
-        font-size: clamp(2.15rem, 11.2vw, 3rem);
+        max-width: 6.8em;
+        font-size: clamp(3rem, 12vw, 3.6rem);
+      }
+
+      .hero-title-line {
+        display: block;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .top-hero {
+        min-height: 65vh;
+        min-height: 65svh;
+        padding: 72px 20px 20px;
+      }
+
+      .top-hero h1 {
+        max-width: 6.8em;
+        font-size: clamp(3rem, 13.2vw, 3.6rem);
+      }
+
+      .hero-title-line {
+        display: block;
       }
 
       .hero-subtitle {
-        font-size: 1.05rem;
+        margin-top: 14px;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .hero-footer {
+        margin-top: 22px;
       }
 
       .story-text {
-        font-size: 18px;
+        font-size: 17.5px;
         line-height: 1.8;
       }
 
       .lesson-body {
-        padding: 17px;
+        padding: 19px;
       }
 
       .block {
-        padding: 15px;
+        padding: 17px;
       }
 
       body[data-view="presentation"] .presentation-stage {
@@ -1635,8 +1696,9 @@
 
     @media (max-width: 390px) {
       .top-hero {
-        min-height: 72vh;
-        padding: 88px 18px 24px;
+        min-height: 64vh;
+        min-height: 64svh;
+        padding: 70px 18px 18px;
       }
 
       .hero-logo-badge img {
@@ -1649,22 +1711,22 @@
       }
 
       .top-hero h1 {
-        font-size: clamp(2rem, 10.8vw, 2.7rem);
+        font-size: clamp(2.8rem, 12.8vw, 3.25rem);
       }
 
       .mobile-pill {
-        min-height: 32px;
-        padding: 5px 9px;
+        min-height: 44px;
+        padding: 8px 10px;
         font-size: .86rem;
       }
 
       .content {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .story-text {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 1.78;
       }
     }
@@ -2006,7 +2068,7 @@
       <span>法治教育</span>
     </div>
     <div class="hero-inner">
-      <h1>法治教育學生手冊</h1>
+      <h1><span class="hero-title-line">法治教育</span><span class="hero-title-line">學生手冊</span></h1>
       <p class="hero-subtitle">陪孩子學會判斷、尊重與保護自己</p>
       <p class="hero-applicable">三～六年級適用</p>
       <span class="version-mark">v1.0</span>

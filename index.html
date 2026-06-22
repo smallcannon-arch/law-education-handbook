@@ -4709,8 +4709,8 @@
         "summary": [
           "小安最喜歡的小狗橡皮擦不見了。",
           "他翻了鉛筆盒、抽屜和書包，都沒有找到。",
-          "小安想起早上小哲曾經說：「你的橡皮擦好可愛，可以借我看一下嗎？",
-          "」於是他忍不住大聲問：「小哲，是不是你拿了我的橡皮擦？"
+          "小安想起小哲曾經說：「你的橡皮擦好可愛，可以借我看一下嗎？」",
+          "小安著急地問：「小哲，是不是你拿了我的橡皮擦？」"
         ],
         "think": [
           "小安為什麼會懷疑小哲？",
@@ -4762,9 +4762,9 @@
         "openingCore": "危險遊戲、校園安全｜危險不是遊戲。",
         "summary": [
           "下課時，小虎和阿翔站在二樓走廊。",
-          "阿翔把紙揉成一團，往一樓花圃丟，笑著說：「你看，我丟得到水溝蓋旁邊！",
-          "」小虎也覺得好玩，跟著一起丟。",
-          "丟著丟著，阿翔撿起一個瓶蓋，說：「這個比較重，應該飛更遠！"
+          "阿翔把紙揉成一團往花圃丟，說：「你看，我丟得到水溝蓋旁邊！」",
+          "小虎覺得好玩，跟著一起丟。",
+          "阿翔撿起瓶蓋說：「這個比較重，應該飛更遠！」"
         ],
         "think": [
           "小虎什麼時候已經覺得可能有危險？",
@@ -4791,7 +4791,7 @@
           "三年丁班下課時，大家在玩「紅綠燈」。",
           "玩到一半，阿豪從後面拉了一下小晴的外套帽子。",
           "小晴嚇了一跳，差點跌倒。",
-          "阿豪笑著說：「我只是開玩笑啦！"
+          "阿豪笑著說：「我只是開玩笑啦！」"
         ],
         "think": [
           "小晴為什麼不舒服？",
@@ -4816,9 +4816,9 @@
         "openingCore": "詐騙、個資保護｜不慌張、不透露、找大人。",
         "summary": [
           "星期三下午，小晴回到家，客廳電話響了。",
-          "她接起電話，聽見一個陌生叔叔的聲音：「你是小晴嗎？",
-          "你媽媽出事情了，她請我打電話給你。",
-          "」 小晴一聽見媽媽出事，心裡很緊張。"
+          "她接起電話，聽見陌生叔叔問：「你是小晴嗎？」",
+          "對方說：「你媽媽出事情了，她請我打電話給你。」",
+          "小晴一聽見媽媽出事，心裡很緊張。"
         ],
         "think": [
           "陌生叔叔問了哪些資料？",
@@ -4845,7 +4845,7 @@
           "資訊課時，老師請大家把自然課觀察植物的照片上傳到班級平台，並留言鼓勵同學。",
           "小恩上傳了一張綠豆芽照片。",
           "綠豆芽有點歪，但那是他每天澆水、觀察後的成果。",
-          "晚上，阿凱看到照片，覺得很好笑，就留言： 「你的豆芽好醜喔，像快倒掉的草。"
+          "阿凱看到照片覺得很好笑，留言：「你的豆芽好醜喔，像快倒掉的草。」"
         ],
         "think": [
           "小恩為什麼不想再分享？",
@@ -4872,7 +4872,7 @@
           "放學後，小廷和阿佑一起走到校門口。",
           "校門旁邊有一隻小黑狗，常常安靜地趴在樹下。",
           "牠不太靠近人，只會搖搖尾巴，看著學生放學。",
-          "小廷很喜歡牠，每次經過都會小聲說：「嗨，小黑。"
+          "小廷很喜歡牠，每次經過都會小聲說：「嗨，小黑。」"
         ],
         "think": [
           "小黑被丟石頭時，可能有什麼感覺？",
@@ -5312,8 +5312,39 @@
 
     function splitStorySentences(text) {
       const cleanText = normalizeSlideText(text);
-      const matches = cleanText.match(/[^。！？]+[。！？]/g);
-      return matches ? matches.map((item) => item.trim()) : [cleanText];
+      const sentences = [];
+      let current = "";
+      let quoteDepth = 0;
+
+      Array.from(cleanText).forEach((char, index, chars) => {
+        current += char;
+        if (char === "「" || char === "『") quoteDepth += 1;
+        if ((char === "」" || char === "』") && quoteDepth > 0) quoteDepth -= 1;
+
+        const previous = chars[index - 1] || "";
+        const isSentenceEnd = /[。！？]/.test(char) && quoteDepth === 0;
+        const closesQuotedSentence = /[」』]/.test(char) && quoteDepth === 0 && /[。！？]/.test(previous);
+        if (isSentenceEnd || closesQuotedSentence) {
+          sentences.push(current.trim());
+          current = "";
+        }
+      });
+
+      if (current.trim()) sentences.push(current.trim());
+      return mergeLeadingClosers(sentences.length ? sentences : [cleanText]);
+    }
+
+    function mergeLeadingClosers(items) {
+      return items.reduce((result, item) => {
+        const current = item.trim();
+        if (!current) return result;
+        if (/^[」』）)\]]/.test(current) && result.length) {
+          result[result.length - 1] = `${result[result.length - 1]}${current}`;
+        } else {
+          result.push(current);
+        }
+        return result;
+      }, []);
     }
 
     function normalizeSlideText(text) {
@@ -5329,7 +5360,25 @@
       const cleanText = normalizeSlideText(text);
       if (!cleanText || cleanText.length <= maxLength) return cleanText;
       const clipped = cleanText.slice(0, maxLength).replace(/[，、；：,.!?！？。]+$/, "");
-      return `${clipped}。`;
+      return appendSentencePeriod(balanceSlideQuotes(clipped));
+    }
+
+    function balanceSlideQuotes(text) {
+      let balanced = text;
+      const leftQuotes = (balanced.match(/「/g) || []).length;
+      const rightQuotes = (balanced.match(/」/g) || []).length;
+      const leftDoubleQuotes = (balanced.match(/『/g) || []).length;
+      const rightDoubleQuotes = (balanced.match(/』/g) || []).length;
+      if (leftQuotes > rightQuotes) balanced += "」";
+      if (leftDoubleQuotes > rightDoubleQuotes) balanced += "』";
+      return balanced;
+    }
+
+    function appendSentencePeriod(text) {
+      if (/[。！？][」』）)\]]*$/.test(text)) return text;
+      const closingMarks = text.match(/^(.*?)([」』）)\]]+)$/);
+      if (closingMarks) return `${closingMarks[1]}。${closingMarks[2]}`;
+      return `${text}。`;
     }
 
     function updateActiveLessonNav(gradeId, lessonIndex) {

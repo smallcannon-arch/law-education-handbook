@@ -1190,6 +1190,29 @@
       padding-left: 1.45rem;
     }
 
+    .teacher-note {
+      margin-top: 16px;
+      border: 1px solid #d7dee9;
+      border-radius: 7px;
+      background: #f3f7fb;
+    }
+
+    .teacher-note summary {
+      min-height: 42px;
+      padding: 8px 14px;
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .teacher-note-content {
+      padding: 0 16px 16px;
+      color: #4c5d76;
+      font-size: .95rem;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
     .pending-panel {
       display: grid;
       gap: 18px;
@@ -2068,7 +2091,8 @@
         padding-left: 6mm;
       }
 
-      .teacher-answer {
+      .teacher-answer,
+      .teacher-note {
         display: none !important;
       }
 
@@ -5226,6 +5250,7 @@
             </div>
             ${renderTeacherAnswers(lesson.quiz)}
           </section>
+          ${renderTeacherNote(lesson.teacherNote)}
         </div>
       `;
 
@@ -5302,6 +5327,17 @@
               ${answers.map((item) => `<li>${item.a}</li>`).join("")}
             </ol>
           </div>
+        </details>
+      `;
+    }
+
+    function renderTeacherNote(note) {
+      if (!note || !String(note).trim()) return "";
+
+      return `
+        <details class="teacher-note">
+          <summary>教師備註</summary>
+          <div class="teacher-note-content">${note}</div>
         </details>
       `;
     }

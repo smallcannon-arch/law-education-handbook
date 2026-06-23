@@ -447,14 +447,6 @@
       margin: 0 auto;
     }
 
-    .toolbar {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-bottom: 18px;
-      pointer-events: none;
-    }
-
     .print-button {
       min-height: 40px;
       padding: 7px 14px;
@@ -1383,10 +1375,6 @@
         max-width: 880px;
       }
 
-      .toolbar {
-        position: static;
-      }
-
       .global-topbar {
         position: sticky;
         right: auto;
@@ -1497,11 +1485,6 @@
 
       .content {
         padding: 20px 20px calc(104px + env(safe-area-inset-bottom));
-      }
-
-      .toolbar {
-        gap: 8px;
-        margin-bottom: 12px;
       }
 
       .print-button {
@@ -1737,12 +1720,6 @@
         min-height: 170px;
       }
 
-      .toolbar {
-        position: static;
-        justify-content: stretch;
-        flex-direction: column;
-      }
-
       .print-button {
         width: 100%;
       }
@@ -1967,7 +1944,6 @@
       .overview-section,
       .side-nav,
       .mobile-nav,
-      .toolbar,
       .global-topbar,
       .presentation-stage,
       .skip-link {
@@ -2329,10 +2305,6 @@
 
     <main class="content" id="mainContent" tabindex="-1">
       <div class="content-shell">
-        <div class="toolbar" aria-label="列印工具">
-          <button class="print-button secondary" type="button" id="printCurrent">列印目前年級</button>
-          <button class="print-button" type="button" id="printAll">列印全冊</button>
-        </div>
         <div id="gradeContainer"></div>
         <footer class="site-footer">
           <p>COPYRIGHT © 2026 江志宏</p>
@@ -5117,8 +5089,6 @@
     const mobileGradeNav = document.getElementById("mobileGradeNav");
     const mobileLessonNav = document.getElementById("mobileLessonNav");
     const gradeContainer = document.getElementById("gradeContainer");
-    const printCurrentButton = document.getElementById("printCurrent");
-    const printAllButton = document.getElementById("printAll");
     const topPrintCurrentButton = document.getElementById("topPrintCurrent");
     const topPrintAllButton = document.getElementById("topPrintAll");
     const readingModeButton = document.getElementById("readingModeButton");
@@ -5931,8 +5901,6 @@
       });
     });
 
-    printCurrentButton.addEventListener("click", () => printHandbook("current"));
-    printAllButton.addEventListener("click", () => printHandbook("all"));
     topPrintCurrentButton.addEventListener("click", () => printHandbook("current"));
     topPrintAllButton.addEventListener("click", () => printHandbook("all"));
     readingModeButton.addEventListener("click", () => setViewMode("reading"));

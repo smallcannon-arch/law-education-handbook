@@ -10,6 +10,8 @@
 - 完成 9-7〈AI 換臉群組〉正式課文化，建立 AI 生成內容、散布責任與求助導向教材內容。
 - 補入 9-7 teacherNote，強調停止散布、保護當事人與程序分流。
 - 完成 9-7 法規風險複核與線上驗收。
+- 完成 Phase A｜`LEGAL_SOURCE_MAP.md` 全學段法源補完。
+- 依人工複核結果併入三～六年級法源對照：Grade 3 `39ce577`、Grade 4 `9955e81`、Grade 5 `fededbc`、Grade 6 `4b17a80`。
 - 保留教師答案於簡報模式與學生列印版隱藏。
 - 維持純前端靜態網站，無外部 CDN/script/style/font，無 fetch、localStorage、sessionStorage。
 - 標示本版本為草案整合版，尚非正式發布版。

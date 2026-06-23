@@ -25,26 +25,34 @@
     .notice { max-width: 920px; margin: 22px 0 0; color: rgba(245, 241, 232, .8); font-size: 1rem; }
     main { width: min(1680px, calc(100vw - 48px)); margin: 0 auto; padding: 44px 0 72px; }
     .content-card { padding: clamp(22px, 3vw, 42px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 18px 48px rgba(19, 33, 58, .08); }
-    h2 { margin: 36px 0 14px; padding-top: 8px; color: var(--navy); font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.25; }
+    h2 { margin: 36px 0 14px; padding-top: 8px; color: var(--navy); font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.25; scroll-margin-top: 94px; }
     h2:first-child { margin-top: 0; }
     h3 { margin: 28px 0 12px; color: var(--navy); font-size: 1.18rem; }
     p, li { color: var(--muted); font-size: 1rem; }
     ul { padding-left: 1.3rem; }
     code { padding: 1px 5px; border-radius: 4px; background: rgba(19, 33, 58, .08); color: var(--navy); font-family: "Cascadia Mono", Consolas, monospace; font-size: .92em; }
-    .source-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 34px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; }
+    .source-nav { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 34px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; box-shadow: 0 10px 24px rgba(19, 33, 58, .08); }
     .source-nav a { display: inline-flex; align-items: center; min-height: 34px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--navy); text-decoration: none; font-weight: 800; }
     .source-nav a:hover { background: #ebe4d6; }
     .ref-jump { color: var(--navy); font-size: inherit; font-weight: 800; line-height: inherit; text-decoration: underline; text-underline-offset: 3px; }
-    .source-extra { margin: 22px 0 30px; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; overflow: hidden; }
+    .source-extra { margin: 22px 0 30px; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; overflow: hidden; scroll-margin-top: 94px; }
     .source-extra summary { cursor: pointer; padding: 12px 16px; color: var(--navy); font-weight: 800; background: #ebe4d6; }
     .source-extra summary:hover { background: #e4dccd; }
     .source-extra .table-wrap { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
     .article-body { padding: 2px 16px 14px; }
     .article-body p { margin: 10px 0; }
     .table-hint { margin: -2px 0 10px; color: var(--muted); font-size: .92rem; }
+    .section-tools { margin: 10px 0 20px; }
+    .inline-pill { display: inline-flex; align-items: center; min-height: 34px; padding: 4px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--navy); text-decoration: none; font-weight: 800; background: #fffdf8; }
+    .inline-pill:hover { background: #ebe4d6; }
     .table-wrap { width: 100%; margin: 16px 0 30px; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; }
-    table { width: 100%; min-width: 1320px; border-collapse: collapse; }
+    table { width: 100%; min-width: 1440px; border-collapse: collapse; }
     th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); text-align: left; vertical-align: top; font-size: .94rem; }
+    th:nth-child(1), td:nth-child(1) { width: 64px; text-align: center; }
+    th:nth-child(2), td:nth-child(2) { width: 180px; }
+    th:nth-child(3), td:nth-child(3) { width: 280px; }
+    th:nth-child(4), td:nth-child(4) { width: 330px; }
+    th:nth-child(5), td:nth-child(5) { width: 560px; }
     th:last-child, td:last-child { border-right: 0; }
     tr:last-child td { border-bottom: 0; }
     th { position: sticky; top: 0; background: #ebe4d6; color: var(--navy); font-weight: 800; white-space: nowrap; }
@@ -57,7 +65,9 @@
       .hero-inner { width: calc(100vw - 28px); }
       main { width: calc(100vw - 28px); padding-top: 28px; }
       .content-card { padding: 20px; }
-      table { min-width: 1120px; }
+      h2, .source-extra { scroll-margin-top: 150px; }
+      .source-nav { margin-bottom: 28px; }
+      table { min-width: 1240px; }
       th, td { font-size: .9rem; }
     }
   </style>
@@ -77,7 +87,7 @@
 <p>本文件為《法治教育學生手冊》逐課法源對照表，供教師備課、教材審稿與法規複核參考。 本文件列示者為「可能相關法源」，不代表特定故事情境必然構成違法或成立特定法律責任。 實際個案仍須依具體事實、證據、程序與主管機關規定判斷。 本文件不作為法律意見或個案處理依據。</p>
 <h2>使用說明</h2>
 <ul><li>本表已整理三～九年級；全學段法源對照已完成。</li><li>每課列出三至五條參考法條，優先選取與學生行為界線、刑事責任、民事責任或校園程序直接相關者。</li><li>參考法條採螺旋式安排：同一主題保留必要核心條文，並依中年級、高年級、國中階段逐步帶入人格權、侵權、個資、校園程序、輔導、少年事件、消保、交通、洗錢防制與兒少保護等不同切面。</li><li>參考法條供教師備課與審稿使用，不代表特定故事情境必然違法、成立特定責任或應進入特定正式程序。</li><li>高風險課程不得直接依本表轉為法律結論，須由具法規與校園程序經驗者複核。</li></ul>
-<nav class="source-nav" aria-label="法源對照年級導覽">
+<nav class="source-nav" id="source-nav" aria-label="法源對照年級導覽">
   <a href="#grade3">三年級</a>
   <a href="#grade4">四年級</a>
   <a href="#grade5">五年級</a>
@@ -88,6 +98,7 @@
   <a href="#reference-articles">參考法條</a>
 </nav>
 <h2 id="grade3">三年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -234,6 +245,7 @@
 </tbody></table></div>
 </details>
 <h2 id="grade4">四年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -416,6 +428,7 @@
 </tbody></table></div>
 </details>
 <h2 id="grade5">五年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -598,6 +611,7 @@
 </tbody></table></div>
 </details>
 <h2 id="grade6">六年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -780,6 +794,7 @@
 </tbody></table></div>
 </details>
 <h2 id="grade7">七年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -846,6 +861,7 @@
 </tr>
 </tbody></table></div>
 <h2 id="grade8">八年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -912,6 +928,7 @@
 </tr>
 </tbody></table></div>
 <h2 id="grade9">九年級法源對照</h2>
+<p class="table-hint">表格可左右滑動閱讀；點選「參考法條」可跳到下方全文。</p>
 <div class="table-wrap"><table>
 <thead><tr>
 <th>課次</th>
@@ -982,6 +999,7 @@
 <h2 id="reference-articles">參考法條全文彙整</h2>
 <p>本區列出全冊逐課對照所使用之參考法條全文，供教師備課、教材審稿與法規複核使用。所列條文不代表特定故事情境必然違法、成立特定責任或應進入特定正式程序；實際個案仍須依事實、程序與主管機關規定判斷。</p>
 <p>本區不放入學生課程卡，亦不取代個案法律諮詢。</p>
+<p class="section-tools"><a class="inline-pill" href="#source-nav">回到年級導覽</a></p>
 <details class="source-extra" id="civil-179"><summary>參考法條：民法第 179 條</summary>
 <div class="article-body">
 <p><strong>官方來源：</strong><a class="ref-jump" href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=179&pcode=B0000001">https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=179&amp;pcode=B0000001</a></p>

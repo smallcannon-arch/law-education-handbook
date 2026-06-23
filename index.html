@@ -5852,7 +5852,7 @@
       if (shouldScroll) {
         lastLessonSelectionAt = 0;
         updateActiveLesson(gradeId, 0);
-        scrollWithHeaderOffset(document.getElementById(gradeId));
+        scrollGradeIntoView(gradeId);
       }
     }
 
@@ -5874,6 +5874,15 @@
       if (!target) return;
       const offset = getMobileHeaderOffset(12);
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }
+
+    function scrollGradeIntoView(gradeId) {
+      const section = document.getElementById(gradeId);
+      if (!section) return;
+      const cover = section.querySelector(".grade-cover") || section;
+      const offset = getMobileHeaderOffset(4);
+      const top = cover.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     }
 

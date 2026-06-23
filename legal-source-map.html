@@ -23,8 +23,8 @@
     h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1.08; letter-spacing: 0; }
     .subtitle { margin: 14px 0 0; color: rgba(245, 241, 232, .84); font-size: clamp(1.08rem, 2vw, 1.45rem); font-weight: 700; }
     .notice { max-width: 920px; margin: 22px 0 0; color: rgba(245, 241, 232, .8); font-size: 1rem; }
-    main { max-width: 1180px; margin: 0 auto; padding: 44px clamp(18px, 4vw, 48px) 72px; }
-    .content-card { padding: clamp(22px, 4vw, 42px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 18px 48px rgba(19, 33, 58, .08); }
+    main { width: min(1680px, calc(100vw - 48px)); margin: 0 auto; padding: 44px 0 72px; }
+    .content-card { padding: clamp(22px, 3vw, 42px); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 18px 48px rgba(19, 33, 58, .08); }
     h2 { margin: 36px 0 14px; padding-top: 8px; color: var(--navy); font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.25; }
     h2:first-child { margin-top: 0; }
     h3 { margin: 28px 0 12px; color: var(--navy); font-size: 1.18rem; }
@@ -36,20 +36,20 @@
     .source-nav a:hover { background: #ebe4d6; }
     .table-hint { margin: -2px 0 10px; color: var(--muted); font-size: .92rem; }
     .table-wrap { width: 100%; margin: 16px 0 30px; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; }
-    table { width: 100%; min-width: 920px; border-collapse: collapse; }
+    table { width: 100%; min-width: 1320px; border-collapse: collapse; }
     th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); text-align: left; vertical-align: top; font-size: .94rem; }
     th:last-child, td:last-child { border-right: 0; }
     tr:last-child td { border-bottom: 0; }
     th { position: sticky; top: 0; background: #ebe4d6; color: var(--navy); font-weight: 800; white-space: nowrap; }
     td { color: #344056; }
     tbody tr:nth-child(even) { background: rgba(235, 228, 214, .28); }
-    .page-footer { max-width: 1180px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 48px) 42px; color: var(--muted); }
+    .page-footer { width: min(1680px, calc(100vw - 48px)); margin: 0 auto; padding: 0 0 42px; color: var(--muted); }
     .footer-link { color: var(--navy); }
     @media (max-width: 640px) {
       .page-hero { padding-top: 32px; }
-      main { padding-top: 28px; }
+      main { width: calc(100vw - 28px); padding-top: 28px; }
       .content-card { padding: 20px; }
-      table { min-width: 1020px; }
+      table { min-width: 1120px; }
       th, td { font-size: .9rem; }
     }
   </style>

@@ -8,3 +8,7 @@ desktop.ini
 playwright-report/
 test-results/
 screenshots/
+
+# Local-only editorial material; do not publish to the public repository.
+/內部審稿筆記/
+/匯入母稿備份/
